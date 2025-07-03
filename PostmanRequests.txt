@@ -1,0 +1,15 @@
+LISTA DE REQUESTS PARA POSTMAN
+
+Lista de requests testados no postman, ficheiro deve ser atualizado sempre que for criado um request novo.
+OBS: Lembrar de salvar todos os requests que fizer run no ambiente de desenvolvimento.
+
+TesteLogin
+
+Solicitação - POST - http://localhost:8080/auth/login
+
+Body/raw:
+
+{
+    "username": "user",
+    "password": "pass"
+}
