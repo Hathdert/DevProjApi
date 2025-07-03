@@ -26,6 +26,24 @@ public class SecurityConfig {
     }
 
     @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable())
+                .headers(headers -> headers
+                        .frameOptions(frame -> frame.sameOrigin()) 
+                )
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/auth/**", "/h2-console/**").permitAll() 
+                        .anyRequest().hasAuthority("ROLE_USER"))
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    @Bean
     public AuthenticationProvider authenticationProvider() {
         return new AuthenticationProvider() {
             @Override
@@ -37,7 +55,8 @@ public class SecurityConfig {
                     List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } else {
-                    throw new AuthenticationException("Invalid credentials") {};
+                    throw new AuthenticationException("Invalid credentials") {
+                    };
                 }
             }
 
@@ -53,20 +72,4 @@ public class SecurityConfig {
         return config.getAuthenticationManager();
     }
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-            .csrf().disable() 
-            .authorizeHttpRequests()
-                .requestMatchers("/auth/**").permitAll() 
-                .anyRequest().hasAuthority("ROLE_USER") 
-            .and()
-            .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) 
-            .and()
-            .authenticationProvider(authenticationProvider()) 
-            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); 
-
-        return http.build();
-    }
 }
