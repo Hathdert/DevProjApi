@@ -32,7 +32,7 @@ public class Application {
 
     // Getters and Setters
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -40,7 +40,7 @@ public class Application {
     }
 
     public Candidate getCandidate() {
-        return candidate;
+        return this.candidate;
     }
 
     public void setCandidate(Candidate candidate) {
@@ -48,7 +48,7 @@ public class Application {
     }
 
     public Document getDocument() {
-        return document;
+        return this.document;
     }
 
     public void setDocument(Document document) {
@@ -56,7 +56,7 @@ public class Application {
     }
 
     public String getPitch() {
-        return pitch;
+        return this.pitch;
     }
 
     public void setPitch(String pitch) {
@@ -64,7 +64,7 @@ public class Application {
     }
 
     public int getState() {
-        return state;
+        return this.state;
     }
 
     public void setState(int state) {

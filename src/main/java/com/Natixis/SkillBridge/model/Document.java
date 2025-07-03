@@ -29,7 +29,7 @@ public class Document {
 
     // Getters and Setters
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -37,7 +37,7 @@ public class Document {
     }
 
     public String getFileName() {
-        return fileName;
+        return this.fileName;
     }
 
     public void setFileName(String fileName) {
@@ -45,7 +45,7 @@ public class Document {
     }
 
     public String getFileType() {
-        return fileType;
+        return this.fileType;
     }
 
     public void setFileType(String fileType) {
@@ -53,7 +53,7 @@ public class Document {
     }
 
     public byte[] getData() {
-        return data;
+        return this.data;
     }
 
     public void setData(byte[] data) {
@@ -61,7 +61,7 @@ public class Document {
     }
 
     public Candidate getCandidate() {
-        return candidate;
+        return this.candidate;
     }
 
     public void setCandidate(Candidate candidate) {

@@ -41,7 +41,7 @@ public class Company extends User {
 
     // Getters and Setters
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -49,7 +49,7 @@ public class Company extends User {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -57,15 +57,15 @@ public class Company extends User {
     }
 
     public LocalTime getRegistrationDate() {
-        return registrationTime;
+        return this.registrationTime;
     }
 
     public LocalDate getRegistrationTime() {
-        return registrationDate;
+        return this.registrationDate;
     }
 
     public List<Document> getDocuments() {
-        return documents;
+        return this.documents;
     }
 
     public void setDocuments(List<Document> documents) {
@@ -73,7 +73,7 @@ public class Company extends User {
     }
 
     public int getNipc() {
-        return nipc;
+        return this.nipc;
     }
 
     public void setNipc(int nipc) {
@@ -81,7 +81,7 @@ public class Company extends User {
     }
 
     public int getApprovalStatus() {
-        return approvalStatus;
+        return this.approvalStatus;
     }
 
     public void setApprovalStatus(int approvalStatus) {

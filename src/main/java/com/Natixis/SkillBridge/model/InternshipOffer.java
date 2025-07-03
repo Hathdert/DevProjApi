@@ -60,11 +60,11 @@ public class InternshipOffer {
 
     @OneToMany
     @JoinColumn(name = "internship_offer_id")
-    private List<Document> documents;
+    private List<Application> applications;
 
     // Getters and Setters
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -72,7 +72,7 @@ public class InternshipOffer {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -80,7 +80,7 @@ public class InternshipOffer {
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
@@ -88,7 +88,7 @@ public class InternshipOffer {
     }
 
     public String getRequirements() {
-        return requirements;
+        return this.requirements;
     }
 
     public void setRequirements(String requirements) {
@@ -96,7 +96,7 @@ public class InternshipOffer {
     }
 
     public String getArea() {
-        return area;
+        return this.area;
     }
 
     public void setArea(String area) {
@@ -104,7 +104,7 @@ public class InternshipOffer {
     }
 
     public LocalDate getStartDate() {
-        return startDate;
+        return this.startDate;
     }
 
     public void setStartDate(LocalDate startDate) {
@@ -112,7 +112,7 @@ public class InternshipOffer {
     }
 
     public LocalDate getEndDate() {
-        return endDate;
+        return this.endDate;
     }
 
     public void setEndDate(LocalDate endDate) {
@@ -120,7 +120,7 @@ public class InternshipOffer {
     }
 
     public int getVacancies() {
-        return vacancies;
+        return this.vacancies;
     }
 
     public void setVacancies(int vacancies) {
@@ -128,7 +128,7 @@ public class InternshipOffer {
     }
 
     public Company getCompany() {
-        return company;
+        return this.company;
     }
 
     public void setCompany(Company company) {
@@ -136,18 +136,18 @@ public class InternshipOffer {
     }
 
     public boolean isOffer() {
-        return isOffer;
+        return this.isOffer;
     }
 
     public void setOffer(boolean isOffer) {
         this.isOffer = isOffer;
     }
 
-    public List<Document> getDocuments() {
-        return documents;
+    public List<Application> getApplications() {
+        return this.applications;
     }
 
-    public void setDocuments(List<Document> documents) {
-        this.documents = documents;
+    public void setApplications(List<Application> applications) {
+        this.applications = applications;
     }
 }

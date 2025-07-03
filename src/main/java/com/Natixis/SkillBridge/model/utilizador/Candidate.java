@@ -34,7 +34,7 @@ public class Candidate extends User {
 
     // Getters and Setters
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -42,7 +42,7 @@ public class Candidate extends User {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -50,7 +50,7 @@ public class Candidate extends User {
     }
 
     public LocalDate getBirthDate() {
-        return birthDate;
+        return this.birthDate;
     }
 
     public void setBirthDate(LocalDate birthDate) {
@@ -58,21 +58,21 @@ public class Candidate extends User {
     }
 
     public LocalDate getRegistrationDate() {
-        return registrationDate;
+        return this.registrationDate;
     }
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
 
     public LocalTime getRegistrationTime() {
-        return registrationTime;
+        return this.registrationTime;
     }
     public void setRegistrationTime(LocalTime registrationTime) {
         this.registrationTime = registrationTime;
     }
 
     public List<Document> getDocuments() {
-        return documents;
+        return this.documents;
     }
 
     public void setDocuments(List<Document> documents) {
