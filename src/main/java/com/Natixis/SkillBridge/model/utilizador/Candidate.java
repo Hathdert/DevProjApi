@@ -1,46 +1,42 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
+import com.Natixis.SkillBridge.model.Document;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
-import com.Natixis.SkillBridge.model.Document;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Pattern;
-
 @Entity
+@Table(name = "candidate")
 public class Candidate extends User {
 
     @NotBlank(message = "Address is required")
-    private String address; 
+    private String address;
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "\\d{9}", message = "Phone number must have exactly 9 digits")
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String phone;
 
     @NotNull(message = "Birth date is required")
     @Past(message = "Birth date must be in the past")
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @NotNull(message = "Registration date is required")
-    private LocalTime registrationDate;
+    private LocalDate registrationDate;
 
     @NotNull(message = "Registration time is required")
-    private LocalDate registrationTime;
+    private LocalTime registrationTime;
 
+    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Document> documents;
 
     // Getters and Setters
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -48,34 +44,39 @@ public class Candidate extends User {
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public LocalDateTime getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
-    public void setBirthDate(LocalDateTime birthDate) {
+
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public LocalTime getRegistrationDate() {
+    public LocalDate getRegistrationDate() {
         return registrationDate;
     }
-    public void setRegistrationDate(LocalTime registrationDate) {
+
+    public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
 
-    public LocalDate getRegistrationTime() {
+    public LocalTime getRegistrationTime() {
         return registrationTime;
     }
-    public void setRegistrationTime(LocalDate registrationTime) {
+
+    public void setRegistrationTime(LocalTime registrationTime) {
         this.registrationTime = registrationTime;
     }
 
     public List<Document> getDocuments() {
         return documents;
     }
+
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }

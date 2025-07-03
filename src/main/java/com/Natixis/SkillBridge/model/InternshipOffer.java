@@ -9,7 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Min;
@@ -56,12 +58,15 @@ public class InternshipOffer {
 
     private boolean isOffer;
 
+    @OneToMany
+    @JoinColumn(name = "internship_offer_id")
     private List<Document> documents;
 
     // Getters and Setters
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -69,6 +74,7 @@ public class InternshipOffer {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -76,6 +82,7 @@ public class InternshipOffer {
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -83,6 +90,7 @@ public class InternshipOffer {
     public String getRequirements() {
         return requirements;
     }
+
     public void setRequirements(String requirements) {
         this.requirements = requirements;
     }
@@ -90,6 +98,7 @@ public class InternshipOffer {
     public String getArea() {
         return area;
     }
+
     public void setArea(String area) {
         this.area = area;
     }
@@ -97,6 +106,7 @@ public class InternshipOffer {
     public LocalDate getStartDate() {
         return startDate;
     }
+
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -104,6 +114,7 @@ public class InternshipOffer {
     public LocalDate getEndDate() {
         return endDate;
     }
+
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
@@ -111,6 +122,7 @@ public class InternshipOffer {
     public int getVacancies() {
         return vacancies;
     }
+
     public void setVacancies(int vacancies) {
         this.vacancies = vacancies;
     }
@@ -118,6 +130,7 @@ public class InternshipOffer {
     public Company getCompany() {
         return company;
     }
+
     public void setCompany(Company company) {
         this.company = company;
     }
@@ -125,6 +138,7 @@ public class InternshipOffer {
     public boolean isOffer() {
         return isOffer;
     }
+
     public void setOffer(boolean isOffer) {
         this.isOffer = isOffer;
     }
@@ -132,6 +146,7 @@ public class InternshipOffer {
     public List<Document> getDocuments() {
         return documents;
     }
+
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }

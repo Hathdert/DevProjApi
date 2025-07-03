@@ -1,27 +1,22 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-
-import javax.print.Doc;
-
 import com.Natixis.SkillBridge.model.Document;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class Company extends User {
-    
+
     @NotBlank(message = "Address is required")
-    private String address; 
+    private String address;
 
     @NotBlank(message = "Phone number is required")
     @Pattern(regexp = "\\d{9}", message = "Phone number must have exactly 9 digits")
@@ -29,11 +24,12 @@ public class Company extends User {
     private String phone;
 
     @NotNull(message = "Registration date is required")
-    private LocalTime registrationDate;
+    private LocalDate registrationDate;
 
     @NotNull(message = "Registration time is required")
-    private LocalDate registrationTime;
+    private LocalTime registrationTime;
 
+    @OneToMany(mappedBy = "company")
     private List<Document> documents;
 
     @NotNull(message = "NIPC is required")
@@ -41,12 +37,13 @@ public class Company extends User {
     private int nipc;
 
     @NotNull(message = "Status is required")
-    private int approvalStatus; //int representing approval status (0: pending, 1: approved, 2: rejected)
+    private int approvalStatus; // int representing approval status (0: pending, 1: approved, 2: rejected)
 
     // Getters and Setters
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
@@ -54,21 +51,23 @@ public class Company extends User {
     public String getPhone() {
         return phone;
     }
+
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
     public LocalTime getRegistrationDate() {
-        return registrationDate;
+        return registrationTime;
     }
 
     public LocalDate getRegistrationTime() {
-        return registrationTime;
+        return registrationDate;
     }
 
     public List<Document> getDocuments() {
         return documents;
     }
+
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }
@@ -76,6 +75,7 @@ public class Company extends User {
     public int getNipc() {
         return nipc;
     }
+
     public void setNipc(int nipc) {
         this.nipc = nipc;
     }
@@ -83,10 +83,9 @@ public class Company extends User {
     public int getApprovalStatus() {
         return approvalStatus;
     }
+
     public void setApprovalStatus(int approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
-
-
 
 }

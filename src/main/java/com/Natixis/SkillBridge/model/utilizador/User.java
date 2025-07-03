@@ -1,22 +1,14 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "utilizador")
 public class User {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,9 +16,10 @@ public class User {
     @NotBlank(message = "Name is required")
     @Size(min = 3, max = 100, message = "The user's name must be between 3 and 100 characters")
     private String name;
-    
+
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email")
+    @Column(unique = true, nullable = false)
     private String email;
 
     @NotBlank(message = "Password is required")
@@ -35,7 +28,7 @@ public class User {
     @NotBlank(message = "Role is required")
     private String role;
 
-        // Getters and Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -44,16 +37,18 @@ public class User {
         this.id = id;
     }
 
-    public String getname() {
+    public String getName() {
         return name;
     }
-    public void setname(String name) {
+
+    public void setName(String name) {
         this.name = name;
     }
 
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -61,6 +56,7 @@ public class User {
     public String getPassword() {
         return password;
     }
+
     public void setPassword(String password) {
         this.password = password;
     }
@@ -68,6 +64,7 @@ public class User {
     public String getRole() {
         return role;
     }
+
     public void setRole(String role) {
         this.role = role;
     }
