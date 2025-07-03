@@ -25,7 +25,7 @@ public class Candidate extends User {
 
     @NotNull(message = "Registration date is required")
     private LocalDate registrationDate;
-
+    
     @NotNull(message = "Registration time is required")
     private LocalTime registrationTime;
 
@@ -60,7 +60,6 @@ public class Candidate extends User {
     public LocalDate getRegistrationDate() {
         return registrationDate;
     }
-
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
@@ -68,7 +67,6 @@ public class Candidate extends User {
     public LocalTime getRegistrationTime() {
         return registrationTime;
     }
-
     public void setRegistrationTime(LocalTime registrationTime) {
         this.registrationTime = registrationTime;
     }
