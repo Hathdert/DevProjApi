@@ -1,5 +1,7 @@
 package com.Natixis.SkillBridge.model;
 
+import java.time.LocalDate;
+
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
@@ -16,12 +18,13 @@ public class Document {
 
     private String fileType;
 
+    private String filePath;
+
+    private LocalDate uploadDate;
+
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-
-    @Lob
-    private byte[] data;
 
     @ManyToOne
     @JoinColumn(name = "candidate_id", nullable = false)
@@ -52,14 +55,27 @@ public class Document {
         this.fileType = fileType;
     }
 
-    public byte[] getData() {
-        return this.data;
+    public String getFilePath() {
+        return this.filePath;
+    }
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
-    public void setData(byte[] data) {
-        this.data = data;
+    public LocalDate getUploadDate() {
+        return this.uploadDate;
+    }
+    public void setUploadDate(LocalDate uploadDate) {
+        this.uploadDate = uploadDate;
     }
 
+    public Company getCompany() {
+        return this.company;
+    }
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+    
     public Candidate getCandidate() {
         return this.candidate;
     }
