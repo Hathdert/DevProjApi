@@ -4,9 +4,10 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-import org.springframework.cglib.core.Local;
 
 import com.Natixis.SkillBridge.model.Document;
+
+import jakarta.validation.constraints.NotNull;
 
 public class UserRequest {
     // Superclass User fields
@@ -62,6 +63,22 @@ public class UserRequest {
         this.role = role;
     }
 
+      public LocalTime getRegistrationTime() {
+        return registrationTime;
+    }
+
+    public void setRegistrationTime(LocalTime registrationTime) {
+        this.registrationTime = registrationTime;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
 
     // Getters and Setters for Candidate specific fields
     public String getAddress() {
@@ -80,21 +97,7 @@ public class UserRequest {
         this.birthDate = birthDate;
     }
 
-    public LocalTime getRegistrationTime() {
-        return registrationTime;
-    }
-
-    public void setRegistrationTime(LocalTime registrationTime) {
-        this.registrationTime = registrationTime;
-    }
-
-    public LocalDate getRegistrationDate() {
-        return registrationDate;
-    }
-
-    public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = registrationDate;
-    }
+  
 
     public List<Document> getDocuments() {
         return documents;
@@ -124,6 +127,6 @@ public class UserRequest {
     public void setApprovalStatus(int approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
-   
-
+    
+ 
 }

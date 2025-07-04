@@ -23,12 +23,6 @@ public class Company extends User {
     @Column(unique = true)
     private String phone;
 
-    @NotNull(message = "Registration date is required")
-    private LocalDate registrationDate;
-
-    @NotNull(message = "Registration time is required")
-    private LocalTime registrationTime;
-
     @OneToMany(mappedBy = "company")
     private List<Document> documents;
 
@@ -56,13 +50,7 @@ public class Company extends User {
         this.phone = phone;
     }
 
-    public LocalTime getRegistrationDate() {
-        return this.registrationTime;
-    }
-
-    public LocalDate getRegistrationTime() {
-        return this.registrationDate;
-    }
+  
 
     public List<Document> getDocuments() {
         return this.documents;

@@ -1,10 +1,14 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -12,8 +16,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "users")
 public class User {
     @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
-    @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Name is required")
@@ -30,6 +33,13 @@ public class User {
 
     @NotBlank(message = "Role is required")
     private String role;
+
+    
+    @NotNull(message = "Registration date is required")
+    private LocalDate registrationDate;
+    
+    @NotNull(message = "Registration time is required")
+    private LocalTime registrationTime;
 
     // Getters and Setters
     public Long getId() {
@@ -70,5 +80,18 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public LocalDate getRegistrationDate() {
+        return this.registrationDate;
+    }
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+    public LocalTime getRegistrationTime() {
+        return this.registrationTime;
+    }
+    public void setRegistrationTime(LocalTime registrationTime) {
+        this.registrationTime = registrationTime;
     }
 }
