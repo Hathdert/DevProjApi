@@ -20,19 +20,32 @@ public class RegisterController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-  @PostMapping("/register")
-public ResponseEntity<?> register(@RequestBody AuthRequest request) {
-    User user = new User();
-    user.setName(request.getUsername());
-    user.setEmail(request.getEmail());
-    user.setPassword(passwordEncoder.encode(request.getPassword()));
-    user.setRole("ROLE_USER"); // default value
+//   @PostMapping("/register")
+// public ResponseEntity<?> register(@RequestBody AuthRequest request) {
+//     User user = new User();
+//     user.setName(request.getUsername());
+//     user.setEmail(request.getEmail());
+//     user.setPassword(passwordEncoder.encode(request.getPassword()));
+//     user.setRole("ROLE_CADIDATE"); // default value
 
-     try {
-        User savedUser = userService.createUser(user); // Assuming createUser returns the saved User object
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedUser.getId()); // e pegue o ID daqui
-    } catch (DataIntegrityViolationException e) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body("Email já cadastrado");
+
+//      try {
+//         User savedUser = userService.createUser(user); // Assuming createUser returns the saved User object
+//         return ResponseEntity.status(HttpStatus.CREATED).body(savedUser); // e pegue o ID daqui
+//     } catch (DataIntegrityViolationException e) {
+//         return ResponseEntity.status(HttpStatus.CONFLICT).body("Email já cadastrado");
+//     }
+// }
+
+@PostMapping("/register")
+public ResponseEntity<?> register(@RequestBody UserRequest request) {
+
+    try {
+        userService.registerUser(request);
+        return ResponseEntity.ok("Usuário registrado com sucesso");
+    } catch (Exception e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
     }
 }
+
 }
