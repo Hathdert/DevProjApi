@@ -1,5 +1,7 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -9,9 +11,9 @@ import jakarta.validation.constraints.Size;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "users")
 public class User {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq")
+    @SequenceGenerator(name = "user_seq", sequenceName = "user_seq", allocationSize = 1)
     private Long id;
 
     @NotBlank(message = "Name is required")
