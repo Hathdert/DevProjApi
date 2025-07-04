@@ -54,6 +54,7 @@ public class InternshipOffer {
 
     @NotNull(message = "Company is required")
     @ManyToOne
+    @JoinColumn(name = "company_id")
     private Company company;
 
     private boolean isOffer;

@@ -33,8 +33,9 @@ public class SecurityConfig {
                         .frameOptions(frame -> frame.sameOrigin()) 
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/h2-console/**").permitAll() 
-                        .anyRequest().hasAuthority("ROLE_USER"))
+                        //.requestMatchers("/auth/**", "/h2-console/**").permitAll() 
+                        //.anyRequest().hasAuthority("ROLE_USER"))
+                        .anyRequest().permitAll())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())

@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+data/SkillBridgedb.mv.db
+data/SkillBridgedb.trace.db
