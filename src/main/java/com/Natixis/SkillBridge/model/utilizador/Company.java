@@ -15,6 +15,8 @@ import jakarta.validation.constraints.Pattern;
 @Entity
 public class Company extends User {
 
+    
+
     @NotBlank(message = "Address is required")
     private String address;
 
@@ -29,8 +31,8 @@ public class Company extends User {
     @NotNull(message = "Registration time is required")
     private LocalTime registrationTime;
 
-    @OneToMany(mappedBy = "company")
-    private List<Document> documents;
+    @OneToMany()
+private List<Document> documents;
 
     @NotNull(message = "NIPC is required")
     @Digits(integer = 9, fraction = 0, message = "NIPC must be a 9-digit number")

@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,7 +30,7 @@ public class Candidate extends User {
     @NotNull(message = "Registration time is required")
     private LocalTime registrationTime;
 
-    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany( cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Document> documents;
 
     // Getters and Setters
@@ -78,4 +79,11 @@ public class Candidate extends User {
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }
+
+    public void addDocument(Document doc) {
+    if (this.documents == null) {
+        this.documents = new ArrayList<>();
+    }
+    this.documents.add(doc);
+}
 }

@@ -22,13 +22,7 @@ public class Document {
 
     private LocalDate uploadDate;
 
-    @ManyToOne
-    @JoinColumn(name = "company_id")
-    private Company company;
-
-    @ManyToOne
-    @JoinColumn(name = "candidate_id", nullable = false)
-    private Candidate candidate;
+    
 
     @PrePersist
     public void prePersist() {
@@ -87,18 +81,5 @@ public class Document {
         this.uploadDate = uploadDate;
     }
 
-    public Company getCompany() {
-        return this.company;
-    }
-    public void setCompany(Company company) {
-        this.company = company;
-    }
     
-    public Candidate getCandidate() {
-        return this.candidate;
-    }
-
-    public void setCandidate(Candidate candidate) {
-        this.candidate = candidate;
-    }
 }

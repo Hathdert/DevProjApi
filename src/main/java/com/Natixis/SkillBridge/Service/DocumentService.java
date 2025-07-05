@@ -1,7 +1,11 @@
 package com.Natixis.SkillBridge.Service;
+
+import com.Natixis.SkillBridge.Repository.CandidateRepository;
 import com.Natixis.SkillBridge.Repository.DocumentRepository;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,16 +14,20 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import java.util.UUID;
 
-
 @Service
 public class DocumentService {
 
     private final DocumentRepository documentRepository;
+    @Autowired
+    private CandidateRepository candidateRepository;
+
+    
 
     @Value("${upload.directory}")
     private String uploadDirectory;
@@ -29,32 +37,44 @@ public class DocumentService {
     }
 
     public Document saveDocument(MultipartFile file, Candidate candidate) throws IOException {
-    Files.createDirectories(Paths.get(uploadDirectory));
+        
+        Files.createDirectories(Paths.get(uploadDirectory));
 
-    String originalFileName = file.getOriginalFilename();
-    String fileExtension = getFileExtension(originalFileName);
-    String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
-    String filePath = uploadDirectory + File.separator + randomFileName;
-    Path path = Paths.get(filePath);
+        String originalFileName = file.getOriginalFilename();
+        String fileExtension = getFileExtension(originalFileName);
+        String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
+        String filePath = uploadDirectory + File.separator + randomFileName;
+        Path path = Paths.get(filePath);
 
-    // Salva o arquivo no disco
-    Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
+        // Salva o arquivo no disco
+        Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
 
-    Document doc = new Document();
-    doc.setFileName(randomFileName); // Nome único salvo
-    doc.setOriginalFileName(originalFileName); // Nome original para exibição
-    doc.setFileType(file.getContentType());
-    doc.setFilePath(filePath);
-    doc.setUploadDate(LocalDate.now());
-    doc.setCandidate(candidate);
+        Document doc = new Document();
+        doc.setFileName(randomFileName); // Nome único salvo
+        doc.setOriginalFileName(originalFileName); // Nome original para exibição
+        doc.setFileType(file.getContentType());
+        doc.setFilePath(filePath);
+        doc.setUploadDate(LocalDate.now());
 
-    return documentRepository.save(doc);
-}
+        // Salva o documento no banco
+        doc = documentRepository.save(doc);
 
-private String getFileExtension(String fileName) {
-    int lastDot = fileName.lastIndexOf('.');
-    return (lastDot == -1) ? "" : fileName.substring(lastDot + 1);
-}
+        // Adiciona o documento à lista do candidato
+        if (candidate.getDocuments() == null) {
+            candidate.setDocuments(new ArrayList<>());
+        }
+        candidate.getDocuments().add(doc);
+
+        // Salva o candidato para persistir a associação
+        candidateRepository.save(candidate);
+
+        return doc;
+    }
+
+    private String getFileExtension(String fileName) {
+        int lastDot = fileName.lastIndexOf('.');
+        return (lastDot == -1) ? "" : fileName.substring(lastDot + 1);
+    }
 
     public Optional<Document> findById(Long id) {
         return documentRepository.findById(id);
@@ -94,7 +114,6 @@ private String getFileExtension(String fileName) {
         doc.setFileType(file.getContentType());
         doc.setFilePath(filePath);
         doc.setUploadDate(LocalDate.now());
-        doc.setCandidate(candidate);
 
         return documentRepository.save(doc);
     }
