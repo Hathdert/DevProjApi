@@ -15,19 +15,17 @@ import com.Natixis.SkillBridge.model.utilizador.User;
 
 @Service
 public class UserService {
-
-    // @Autowired
-    // private UserRepository userRepository;
-
-    // public User findByEmail(String email) {
-    //     return userRepository.findByEmail(email).orElse(null);
-    // }
-    
+   
 
     private final UserRepository userRepository;
 
     UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElse(null);
     }
 
     public void registerUser(UserRequest request) {
