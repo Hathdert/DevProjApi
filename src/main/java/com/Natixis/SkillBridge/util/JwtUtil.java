@@ -38,10 +38,14 @@ public class JwtUtil {
     //Valida o token
     public boolean validateToken(String token) {
         try {
+            System.out.println("------[JWT UTIL] Validando token: " + token);
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
+            System.out.println("-------[JWT UTIL] Token válido!");
             return true;
         } catch (JwtException e) {
             return false;
         }
     }
+
+    
 }

@@ -33,26 +33,26 @@ public class CompanyController {
     @Autowired
     private UserService userService;
 
-    // @GetMapping("/profile")
-    // public ResponseEntity<?> profileCompany(Authentication authentication) {
-    //     if (authentication == null || !authentication.isAuthenticated()) {
-    //         return ResponseEntity.status(401).body("Usuário não autenticado");
-    //     }
+    @GetMapping("/profile")
+    public ResponseEntity<?> profileCompany(Authentication authentication) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(401).body("Usuário não autenticado");
+        }
 
-    //     String email = authentication.getName();
-    //     System.out.println("-------Email: " + email);
-    //     User user = userService.findByEmail(email);
-    //     if (user == null) {
-    //         return ResponseEntity.status(404).body("Usuário não encontrado");
-    //     }
-    //     System.out.println("-------User: " + user);
-    //     Company company = companyService.getCompanyById(user.getId());
-    //     if (company == null) {
-    //         return ResponseEntity.status(404).body("Empresa não encontrada");
-    //     }
-    //     System.out.println("-------Company: " + company);
-    //     return ResponseEntity.ok(company);
-    // }
+        String email = authentication.getName();
+        System.out.println("-------Email: " + email);
+        User user = userService.findByEmail(email);
+        if (user == null) {
+            return ResponseEntity.status(404).body("Usuário não encontrado");
+        }
+        System.out.println("-------User: " + user);
+        Company company = companyService.getCompanyById(user.getId());
+        if (company == null) {
+            return ResponseEntity.status(404).body("Empresa não encontrada");
+        }
+        System.out.println("-------Company: " + company);
+        return ResponseEntity.ok(company);
+    }
 
     @GetMapping
     public ResponseEntity<?> getAllCompanies() {
