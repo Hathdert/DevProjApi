@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -28,6 +30,7 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id", nullable = false)
+    @JsonBackReference
     private Candidate candidate;
 
     @PrePersist
