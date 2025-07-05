@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+
 @Entity
 @Table(name = "candidate")
 public class Candidate extends User {
@@ -30,6 +33,7 @@ public class Candidate extends User {
     private LocalTime registrationTime;
 
     @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Document> documents;
 
     // Getters and Setters

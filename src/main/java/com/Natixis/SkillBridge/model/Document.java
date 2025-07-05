@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -28,9 +30,28 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id", nullable = false)
+    @JsonBackReference
     private Candidate candidate;
 
+    @PrePersist
+    public void prePersist() {
+        if (uploadDate == null) {
+            uploadDate = LocalDate.now();
+        }
+    }
+
+    private String originalFileName;
+
     // Getters and Setters
+
+    public String getOriginalFileName() {
+        return originalFileName;
+    }
+
+    public void setOriginalFileName(String originalFileName) {
+        this.originalFileName = originalFileName;
+    }
+
     public Long getId() {
         return this.id;
     }

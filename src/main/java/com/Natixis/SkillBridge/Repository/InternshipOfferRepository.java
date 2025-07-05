@@ -1,9 +1,10 @@
 package com.Natixis.SkillBridge.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.Natixis.SkillBridge.model.InternshipOffer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface InternshipOfferRepository extends JpaRepository<InternshipOffer, Long>  {
+@Repository
+public interface InternshipOfferRepository extends JpaRepository<InternshipOffer, Long> {
     
 }
