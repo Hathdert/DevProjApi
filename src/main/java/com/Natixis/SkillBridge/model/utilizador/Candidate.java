@@ -4,7 +4,6 @@ import com.Natixis.SkillBridge.model.Document;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -26,11 +25,6 @@ public class Candidate extends User {
     @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
 
-    @NotNull(message = "Registration date is required")
-    private LocalDate registrationDate;
-    
-    @NotNull(message = "Registration time is required")
-    private LocalTime registrationTime;
 
     @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
@@ -61,19 +55,6 @@ public class Candidate extends User {
         this.birthDate = birthDate;
     }
 
-    public LocalDate getRegistrationDate() {
-        return this.registrationDate;
-    }
-    public void setRegistrationDate(LocalDate registrationDate) {
-        this.registrationDate = registrationDate;
-    }
-
-    public LocalTime getRegistrationTime() {
-        return this.registrationTime;
-    }
-    public void setRegistrationTime(LocalTime registrationTime) {
-        this.registrationTime = registrationTime;
-    }
 
     public List<Document> getDocuments() {
         return this.documents;

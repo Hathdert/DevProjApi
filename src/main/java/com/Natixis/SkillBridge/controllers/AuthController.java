@@ -8,14 +8,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.security.core.AuthenticationException;
-
-
 import com.Natixis.SkillBridge.util.JwtUtil;
 
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+     
 
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
@@ -24,6 +23,7 @@ public class AuthController {
         this.authenticationManager = authenticationManager;
         this.jwtUtil = jwtUtil;
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
