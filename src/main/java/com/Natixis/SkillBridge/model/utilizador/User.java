@@ -3,7 +3,6 @@ package com.Natixis.SkillBridge.model.utilizador;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

@@ -26,7 +26,8 @@ public class SecurityConfig {
     public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter) {
         this.jwtAuthFilter = jwtAuthFilter;
     }
-       @Bean
+
+    @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
@@ -36,11 +37,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .headers(headers -> headers
-                        .frameOptions(frame -> frame.sameOrigin()) 
-                )
+                        .frameOptions(frame -> frame.sameOrigin()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**","/register", "/h2-console/**").permitAll() 
-                        .anyRequest().hasAuthority("ROLE_USER"))
+                        .requestMatchers("/auth/**", "/register", "/h2-console/**, \"/api/**\"").permitAll()
+                        .anyRequest().permitAll())
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
