@@ -34,7 +34,7 @@ public class SecurityConfig {
     // Using @Lazy to avoid circular dependency issues because it only creates the bean when it's actually needed
     public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter, @Lazy UserService userService) {
         this.jwtAuthFilter = jwtAuthFilter;
-        this.userService = userService; 
+        this.userService = userService;
     }
 
     @Bean
@@ -70,11 +70,11 @@ public class SecurityConfig {
                 User user = userService.findByEmail(username);
                 if (user != null && passwordEncoder().matches(password, user.getPassword())) {
                     List<SimpleGrantedAuthority> authorities = Collections.singletonList(
-                            new SimpleGrantedAuthority("ROLE_" + user.getRole())
-                    );
+                            new SimpleGrantedAuthority("ROLE_" + user.getRole()));
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } else {
-                    throw new AuthenticationException("Invalid credentials") {};
+                    throw new AuthenticationException("Invalid credentials") {
+                    };
                 }
             }
 

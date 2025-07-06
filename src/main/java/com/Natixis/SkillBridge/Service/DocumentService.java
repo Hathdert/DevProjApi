@@ -1,7 +1,10 @@
 package com.Natixis.SkillBridge.Service;
+
 import com.Natixis.SkillBridge.Repository.DocumentRepository;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
+import com.Natixis.SkillBridge.model.utilizador.Company;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +18,6 @@ import java.util.Optional;
 
 import java.util.UUID;
 
-
 @Service
 public class DocumentService {
 
@@ -28,33 +30,54 @@ public class DocumentService {
         this.documentRepository = documentRepository;
     }
 
-    public Document saveDocument(MultipartFile file, Candidate candidate) throws IOException {
-    Files.createDirectories(Paths.get(uploadDirectory));
+    public Document saveDocumentCandidate(MultipartFile file, Candidate candidate) throws IOException {
+        Files.createDirectories(Paths.get(uploadDirectory));
 
-    String originalFileName = file.getOriginalFilename();
-    String fileExtension = getFileExtension(originalFileName);
-    String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
-    String filePath = uploadDirectory + File.separator + randomFileName;
-    Path path = Paths.get(filePath);
+        String originalFileName = file.getOriginalFilename();
+        String fileExtension = getFileExtension(originalFileName);
+        String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
+        String filePath = uploadDirectory + File.separator + randomFileName;
+        Path path = Paths.get(filePath);
 
-    // Salva o arquivo no disco
-    Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
+        Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
 
-    Document doc = new Document();
-    doc.setFileName(randomFileName); // Nome único salvo
-    doc.setOriginalFileName(originalFileName); // Nome original para exibição
-    doc.setFileType(file.getContentType());
-    doc.setFilePath(filePath);
-    doc.setUploadDate(LocalDate.now());
-    doc.setCandidate(candidate);
+        Document doc = new Document();
+        doc.setFileName(randomFileName);
+        doc.setOriginalFileName(originalFileName);
+        doc.setFileType(file.getContentType());
+        doc.setFilePath(filePath);
+        doc.setUploadDate(LocalDate.now());
+        doc.setCandidate(candidate);
 
-    return documentRepository.save(doc);
-}
+        return documentRepository.save(doc);
+    }
 
-private String getFileExtension(String fileName) {
-    int lastDot = fileName.lastIndexOf('.');
-    return (lastDot == -1) ? "" : fileName.substring(lastDot + 1);
-}
+    public Document saveDocumentCompany(MultipartFile file, Company company) throws IOException {
+        Files.createDirectories(Paths.get(uploadDirectory));
+
+        String originalFileName = file.getOriginalFilename();
+        String fileExtension = getFileExtension(originalFileName);
+        String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
+        String filePath = uploadDirectory + File.separator + randomFileName;
+        Path path = Paths.get(filePath);
+
+        Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
+
+        Document doc = new Document();
+        doc.setFileName(randomFileName);
+        doc.setOriginalFileName(originalFileName);
+        doc.setFileType(file.getContentType());
+        doc.setFilePath(filePath);
+        doc.setUploadDate(LocalDate.now());
+        doc.setCompany(company);
+
+        return documentRepository.save(doc);
+    }
+
+    private String getFileExtension(String fileName) {
+        int lastDot = fileName.lastIndexOf('.');
+        return (lastDot == -1) ? "" : fileName.substring(lastDot + 1);
+    }
 
     public Optional<Document> findById(Long id) {
         return documentRepository.findById(id);
@@ -68,12 +91,11 @@ private String getFileExtension(String fileName) {
         Optional<Document> optionalDoc = documentRepository.findById(id);
 
         if (optionalDoc.isEmpty()) {
-            throw new RuntimeException("Documento não encontrado com id: " + id);
+            throw new RuntimeException("Document not found with id: " + id);
         }
 
         Document doc = optionalDoc.get();
 
-        // Remove arquivo antigo, se existir
         if (doc.getFilePath() != null) {
             try {
                 Files.deleteIfExists(Paths.get(doc.getFilePath()));
@@ -102,15 +124,24 @@ private String getFileExtension(String fileName) {
     public void deleteDocument(Long id) throws IOException {
         Optional<Document> optionalDoc = documentRepository.findById(id);
         if (optionalDoc.isEmpty()) {
-            throw new RuntimeException("Documento não encontrado com id: " + id);
+            throw new RuntimeException("Document not found with id: " + id);
         }
         Document doc = optionalDoc.get();
 
-        // Remove arquivo do disco
         if (doc.getFilePath() != null) {
             Files.deleteIfExists(Paths.get(doc.getFilePath()));
         }
 
         documentRepository.deleteById(id);
+    }
+
+    // Return all documents from candidate ID
+    public List<Document> findByCandidateId(Long candidateId) {
+        return documentRepository.findByCandidateId(candidateId);
+    }
+
+    // Return all documents from company ID
+    public List<Document> findByCompanyId(Long companyId) {
+        return documentRepository.findByCompanyId(companyId);
     }
 }

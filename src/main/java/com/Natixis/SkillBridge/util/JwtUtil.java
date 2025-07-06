@@ -15,7 +15,7 @@ public class JwtUtil {
 
     private final long expirationMs = 3600000; 
 
-    //Gera o token que vai ser usado
+    //Generate TOKEN
     public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
@@ -25,7 +25,7 @@ public class JwtUtil {
                 .compact();
     }
 
-
+    //Extract username from TOKEN
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(key)
@@ -35,7 +35,7 @@ public class JwtUtil {
                 .getSubject();
     }
 
-    //Valida o token
+    //Validate TOKEN
     public boolean validateToken(String token) {
         try {
             System.out.println("------[JWT UTIL] Validando token: " + token);

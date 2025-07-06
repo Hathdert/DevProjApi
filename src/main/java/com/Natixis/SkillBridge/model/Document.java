@@ -6,6 +6,7 @@ import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -26,10 +27,11 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
+    @JsonIgnore
     private Company company;
 
     @ManyToOne
-    @JoinColumn(name = "candidate_id", nullable = false)
+    @JoinColumn(name = "candidate_id")
     @JsonBackReference
     private Candidate candidate;
 
