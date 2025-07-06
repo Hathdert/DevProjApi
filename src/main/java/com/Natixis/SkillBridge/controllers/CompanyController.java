@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.UserService;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 import com.Natixis.SkillBridge.model.utilizador.User;
 
@@ -69,11 +68,12 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}")    
     public Company updateCompnay(@PathVariable Long id, @RequestBody Company updatedCompany) {
         System.out.println("idcandidate " + profileCompany(id));
         return companyService.updateCompany(id, updatedCompany);
     }
+    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCompany(@PathVariable Long id) {
