@@ -3,6 +3,8 @@ package com.Natixis.SkillBridge.Service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.Natixis.SkillBridge.Repository.UserRepository;
 import com.Natixis.SkillBridge.controllers.UserRequest;
@@ -15,19 +17,19 @@ import com.Natixis.SkillBridge.model.utilizador.User;
 
 @Service
 public class UserService {
-
-    // @Autowired
-    // private UserRepository userRepository;
-
-    // public User findByEmail(String email) {
-    //     return userRepository.findByEmail(email).orElse(null);
-    // }
-    
+   
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     private final UserRepository userRepository;
 
     UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email).orElse(null);
     }
 
     public void registerUser(UserRequest request) {
@@ -45,7 +47,7 @@ public class UserService {
                 Candidate c = new Candidate();
                 c.setName(request.getName());
                 c.setEmail(request.getEmail());
-                c.setPassword(request.getPassword());
+                c.setPassword(passwordEncoder.encode(request.getPassword()));
                 c.setPhone(request.getPhone());
                 c.setRole("candidate");
                 c.setAddress(request.getAddress());
@@ -60,7 +62,7 @@ public class UserService {
                 comp.setName(request.getName());
                 comp.setAddress(request.getAddress());
                 comp.setEmail(request.getEmail());
-                comp.setPassword(request.getPassword());
+                comp.setPassword(passwordEncoder.encode(request.getPassword()));
                 comp.setRole("company");
                 comp.setPhone(request.getPhone());
                 comp.setNipc(request.getNipc());

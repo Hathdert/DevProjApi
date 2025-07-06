@@ -2,11 +2,13 @@ package com.Natixis.SkillBridge.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
@@ -16,15 +18,23 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.Natixis.SkillBridge.model.utilizador.User;
+import com.Natixis.SkillBridge.Service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Collections;
 import java.util.List;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
+    private UserService userService;
 
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter) {
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter, @Lazy UserService userService) {
         this.jwtAuthFilter = jwtAuthFilter;
+        this.userService = userService; 
     }
 
     @Bean
@@ -39,8 +49,6 @@ public class SecurityConfig {
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.sameOrigin()))
                 .authorizeHttpRequests(auth -> auth
-                        //.requestMatchers("/auth/**", "/h2-console/**").permitAll() 
-                        //.anyRequest().hasAuthority("ROLE_USER"))
                         .requestMatchers("/auth/**", "/register", "/h2-console/**, \"/api/**\"").permitAll()
                         .anyRequest().permitAll())
                 .sessionManagement(session -> session
@@ -59,12 +67,14 @@ public class SecurityConfig {
                 String username = authentication.getName();
                 String password = authentication.getCredentials().toString();
 
-                if ("user".equals(username) && "pass".equals(password)) {
-                    List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_USER"));
+                User user = userService.findByEmail(username);
+                if (user != null && passwordEncoder().matches(password, user.getPassword())) {
+                    List<SimpleGrantedAuthority> authorities = Collections.singletonList(
+                            new SimpleGrantedAuthority("ROLE_" + user.getRole())
+                    );
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } else {
-                    throw new AuthenticationException("Invalid credentials") {
-                    };
+                    throw new AuthenticationException("Invalid credentials") {};
                 }
             }
 
@@ -79,5 +89,4 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
-
 }
