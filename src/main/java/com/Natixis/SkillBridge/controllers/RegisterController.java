@@ -1,15 +1,11 @@
 package com.Natixis.SkillBridge.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.Natixis.SkillBridge.Service.UserService;
-import com.Natixis.SkillBridge.model.utilizador.User;
-import com.Natixis.SkillBridge.controllers.AuthRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RestController;
 

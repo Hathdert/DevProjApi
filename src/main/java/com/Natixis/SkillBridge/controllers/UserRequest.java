@@ -7,8 +7,6 @@ import java.util.List;
 
 import com.Natixis.SkillBridge.model.Document;
 
-import jakarta.validation.constraints.NotNull;
-
 public class UserRequest {
     // Superclass User fields
     private String password;

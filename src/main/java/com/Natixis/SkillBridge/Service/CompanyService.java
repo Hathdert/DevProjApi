@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
 @Service

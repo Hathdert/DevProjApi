@@ -15,22 +15,22 @@ public class InternshipOfferService {
     @Autowired
     private InternshipOfferRepository repository;
 
-    // Listar todos
+    // List all InternshipOffer
     public List<InternshipOffer> findAll() {
         return repository.findAll();
     }
 
-    // Buscar por ID
+    // Search InternshipOffer by ID
     public Optional<InternshipOffer> findById(Long id) {
         return repository.findById(id);
     }
 
-    // Salvar nova oferta
+    // Save new InternshipOffer
     public InternshipOffer save(InternshipOffer offer) {
         return repository.save(offer);
     }
 
-    // Atualizar oferta
+    // Update InternshipOffer
     public InternshipOffer update(Long id, InternshipOffer offerDetails) {
         Optional<InternshipOffer> existingOfferOpt = repository.findById(id);
 
@@ -50,12 +50,11 @@ public class InternshipOfferService {
 
             return repository.save(existingOffer);
         } else {
-            // Aqui pode lançar exceção ou retornar null
             return null;
         }
     }
 
-    // Deletar oferta
+    // Delete InternshipOffer
     public boolean delete(Long id) {
         Optional<InternshipOffer> existingOfferOpt = repository.findById(id);
         if (existingOfferOpt.isPresent()) {

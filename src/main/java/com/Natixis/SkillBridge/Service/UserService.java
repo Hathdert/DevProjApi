@@ -12,12 +12,9 @@ import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 import com.Natixis.SkillBridge.model.utilizador.User;
 
-import com.Natixis.SkillBridge.Repository.UserRepository;
-import com.Natixis.SkillBridge.model.utilizador.User;
-
 @Service
 public class UserService {
-   
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -27,7 +24,6 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    
     public User findByEmail(String email) {
         return userRepository.findByEmail(email).orElse(null);
     }
@@ -35,7 +31,7 @@ public class UserService {
     public void registerUser(UserRequest request) {
 
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("E-mail já em uso");
+            throw new RuntimeException("E-mail already in use");
         }
 
         User user;
@@ -69,11 +65,11 @@ public class UserService {
                 comp.setApprovalStatus(request.getApprovalStatus());
                 comp.setRegistrationDate(today);
                 comp.setRegistrationTime(now);
-                comp.setApprovalStatus(request.getApprovalStatus()); // Default approval status set to pending
+                comp.setApprovalStatus(request.getApprovalStatus());
                 user = comp;
                 break;
             default:
-                throw new RuntimeException("Role inválido");
+                throw new RuntimeException("Invalid Role ");
         }
 
         userRepository.save(user);

@@ -1,7 +1,5 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 import com.Natixis.SkillBridge.model.Document;
 import jakarta.persistence.Column;

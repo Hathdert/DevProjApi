@@ -29,7 +29,7 @@ public class Document {
     private Company company;
 
     @ManyToOne
-    @JoinColumn(name = "candidate_id", nullable = false)
+    @JoinColumn(name = "candidate_id")
     @JsonBackReference
     private Candidate candidate;
 

@@ -22,7 +22,7 @@ public class CandidateService {
     // Method to get a candidate by ID
     public Candidate getCandidateById(Long id) {
         return candidateRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Candidato não encontrado com ID: " + id));
+                .orElseThrow(() -> new RuntimeException("Candidate not found with ID: " + id));
     }
     // Method to update a candidate
     public Candidate updateCandidate(Long id, Candidate updatedCandidate) {
@@ -38,7 +38,7 @@ public class CandidateService {
     // Method to delete a candidate
     public void deleteCandidate(Long id) {
         if (!candidateRepository.existsById(id)) {
-            throw new RuntimeException("Candidato não encontrado");
+            throw new RuntimeException("Candidate not found");
         }
         candidateRepository.deleteById(id);
     }

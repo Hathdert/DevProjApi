@@ -2,8 +2,11 @@ package com.Natixis.SkillBridge.controllers;
 
 import com.Natixis.SkillBridge.Service.DocumentService;
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
+import com.Natixis.SkillBridge.Repository.CompanyRepository;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.utilizador.Candidate;
+import com.Natixis.SkillBridge.model.utilizador.Company;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,26 +24,46 @@ public class DocumentController {
 
     @Autowired
     private CandidateRepository candidateRepository;
+    @Autowired
+     private CompanyRepository companyRepository;
 
-    @PostMapping("/upload")
+    @PostMapping("/upload/candidate")
     public ResponseEntity<?> uploadFile(
             @RequestParam("file") MultipartFile file,
             @RequestParam("candidateId") Long candidateId) {
         try {
             Optional<Candidate> candidateOpt = candidateRepository.findById(candidateId);
             if (!candidateOpt.isPresent()) {
-                return ResponseEntity.status(404).body("Candidate não encontrado com id: " + candidateId);
+                return ResponseEntity.status(404).body("Candidate not found with id: " + candidateId);
             }
 
             Candidate candidate = candidateOpt.get();
-            Document savedDoc = documentService.saveDocument(file, candidate);
+            Document savedDoc = documentService.saveDocumentCandidate(file, candidate);
             return ResponseEntity.ok(savedDoc);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erro ao fazer upload do arquivo: " + e.getMessage());
+            return ResponseEntity.status(500).body("Error uploading file: " + e.getMessage());
         }
     }
 
-    @GetMapping
+    @PostMapping("/upload/company")
+    public ResponseEntity<?> uploadFileForCompany(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("companyId") Long companyId) {
+        try {
+            Optional<Company> companyOpt = companyRepository.findById(companyId);
+            if (!companyOpt.isPresent()) {
+                return ResponseEntity.status(404).body("Company not found by id: " + companyId);
+            }
+
+            Company company = companyOpt.get();
+            Document savedDoc = documentService.saveDocumentCompany(file, company);
+            return ResponseEntity.ok(savedDoc);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error uploading file " + e.getMessage());
+        }
+    }
+
+     @GetMapping
     public ResponseEntity<List<Document>> getAllDocuments() {
         List<Document> documents = documentService.findAll();
         return ResponseEntity.ok(documents);
@@ -52,7 +75,7 @@ public class DocumentController {
         if (document.isPresent()) {
             return ResponseEntity.ok(document.get());
         } else {
-            return ResponseEntity.status(404).body("Documento não encontrado com id: " + id);
+            return ResponseEntity.status(404).body("Document not found by id: " + id);
         }
     }
 
@@ -64,14 +87,14 @@ public class DocumentController {
         try {
             Optional<Candidate> candidateOpt = candidateRepository.findById(candidateId);
             if (!candidateOpt.isPresent()) {
-                return ResponseEntity.status(404).body("Candidate não encontrado com id: " + candidateId);
+                return ResponseEntity.status(404).body("Candidate not found by id: " + candidateId);
             }
 
             Candidate candidate = candidateOpt.get();
             Document updatedDoc = documentService.updateDocument(id, file, candidate);
             return ResponseEntity.ok(updatedDoc);
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erro ao atualizar documento: " + e.getMessage());
+            return ResponseEntity.status(500).body("Erro updating document: " + e.getMessage());
         }
     }
 
@@ -79,9 +102,31 @@ public class DocumentController {
     public ResponseEntity<?> deleteDocument(@PathVariable Long id) {
         try {
             documentService.deleteDocument(id);
-            return ResponseEntity.ok("Documento deletado com sucesso.");
+            return ResponseEntity.ok("Documento deleted.");
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Erro ao deletar documento: " + e.getMessage());
+            return ResponseEntity.status(500).body("Erro deleting: " + e.getMessage());
         }
+    }
+
+    @GetMapping("/candidate/{candidateId}")
+    public ResponseEntity<?> getDocumentsByCandidate(@PathVariable Long candidateId) {
+        Optional<Candidate> candidateOpt = candidateRepository.findById(candidateId);
+        if (!candidateOpt.isPresent()) {
+            return ResponseEntity.status(404).body("Candidate not found by id: " + candidateId);
+        }
+
+        List<Document> documents = documentService.findByCandidateId(candidateId);
+        return ResponseEntity.ok(documents);
+    }
+
+    @GetMapping("/company/{companyId}")
+    public ResponseEntity<?> getDocumentsByCompany(@PathVariable Long companyId) {
+        Optional<Company> companyOpt = companyRepository.findById(companyId);
+        if (!companyOpt.isPresent()) {
+            return ResponseEntity.status(404).body("Company not found by id: " + companyId);
+        }
+
+        List<Document> documents = documentService.findByCompanyId(companyId);
+        return ResponseEntity.ok(documents);
     }
 }

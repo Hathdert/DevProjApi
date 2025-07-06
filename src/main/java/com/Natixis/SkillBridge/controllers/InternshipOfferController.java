@@ -12,34 +12,34 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/internshipoffers")
-@CrossOrigin(origins = "http://localhost:4200")  // Ajuste a URL do front Angular se for diferente
+@CrossOrigin(origins = "http://localhost:4200")
 public class InternshipOfferController {
 
     @Autowired
     private InternshipOfferService service;
 
-    // Listar todas as ofertas
+    // List all InternshipOffer
     @GetMapping
     public List<InternshipOffer> getAllOffers() {
         return service.findAll();
     }
 
-    // Buscar uma oferta por id
+    // Search InternshipOffer by ID
     @GetMapping("/{id}")
     public ResponseEntity<InternshipOffer> getOfferById(@PathVariable Long id) {
         Optional<InternshipOffer> offerOpt = service.findById(id);
         return offerOpt.map(ResponseEntity::ok)
-                       .orElseGet(() -> ResponseEntity.notFound().build());
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // Criar uma nova oferta
+    // Create new InternshipOffer
     @PostMapping
     public ResponseEntity<InternshipOffer> createOffer(@RequestBody InternshipOffer offer) {
         InternshipOffer savedOffer = service.save(offer);
         return ResponseEntity.ok(savedOffer);
     }
 
-    // Atualizar uma oferta existente
+    // Update InternshipOffer
     @PutMapping("/{id}")
     public ResponseEntity<InternshipOffer> updateOffer(@PathVariable Long id, @RequestBody InternshipOffer offer) {
         InternshipOffer updatedOffer = service.update(id, offer);
@@ -49,7 +49,7 @@ public class InternshipOfferController {
         return ResponseEntity.ok(updatedOffer);
     }
 
-    // Deletar uma oferta
+    // Delete InternshipOffer
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
         boolean deleted = service.delete(id);

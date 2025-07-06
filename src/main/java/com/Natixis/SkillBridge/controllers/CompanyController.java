@@ -1,11 +1,9 @@
 package com.Natixis.SkillBridge.controllers;
 
-import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.UserService;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 import com.Natixis.SkillBridge.model.utilizador.User;
 
@@ -36,19 +33,19 @@ public class CompanyController {
     @GetMapping("/profile")
     public ResponseEntity<?> profileCompany(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
-            return ResponseEntity.status(401).body("Usuário não autenticado");
+            return ResponseEntity.status(401).body("User not found");
         }
 
         String email = authentication.getName();
         System.out.println("-------Email: " + email);
         User user = userService.findByEmail(email);
         if (user == null) {
-            return ResponseEntity.status(404).body("Usuário não encontrado");
+            return ResponseEntity.status(404).body("User not found");
         }
         System.out.println("-------User: " + user);
         Company company = companyService.getCompanyById(user.getId());
         if (company == null) {
-            return ResponseEntity.status(404).body("Empresa não encontrada");
+            return ResponseEntity.status(404).body("Company not found");
         }
         System.out.println("-------Company: " + company);
         return ResponseEntity.ok(company);
@@ -63,7 +60,7 @@ public class CompanyController {
     public ResponseEntity<?> profileCompany(@PathVariable Long id) {
         Company company = companyService.getCompanyById(id);
         if (company == null) {
-            return ResponseEntity.status(404).body("Empresa não encontrada");
+            return ResponseEntity.status(404).body("Company not found");
         }
 
         return ResponseEntity.ok(company);
@@ -78,6 +75,6 @@ public class CompanyController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCompany(@PathVariable Long id) {
         companyService.deleteCompany(id);
-        return ResponseEntity.ok("Empresa deletada com sucesso");
+        return ResponseEntity.ok("Company deleted");
     }
 }
