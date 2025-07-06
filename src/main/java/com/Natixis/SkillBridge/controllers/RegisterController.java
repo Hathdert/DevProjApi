@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.Natixis.SkillBridge.Service.UserService;
 import com.Natixis.SkillBridge.model.utilizador.User;
+
+import jakarta.validation.Valid;
+
 import com.Natixis.SkillBridge.controllers.AuthRequest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,7 +41,7 @@ public class RegisterController {
 // }
 
 @PostMapping("/register")
-public ResponseEntity<?> register(@RequestBody UserRequest request) {
+public ResponseEntity<?> register(@Valid @RequestBody UserRequest request) {
 
     try {
         userService.registerUser(request);

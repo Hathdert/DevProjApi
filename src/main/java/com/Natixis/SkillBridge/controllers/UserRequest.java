@@ -7,27 +7,50 @@ import java.util.List;
 
 import com.Natixis.SkillBridge.model.Document;
 
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 public class UserRequest {
     // Superclass User fields
     private String password;
+
+    @NotBlank(message = "Name is required")
+    @Size(min = 3, max = 100, message = "The user's name must be between 3 and 100 characters")
     private String name;
+    @NotBlank(message = "Email is required")
+    @Email(message = "Invalid email")
+    @Column(unique = true, nullable = false)
     private String email;
+    private LocalDate registrationDate;
+    private LocalTime registrationTime;
+    @NotBlank(message = "Role is required")
     private String role; // Assuming role is a String, could be an enum or another type
 
     // Candidate specific fields
+    @NotBlank(message = "Address is required")
     private String address;
+    @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
-    private LocalDate registrationDate;
-    private LocalTime registrationTime;
+   
     private List<Document> documents;
 
     //Company specific fields
+     @NotBlank(message = "Phone number is required")
+    @Pattern(regexp = "\\d{9}", message = "Phone number must have exactly 9 digits")
+    @Column(unique = true, nullable = false)
     private String phone;
     private String description;
     private String area;
+    @NotNull(message = "NIPC is required")
+    @Digits(integer = 9, fraction = 0, message = "NIPC must be a 9-digit number")
     private int nipc;
+    @NotNull(message = "Status is required")
     private int approvalStatus;
 
     // Default constructor

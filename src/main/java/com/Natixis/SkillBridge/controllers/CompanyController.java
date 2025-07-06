@@ -103,11 +103,12 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}")    
     public Company updateCompnay(@PathVariable Long id, @RequestBody Company updatedCompany) {
         System.out.println("idcandidate " + profileCompany(id));
         return companyService.updateCompany(id, updatedCompany);
     }
+    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCompany(@PathVariable Long id) {
