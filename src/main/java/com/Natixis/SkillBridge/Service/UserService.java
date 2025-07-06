@@ -23,6 +23,9 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    @Autowired
+    private EmailService emailService;
+
     UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -65,6 +68,8 @@ public class UserService {
                 comp.setPassword(passwordEncoder.encode(request.getPassword()));
                 comp.setRole("company");
                 comp.setPhone(request.getPhone());
+                comp.setDescription(request.getDescription());
+                comp.setArea(request.getArea());
                 comp.setNipc(request.getNipc());
                 comp.setApprovalStatus(request.getApprovalStatus());
                 comp.setRegistrationDate(today);
@@ -77,5 +82,8 @@ public class UserService {
         }
 
         userRepository.save(user);
+
+        // emailService.sendWelcomeEmail(user.getEmail(), user.getName());
+
     }
 }

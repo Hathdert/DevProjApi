@@ -25,6 +25,8 @@ public class UserRequest {
 
     //Company specific fields
     private String phone;
+    private String description;
+    private String area;
     private int nipc;
     private int approvalStatus;
 
@@ -38,11 +40,11 @@ public class UserRequest {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -50,21 +52,21 @@ public class UserRequest {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
     public String getRole() {
-        return role;
+        return this.role;
     }
     public void setRole(String role) {
         this.role = role;
     }
 
       public LocalTime getRegistrationTime() {
-        return registrationTime;
+        return this.registrationTime;
     }
 
     public void setRegistrationTime(LocalTime registrationTime) {
@@ -72,7 +74,7 @@ public class UserRequest {
     }
 
     public LocalDate getRegistrationDate() {
-        return registrationDate;
+        return this.registrationDate;
     }
 
     public void setRegistrationDate(LocalDate registrationDate) {
@@ -82,7 +84,7 @@ public class UserRequest {
 
     // Getters and Setters for Candidate specific fields
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -90,7 +92,7 @@ public class UserRequest {
     }
 
     public LocalDate getBirthDate() {
-        return birthDate;
+        return this.birthDate;
     }
 
     public void setBirthDate(LocalDate birthDate) {
@@ -100,7 +102,7 @@ public class UserRequest {
   
 
     public List<Document> getDocuments() {
-        return documents;
+        return this.documents;
     }
 
     public void setDocuments(List<Document> documents) {
@@ -109,20 +111,34 @@ public class UserRequest {
 
     // Getters and Setters for Company specific fields
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public String getDescription() {
+        return this.description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getArea() {
+        return this.area;
+    }
+    public void setArea(String area) {
+        this.area = area;
+    }
     public int getNipc() {
-        return nipc;
+        return this.nipc;
     }
     public void setNipc(int nipc) {
         this.nipc = nipc;
     }
     public int getApprovalStatus() {
-        return approvalStatus;
+        return this.approvalStatus;
     }
     public void setApprovalStatus(int approvalStatus) {
         this.approvalStatus = approvalStatus;

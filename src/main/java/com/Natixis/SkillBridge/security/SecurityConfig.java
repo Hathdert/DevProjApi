@@ -32,6 +32,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private UserService userService;
 
+    // Using @Lazy to avoid circular dependency issues because it only creates the bean when it's actually needed
     public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter, @Lazy UserService userService) {
         this.jwtAuthFilter = jwtAuthFilter;
         this.userService = userService; 

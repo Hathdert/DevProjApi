@@ -1,7 +1,5 @@
 package com.Natixis.SkillBridge.model.utilizador;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 import com.Natixis.SkillBridge.model.Document;
 import jakarta.persistence.Column;
@@ -22,6 +20,13 @@ public class Company extends User {
     @Pattern(regexp = "\\d{9}", message = "Phone number must have exactly 9 digits")
     @Column(unique = true)
     private String phone;
+
+    @NotBlank(message = "Description is required")
+    @Column(length = 500)    
+    private String description;
+
+    @NotBlank(message = "Area is required")
+    private String area;
 
     @OneToMany(mappedBy = "company")
     private List<Document> documents;
@@ -50,7 +55,19 @@ public class Company extends User {
         this.phone = phone;
     }
 
-  
+    public String getDescription() {
+        return this.description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getArea() {
+        return this.area;
+    }
+    public void setArea(String area) {
+        this.area = area;
+    }
 
     public List<Document> getDocuments() {
         return this.documents;

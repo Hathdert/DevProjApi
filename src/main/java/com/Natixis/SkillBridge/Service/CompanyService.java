@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
 import com.Natixis.SkillBridge.model.utilizador.Company;
 
 @Service
@@ -14,8 +13,6 @@ public class CompanyService {
     
     @Autowired
     private CompanyRepository companyRepository;
-
-
 
     public CompanyService(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
@@ -31,6 +28,7 @@ public class CompanyService {
         return companyRepository.findById(id).orElse(null);
     }
 
+    //Update the company by ID
     public Company updateCompany(Long id, Company updatedCompany) {
         Company existing = getCompanyById(id);
         System.out.println("idcandidate " + getCompanyById(id));
@@ -42,6 +40,7 @@ public class CompanyService {
         return companyRepository.save(existing);
     }
 
+    //Delete the company by ID
     public void deleteCompany(Long id) {
         if (!companyRepository.existsById(id)) {
             throw new RuntimeException("Company not found");
