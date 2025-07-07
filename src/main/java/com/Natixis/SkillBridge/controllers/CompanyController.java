@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.UserService;
-import com.Natixis.SkillBridge.model.utilizador.Company;
-import com.Natixis.SkillBridge.model.utilizador.User;
+import com.Natixis.SkillBridge.model.user.Company;
+import com.Natixis.SkillBridge.model.user.User;
 
 @CrossOrigin(origins = "*")
 @RestController

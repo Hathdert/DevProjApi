@@ -2,9 +2,8 @@ package com.Natixis.SkillBridge.model;
 
 import java.time.LocalDate;
 
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
-import com.Natixis.SkillBridge.model.utilizador.Company;
-
+import com.Natixis.SkillBridge.model.user.Candidate;
+import com.Natixis.SkillBridge.model.user.Company;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

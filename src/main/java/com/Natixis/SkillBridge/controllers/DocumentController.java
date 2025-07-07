@@ -4,8 +4,8 @@ import com.Natixis.SkillBridge.Service.DocumentService;
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
 import com.Natixis.SkillBridge.model.Document;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
-import com.Natixis.SkillBridge.model.utilizador.Company;
+import com.Natixis.SkillBridge.model.user.Candidate;
+import com.Natixis.SkillBridge.model.user.Company;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

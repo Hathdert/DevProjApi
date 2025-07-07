@@ -3,7 +3,7 @@ package com.Natixis.SkillBridge.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.Natixis.SkillBridge.model.utilizador.Company;
+import com.Natixis.SkillBridge.model.user.Company;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

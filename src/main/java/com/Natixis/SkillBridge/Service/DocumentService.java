@@ -2,8 +2,8 @@ package com.Natixis.SkillBridge.Service;
 
 import com.Natixis.SkillBridge.Repository.DocumentRepository;
 import com.Natixis.SkillBridge.model.Document;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
-import com.Natixis.SkillBridge.model.utilizador.Company;
+import com.Natixis.SkillBridge.model.user.Candidate;
+import com.Natixis.SkillBridge.model.user.Company;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

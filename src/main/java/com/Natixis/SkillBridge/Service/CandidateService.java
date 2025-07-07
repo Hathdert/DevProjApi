@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
+import com.Natixis.SkillBridge.model.user.Candidate;
 
 @Service
 public class CandidateService {

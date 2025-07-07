@@ -1,4 +1,4 @@
-package com.Natixis.SkillBridge.model.utilizador;
+package com.Natixis.SkillBridge.model.user;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
