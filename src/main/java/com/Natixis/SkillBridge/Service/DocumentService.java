@@ -144,4 +144,19 @@ public class DocumentService {
     public List<Document> findByCompanyId(Long companyId) {
         return documentRepository.findByCompanyId(companyId);
     }
+
+    public Optional<Document> findFirstImageByCandidate(Long candidateId) {
+        List<Document> documents = documentRepository.findByCandidateId(candidateId);
+
+        return documents.stream()
+                .filter(doc -> doc.getFileType() != null && doc.getFileType().startsWith("image/"))
+                .findFirst();
+    }
+
+    public Optional<Document> findFirstImageByCompany(Long companyId) {
+        List<Document> documents = documentRepository.findByCompanyId(companyId);
+        return documents.stream()
+                .filter(doc -> doc.getFileType() != null && doc.getFileType().startsWith("image"))
+                .findFirst();
+    }
 }

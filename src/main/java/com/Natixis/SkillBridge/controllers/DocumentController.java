@@ -1,5 +1,7 @@
 package com.Natixis.SkillBridge.controllers;
 
+import com.Natixis.SkillBridge.Service.CandidateService;
+import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.DocumentService;
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
@@ -7,13 +9,22 @@ import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
 
+import io.jsonwebtoken.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+
+import java.nio.file.Path;
 
 @RestController
 @RequestMapping("/api/documents")
@@ -25,13 +36,25 @@ public class DocumentController {
     @Autowired
     private CandidateRepository candidateRepository;
     @Autowired
-     private CompanyRepository companyRepository;
+    private CompanyRepository companyRepository;
+
+    private CandidateService candidateService;
+
+    private CompanyService companyService;
+
+    public DocumentController(CandidateService candidateService, CompanyService companyService){
+        this.candidateService = candidateService;
+        this.companyService = companyService;
+    }
+
 
     @PostMapping("/upload/candidate")
     public ResponseEntity<?> uploadFile(
             @RequestParam("file") MultipartFile file,
-            @RequestParam("candidateId") Long candidateId) {
+            @RequestParam("candidateEmail") String candidateEmail) {
         try {
+
+            Long candidateId = candidateService.getCandidateIdByEmail(candidateEmail);
             Optional<Candidate> candidateOpt = candidateRepository.findById(candidateId);
             if (!candidateOpt.isPresent()) {
                 return ResponseEntity.status(404).body("Candidate not found with id: " + candidateId);
@@ -48,8 +71,10 @@ public class DocumentController {
     @PostMapping("/upload/company")
     public ResponseEntity<?> uploadFileForCompany(
             @RequestParam("file") MultipartFile file,
-            @RequestParam("companyId") Long companyId) {
+            @RequestParam("companyEmail") String companyEmail) {
         try {
+
+            Long companyId = companyService.getCompanyIdByEmail(companyEmail);
             Optional<Company> companyOpt = companyRepository.findById(companyId);
             if (!companyOpt.isPresent()) {
                 return ResponseEntity.status(404).body("Company not found by id: " + companyId);
@@ -63,7 +88,7 @@ public class DocumentController {
         }
     }
 
-     @GetMapping
+    @GetMapping
     public ResponseEntity<List<Document>> getAllDocuments() {
         List<Document> documents = documentService.findAll();
         return ResponseEntity.ok(documents);
@@ -129,4 +154,74 @@ public class DocumentController {
         List<Document> documents = documentService.findByCompanyId(companyId);
         return ResponseEntity.ok(documents);
     }
+
+    @GetMapping("/candidate/{candidateId}/first-image")
+    public ResponseEntity<?> getFirstImageDocumentByCandidate(@PathVariable Long candidateId)
+            throws java.io.IOException {
+        Optional<Candidate> candidateOpt = candidateRepository.findById(candidateId);
+        if (!candidateOpt.isPresent()) {
+            return ResponseEntity.status(404).body("Candidate not found with id: " + candidateId);
+        }
+
+        Optional<Document> imageDocumentOpt = documentService.findFirstImageByCandidate(candidateId);
+        if (imageDocumentOpt.isEmpty()) {
+            return ResponseEntity.status(404).body("No image document found for candidate.");
+        }
+
+        Document imageDocument = imageDocumentOpt.get();
+        Path imagePath = Paths.get(imageDocument.getFilePath());
+
+        try {
+            byte[] imageBytes = Files.readAllBytes(imagePath);
+            MediaType mediaType = getMediaTypeForFileName(imageDocument.getFileName());
+
+            return ResponseEntity.ok()
+                    .contentType(mediaType)
+                    .body(imageBytes);
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Erro ao ler a imagem: " + e.getMessage());
+        }
+    }
+
+    // Método auxiliar para detectar o tipo de mídia com base na extensão do arquivo
+    private MediaType getMediaTypeForFileName(String fileName) {
+        if (fileName.toLowerCase().endsWith(".png")) {
+            return MediaType.IMAGE_PNG;
+        } else if (fileName.toLowerCase().endsWith(".jpg") || fileName.toLowerCase().endsWith(".jpeg")) {
+            return MediaType.IMAGE_JPEG;
+        } else if (fileName.toLowerCase().endsWith(".gif")) {
+            return MediaType.IMAGE_GIF;
+        } else {
+            return MediaType.APPLICATION_OCTET_STREAM;
+        }
+    }
+
+    @GetMapping("/company/{companyId}/first-image")
+    public ResponseEntity<?> getFirstImageDocumentByCompany(@PathVariable Long companyId) throws java.io.IOException {
+        Optional<Company> companyOpt = companyRepository.findById(companyId);
+        if (!companyOpt.isPresent()) {
+            return ResponseEntity.status(404).body("Company not found with id: " + companyId);
+        }
+
+        Optional<Document> imageDocument = documentService.findFirstImageByCompany(companyId);
+        if (imageDocument.isEmpty()) {
+            return ResponseEntity.status(404).body("No image document found for company.");
+        }
+
+        Document doc = imageDocument.get();
+        Path imagePath = Paths.get(doc.getFilePath());
+
+        try {
+            byte[] imageBytes = Files.readAllBytes(imagePath);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.parseMediaType(doc.getFileType()));
+            headers.setContentLength(imageBytes.length);
+
+            return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Error reading image file: " + e.getMessage());
+        }
+    }
+
 }

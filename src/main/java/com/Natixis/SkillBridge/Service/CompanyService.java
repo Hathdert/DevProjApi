@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
+import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
 
 @Service
@@ -47,5 +48,12 @@ public class CompanyService {
         }
         companyRepository.deleteById(id);
     }
+
+    public Long getCompanyIdByEmail(String email) {
+    return companyRepository.findByEmail(email)
+        .map(Company::getId)
+        .orElseThrow(() -> new RuntimeException("Company not found with email: " + email));
+}
+
 
 }
