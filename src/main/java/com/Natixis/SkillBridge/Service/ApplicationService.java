@@ -29,10 +29,10 @@ public class ApplicationService {
         return applicationRepository.findAllByCandidateId(candidateId);
     }
 
-    // // List all applications inside an internship offer
-    // public List<Application> listByInternshipOfferId(Long internshipOfferId) {
-    //     return applicationRepository.findAllByInternshipOfferId(internshipOfferId);
-    // }
+    // List all applications inside an internship offer
+    public List<Application> listByInternshipOfferId(Long internshipOfferId) {
+        return applicationRepository.findAllByInternshipOfferId(internshipOfferId);
+    }
 
     // Creaate new application
     public Application makeNew(Application application) {
