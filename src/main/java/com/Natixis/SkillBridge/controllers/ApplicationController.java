@@ -48,11 +48,11 @@ public class ApplicationController {
         return applicationService.listByCandidateId(candidateId);
     }
 
-    // // List all applications inside an internship offer
-    // @GetMapping("/internshipoffer/{internshipOfferId}")
-    // public List<Application> getApplicationsByInternshipOfferId(Long internshipOfferId) {
-    //     return applicationService.listByInternshipOfferId(internshipOfferId);
-    // }
+    // List all applications inside an internship offer
+    @GetMapping("/internshipoffer/{internshipOfferId}")
+    public List<Application> getApplicationsByInternshipOfferId(Long internshipOfferId) {
+        return applicationService.listByInternshipOfferId(internshipOfferId);
+    }
 
     // Create new application
     @PostMapping("/new")
