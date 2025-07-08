@@ -8,9 +8,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import com.Natixis.SkillBridge.Repository.UserRepository;
 import com.Natixis.SkillBridge.controllers.UserRequest;
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
-import com.Natixis.SkillBridge.model.utilizador.Company;
-import com.Natixis.SkillBridge.model.utilizador.User;
+import com.Natixis.SkillBridge.model.user.Candidate;
+import com.Natixis.SkillBridge.model.user.Company;
+import com.Natixis.SkillBridge.model.user.User;
 
 @Service
 public class UserService {

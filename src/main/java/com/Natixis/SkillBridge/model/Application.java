@@ -1,6 +1,6 @@
 package com.Natixis.SkillBridge.model;
 
-import com.Natixis.SkillBridge.model.utilizador.Candidate;
+import com.Natixis.SkillBridge.model.user.Candidate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Application {
@@ -26,8 +30,14 @@ public class Application {
     @JoinColumn(name = "document_id")
     private Document document;
 
+    @NotNull(message = "Pitch cannot be null")
+    @NotBlank(message = "Pitch cannot be empty")
+    @Size(min = 10, max = 500, message = "Pitch must be between 10 and 500 characters")
     private String pitch;
 
+    @NotNull(message = "State is required")
+    @Min(0)
+    @Max(2)
     public int state; // 0 - pending, 1 - accepted, 2 - rejected
 
     // Getters and Setters

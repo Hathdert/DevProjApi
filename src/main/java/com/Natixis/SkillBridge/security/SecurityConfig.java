@@ -18,8 +18,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.Natixis.SkillBridge.model.utilizador.User;
 import com.Natixis.SkillBridge.Service.*;
+import com.Natixis.SkillBridge.model.user.User;
 
 import java.util.Collections;
 import java.util.List;
