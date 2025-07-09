@@ -15,15 +15,29 @@ public class JwtUtil {
 
     private final long expirationMs = 3600000; 
 
-    //Generate TOKEN
-    public String generateToken(String username) {
+// ...existing code...
+
+    //Generate TOKEN with username and company
+    public String generateToken(String username, String navBar) {
         return Jwts.builder()
                 .setSubject(username)
+                .claim("navBar", navBar)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
                 .signWith(key)
                 .compact();
     }
+
+    //Extract company from TOKEN
+    public String extractNavBar(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .get("navBar", String.class);
+    }
+
 
     //Extract username from TOKEN
     public String extractUsername(String token) {
