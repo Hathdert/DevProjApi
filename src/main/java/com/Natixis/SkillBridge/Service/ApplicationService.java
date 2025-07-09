@@ -67,4 +67,18 @@ public class ApplicationService {
         
         return false;
     }
+
+    // Delete application by the candidate id
+    public boolean deleteByCandidateId(Long id) {
+        List<Application> existingApplicationList = applicationRepository.findAllByCandidateId(id);
+
+        if (existingApplicationList.size() != 0) {
+            for (Application application : existingApplicationList) {
+                applicationRepository.delete(application);
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

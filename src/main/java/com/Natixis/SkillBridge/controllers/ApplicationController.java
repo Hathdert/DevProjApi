@@ -74,5 +74,12 @@ public class ApplicationController {
         applicationService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Delete all applications if a candidate by the id
+    @DeleteMapping("/delete/{candidateId}")
+    public ResponseEntity<List<Application>> deleteAllCandidateApplication(@PathVariable Long id) {
+        applicationService.deleteByCandidateId(id);
+        return ResponseEntity.noContent().build();
+    }
     
 }
