@@ -1,6 +1,7 @@
 package com.Natixis.SkillBridge.model;
 
 import com.Natixis.SkillBridge.model.user.Candidate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,10 +24,12 @@ public class Application {
 
     @NotNull(message = "Candidate is required")
     @ManyToOne(optional = false)
+    @JsonIgnore
     @JoinColumn(name = "candidate_id")
     private Candidate candidate;
 
     @ManyToOne
+    //@JsonIgnore
     @JoinColumn(name = "document_id")
     private Document document;
 
@@ -42,6 +45,7 @@ public class Application {
 
     @NotNull (message = "Application needs to belong to na internship offer")
     @ManyToOne
+    //@JsonIgnore
     @JoinColumn(name = "internship_offer_id")
     private InternshipOffer internshipOffer;
 
