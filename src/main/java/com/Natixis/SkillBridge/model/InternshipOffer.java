@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.Natixis.SkillBridge.model.user.Company;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -54,12 +55,14 @@ public class InternshipOffer {
 
     @NotNull(message = "Company is required")
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "company_id")
     private Company company;
 
     private boolean isOffer;
 
     @OneToMany
+    @JsonIgnore
     @JoinColumn(name = "internship_offer_id")
     private List<Application> applications;
 

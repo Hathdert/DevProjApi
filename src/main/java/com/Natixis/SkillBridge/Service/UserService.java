@@ -31,6 +31,19 @@ public class UserService {
         return userRepository.findByEmail(email).orElse(null);
     }
 
+    public String getUserRole(String email) {
+        User user = findByEmail(email);
+        if (user != null) {
+            if(user instanceof Candidate) {
+                return "1";
+            } else if (user instanceof Company) {
+                return "2";
+            }
+            return "0"; 
+        }
+        return null;
+    }
+
     public void registerUser(UserRequest request) {
 
         if (userRepository.existsByEmail(request.getEmail())) {

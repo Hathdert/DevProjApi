@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -8,12 +9,17 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.security.core.AuthenticationException;
+
+import com.Natixis.SkillBridge.Service.UserService;
 import com.Natixis.SkillBridge.util.JwtUtil;
 
 
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
+
+    @Autowired
+    private UserService userService;
      
 
     private final AuthenticationManager authenticationManager;
@@ -32,8 +38,10 @@ public class AuthController {
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
             );
 
+            String role = userService.getUserRole(request.getUsername());
+
             // Se autenticar, gera token
-            String token = jwtUtil.generateToken(request.getUsername());
+            String token = jwtUtil.generateToken(request.getUsername(), role);
 
             return ResponseEntity.ok(new AuthResponse(token));
         } catch (AuthenticationException e) {
