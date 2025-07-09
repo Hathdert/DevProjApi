@@ -49,6 +49,7 @@ public class ApplicationService {
             existingApplication.setDocument(application.getDocument());
             existingApplication.setPitch(application.getPitch());
             existingApplication.setState(application.getState());
+            existingApplication.setInternshipOffer(application.getInternshipOffer());
             return applicationRepository.save(existingApplication);
         }
 
