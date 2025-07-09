@@ -31,6 +31,7 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
+    @JsonIgnore
     @JsonBackReference
     private Candidate candidate;
 

@@ -11,7 +11,7 @@ import com.Natixis.SkillBridge.model.user.Company;
 
 @Service
 public class CompanyService {
-    
+
     @Autowired
     private CompanyRepository companyRepository;
 
@@ -19,17 +19,17 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
-    //Get all companies
+    // Get all companies
     public List<Company> getAllCompanies() {
         return companyRepository.findAll();
     }
 
-    //Get the company by ID
+    // Get the company by ID
     public Company getCompanyById(Long id) {
         return companyRepository.findById(id).orElse(null);
     }
 
-    //Update the company by ID
+    // Update the company by ID
     public Company updateCompany(Long id, Company updatedCompany) {
         Company existing = getCompanyById(id);
         System.out.println("idcandidate " + getCompanyById(id));
@@ -41,7 +41,7 @@ public class CompanyService {
         return companyRepository.save(existing);
     }
 
-    //Delete the company by ID
+    // Delete the company by ID
     public void deleteCompany(Long id) {
         if (!companyRepository.existsById(id)) {
             throw new RuntimeException("Company not found");
@@ -50,10 +50,18 @@ public class CompanyService {
     }
 
     public Long getCompanyIdByEmail(String email) {
-    return companyRepository.findByEmail(email)
-        .map(Company::getId)
-        .orElseThrow(() -> new RuntimeException("Company not found with email: " + email));
-}
+        return companyRepository.findByEmail(email)
+                .map(Company::getId)
+                .orElseThrow(() -> new RuntimeException("Company not found with email: " + email));
+    }
 
+    public Company updateApprovalStatus(Long companyId, int newStatus) {
+        Company company = getCompanyById(companyId);
+        if (company == null) {
+            throw new RuntimeException("Company not found");
+        }
+        company.setApprovalStatus(newStatus);
+        return companyRepository.save(company);
+    }
 
 }
