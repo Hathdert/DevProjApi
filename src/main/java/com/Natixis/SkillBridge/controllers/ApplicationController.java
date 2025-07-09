@@ -48,11 +48,11 @@ public class ApplicationController {
         return applicationService.listByCandidateId(candidateId);
     }
 
-    // // List all applications inside an internship offer
-    // @GetMapping("/internshipoffer/{internshipOfferId}")
-    // public List<Application> getApplicationsByInternshipOfferId(Long internshipOfferId) {
-    //     return applicationService.listByInternshipOfferId(internshipOfferId);
-    // }
+    // List all applications inside an internship offer
+    @GetMapping("/internshipoffer/{internshipOfferId}")
+    public List<Application> getApplicationsByInternshipOfferId(Long internshipOfferId) {
+        return applicationService.listByInternshipOfferId(internshipOfferId);
+    }
 
     // Create new application
     @PostMapping("/new")
@@ -72,6 +72,13 @@ public class ApplicationController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteApplication(@PathVariable Long id) {
         applicationService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    // Delete all applications if a candidate by the id
+    @DeleteMapping("/delete/{candidateId}")
+    public ResponseEntity<List<Application>> deleteAllCandidateApplication(@PathVariable Long id) {
+        applicationService.deleteByCandidateId(id);
         return ResponseEntity.noContent().build();
     }
     

@@ -43,4 +43,11 @@ public class CandidateService {
         candidateRepository.deleteById(id);
     }
 
+    public Long getCandidateIdByEmail(String email) {
+    return candidateRepository.findByEmail(email)
+        .map(Candidate::getId)
+        .orElseThrow(() -> new RuntimeException("Candidate not found with email: " + email));
+}
+
+
 }

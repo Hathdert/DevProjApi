@@ -10,4 +10,6 @@ public interface DocumentRepository extends JpaRepository<Document, Long> {
     List<Document> findByCandidateId(Long candidateId);
 
     List<Document> findByCompanyId(Long companyId);
+
+    
 }

@@ -29,10 +29,10 @@ public class ApplicationService {
         return applicationRepository.findAllByCandidateId(candidateId);
     }
 
-    // // List all applications inside an internship offer
-    // public List<Application> listByInternshipOfferId(Long internshipOfferId) {
-    //     return applicationRepository.findAllByInternshipOfferId(internshipOfferId);
-    // }
+    // List all applications inside an internship offer
+    public List<Application> listByInternshipOfferId(Long internshipOfferId) {
+        return applicationRepository.findAllByInternshipOfferId(internshipOfferId);
+    }
 
     // Creaate new application
     public Application makeNew(Application application) {
@@ -49,6 +49,7 @@ public class ApplicationService {
             existingApplication.setDocument(application.getDocument());
             existingApplication.setPitch(application.getPitch());
             existingApplication.setState(application.getState());
+            existingApplication.setInternshipOffer(application.getInternshipOffer());
             return applicationRepository.save(existingApplication);
         }
 
@@ -64,6 +65,20 @@ public class ApplicationService {
             return true;
         }
         
+        return false;
+    }
+
+    // Delete application by the candidate id
+    public boolean deleteByCandidateId(Long id) {
+        List<Application> existingApplicationList = applicationRepository.findAllByCandidateId(id);
+
+        if (existingApplicationList.size() != 0) {
+            for (Application application : existingApplicationList) {
+                applicationRepository.delete(application);
+                return true;
+            }
+        }
+
         return false;
     }
 }

@@ -1,6 +1,7 @@
 package com.Natixis.SkillBridge.model;
 
 import com.Natixis.SkillBridge.model.user.Candidate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,7 +39,13 @@ public class Application {
     @NotNull(message = "State is required")
     @Min(0)
     @Max(2)
-    public int state; // 0 - pending, 1 - accepted, 2 - rejected
+    private int state; // 0 - pending, 1 - accepted, 2 - rejected
+
+    @NotNull (message = "Application needs to belong to na internship offer")
+    @ManyToOne
+    @JoinColumn(name = "internship_offer_id")
+    @JsonIgnore
+    private InternshipOffer internshipOffer;
 
     // Getters and Setters
     public Long getId() {
@@ -79,5 +86,13 @@ public class Application {
 
     public void setState(int state) {
         this.state = state;
+    }
+
+    public InternshipOffer getInternshipOffer() {
+        return this.internshipOffer;
+    }
+
+    public void setInternshipOffer(InternshipOffer internshipOffer) {
+        this.internshipOffer = internshipOffer;
     }
 }
