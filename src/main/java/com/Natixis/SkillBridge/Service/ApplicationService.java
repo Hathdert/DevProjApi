@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.model.Application;
+import com.Natixis.SkillBridge.model.InternshipOffer;
 
 @Service
 public class ApplicationService {
@@ -49,7 +50,6 @@ public class ApplicationService {
             existingApplication.setDocument(application.getDocument());
             existingApplication.setPitch(application.getPitch());
             existingApplication.setState(application.getState());
-            existingApplication.setInternshipOffer(application.getInternshipOffer());
             return applicationRepository.save(existingApplication);
         }
 
@@ -81,4 +81,20 @@ public class ApplicationService {
 
         return false;
     }
+
+    // // Check if there are applications in the offer and if any of them are pendent
+    // public boolean checkPendentApplications(InternshipOffer internshipOffer) {
+    //     List<Application> applications = internshipOffer.getApplications();
+
+    //     if (applications.size() > 0) {
+    //         for (Application application : applications) {
+    //             if (application.getState() == 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+        
+    //     return true;
+
+    // }
 }

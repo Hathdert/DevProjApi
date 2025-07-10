@@ -52,10 +52,12 @@ public class InternshipOfferController {
     // Delete InternshipOffer
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
-        boolean deleted = service.delete(id);
-        if (deleted) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        //if (service.checkPendentApplications(service.findById(id))) {
+            boolean deleted = service.delete(id);
+            if (deleted) {
+                return ResponseEntity.noContent().build();
+            }
+            return ResponseEntity.notFound().build();
+        //}
     }
 }

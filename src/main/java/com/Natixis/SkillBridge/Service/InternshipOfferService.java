@@ -1,6 +1,7 @@
 package com.Natixis.SkillBridge.Service;
 
 import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
+import com.Natixis.SkillBridge.model.Application;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,4 +64,19 @@ public class InternshipOfferService {
         }
         return false;
     }
+
+    // // Check if there are applications in the offer and if any of them are pendent
+    // public boolean checkPendentApplications(Optional<InternshipOffer> internshipOffer) {
+    //     List<Application> applications = internshipOffer.getApplications();
+
+    //     if (applications.size() > 0) {
+    //         for (Application application : applications) {
+    //             if (application.getState() == 0) {
+    //                 return false;
+    //             }
+    //         }
+    //     }
+        
+    //     return true;
+    // } 
 }
