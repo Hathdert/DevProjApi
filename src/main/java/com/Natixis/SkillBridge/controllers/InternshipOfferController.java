@@ -27,9 +27,12 @@ public class InternshipOfferController {
     // Search InternshipOffer by ID
     @GetMapping("/{id}")
     public ResponseEntity<InternshipOffer> getOfferById(@PathVariable Long id) {
-        Optional<InternshipOffer> offerOpt = service.findById(id);
-        return offerOpt.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        InternshipOffer offer = service.findById(id);
+        if (offer != null) {
+            return ResponseEntity.ok(offer);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     // Create new InternshipOffer
