@@ -4,6 +4,7 @@ import com.Natixis.SkillBridge.Service.InternshipOfferService;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,24 +46,40 @@ public class InternshipOfferController {
     // Update InternshipOffer
     @PutMapping("/{id}")
     public ResponseEntity<InternshipOffer> updateOffer(@PathVariable Long id, @RequestBody InternshipOffer offer) {
-        if (service.checkPendentApplications(service.findById(id))) {
-            InternshipOffer updatedOffer = service.update(id, offer);
-            if (updatedOffer == null) {
-                return ResponseEntity.notFound().build();
-            }
-            return ResponseEntity.ok(updatedOffer);
+        InternshipOffer existingOffer = service.findById(id);
+
+        if (existingOffer == null) {
+            return ResponseEntity.notFound().build(); // 404
         }
+
+        if (!service.checkPendentApplications(existingOffer)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build(); // 409 - can't update due to pending apps
+        }
+
+        InternshipOffer updatedOffer = service.update(id, offer);
+        return ResponseEntity.ok(updatedOffer); // 200
     }
+
 
     // Delete InternshipOffer
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
-        if (service.checkPendentApplications(service.findById(id))) {
-            boolean deleted = service.delete(id);
-            if (deleted) {
-                return ResponseEntity.noContent().build();
-            }
-            return ResponseEntity.notFound().build();
+        InternshipOffer existingOffer = service.findById(id);
+
+        if (existingOffer == null) {
+            return ResponseEntity.notFound().build(); // 404
+        }
+
+        if (!service.checkPendentApplications(existingOffer)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build(); // 409 - can't delete due to pending apps
+        }
+
+        boolean deleted = service.delete(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build(); // 204
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 500
         }
     }
+
 }
