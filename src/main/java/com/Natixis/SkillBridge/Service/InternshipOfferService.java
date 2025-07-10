@@ -1,9 +1,11 @@
 package com.Natixis.SkillBridge.Service;
 
+import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,12 @@ public class InternshipOfferService {
 
     @Autowired
     private InternshipOfferRepository repository;
+
+    @Autowired
+    private ApplicationRepository applicationRepository;
+
+    @Autowired
+    private InternshipOfferRepository internshipOfferRepository;
 
     // List all InternshipOffer
     public List<InternshipOffer> findAll() {
@@ -64,4 +72,12 @@ public class InternshipOfferService {
         }
         return false;
     }
+
+    public List<InternshipOffer> getTopOffersByApplications(int limit) {
+    List<Object[]> results = applicationRepository.findTopOffersByApplications(PageRequest.of(0, limit));
+    List<Long> offerIds = results.stream()
+                                .map(r -> (Long) r[0])
+                                .toList();
+    return internshipOfferRepository.findAllById(offerIds);
+}
 }

@@ -24,12 +24,12 @@ public class Application {
 
     @NotNull(message = "Candidate is required")
     @ManyToOne(optional = false)
-    @JsonIgnore
+    //@JsonIgnore
     @JoinColumn(name = "candidate_id")
     private Candidate candidate;
 
     @ManyToOne
-    //@JsonIgnore
+    @JsonIgnore
     @JoinColumn(name = "document_id")
     private Document document;
 
@@ -47,7 +47,6 @@ public class Application {
     @ManyToOne
     //@JsonIgnore
     @JoinColumn(name = "internship_offer_id")
-    @JsonIgnore
     private InternshipOffer internshipOffer;
 
     // Getters and Setters
