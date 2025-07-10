@@ -42,22 +42,24 @@ public class InternshipOfferController {
     // Update InternshipOffer
     @PutMapping("/{id}")
     public ResponseEntity<InternshipOffer> updateOffer(@PathVariable Long id, @RequestBody InternshipOffer offer) {
-        InternshipOffer updatedOffer = service.update(id, offer);
-        if (updatedOffer == null) {
-            return ResponseEntity.notFound().build();
+        if (service.checkPendentApplications(service.findById(id))) {
+            InternshipOffer updatedOffer = service.update(id, offer);
+            if (updatedOffer == null) {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(updatedOffer);
         }
-        return ResponseEntity.ok(updatedOffer);
     }
 
     // Delete InternshipOffer
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteOffer(@PathVariable Long id) {
-        //if (service.checkPendentApplications(service.findById(id))) {
+        if (service.checkPendentApplications(service.findById(id))) {
             boolean deleted = service.delete(id);
             if (deleted) {
                 return ResponseEntity.noContent().build();
             }
             return ResponseEntity.notFound().build();
-        //}
+        }
     }
 }

@@ -65,18 +65,18 @@ public class InternshipOfferService {
         return false;
     }
 
-    // // Check if there are applications in the offer and if any of them are pendent
-    // public boolean checkPendentApplications(Optional<InternshipOffer> internshipOffer) {
-    //     List<Application> applications = internshipOffer.getApplications();
+    // Check if there are applications in the offer and if any of them are pendent
+    public boolean checkPendentApplications(InternshipOffer internshipOffer) {
+        List<Application> applications = internshipOffer.getApplications();
 
-    //     if (applications.size() > 0) {
-    //         for (Application application : applications) {
-    //             if (application.getState() == 0) {
-    //                 return false;
-    //             }
-    //         }
-    //     }
+        if (applications.size() > 0) {
+            for (Application application : applications) {
+                if (application.getState() == 0) {
+                    return false;
+                }
+            }
+        }
         
-    //     return true;
-    // } 
+        return true;
+    } 
 }
