@@ -22,8 +22,9 @@ public class InternshipOfferService {
     }
 
     // Search InternshipOffer by ID
-    public Optional<InternshipOffer> findById(Long id) {
-        return repository.findById(id);
+    public InternshipOffer findById(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("InternshipOffer not found with id: " + id));
     }
 
     // Save new InternshipOffer
