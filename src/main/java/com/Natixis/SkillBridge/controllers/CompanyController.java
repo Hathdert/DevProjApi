@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.controllers;
 
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -23,7 +24,7 @@ import com.Natixis.SkillBridge.model.user.User;
 @RequestMapping("/api/companies")
 // @PreAuthorize("hasRole('COMPANY')")
 public class CompanyController {
-    
+
     @Autowired
     private CompanyService companyService;
 
@@ -49,7 +50,8 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    // Endpoint to update the profile of the authenticated company from the JWT token
+    // Endpoint to update the profile of the authenticated company from the JWT
+    // token
     @PutMapping("/profile")
     public ResponseEntity<?> updateProfileCompany(@RequestBody Company updatedCompany, Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -71,7 +73,8 @@ public class CompanyController {
         return ResponseEntity.ok(updated);
     }
 
-    // Endpoint to delete the profile of the authenticated company from the JWT token
+    // Endpoint to delete the profile of the authenticated company from the JWT
+    // token
     @DeleteMapping("/profile")
     public ResponseEntity<?> deleteProfileCompany(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -83,7 +86,7 @@ public class CompanyController {
         if (user == null) {
             return ResponseEntity.status(404).body("User not found");
         }
-        
+
         companyService.deleteCompany(user.getId());
         return ResponseEntity.ok("Company profile deleted successfully");
     }
@@ -103,16 +106,20 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    @PutMapping("/{id}")    
+    @PutMapping("/{id}")
     public Company updateCompnay(@PathVariable Long id, @RequestBody Company updatedCompany) {
         System.out.println("idcandidate " + profileCompany(id));
         return companyService.updateCompany(id, updatedCompany);
     }
-    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCompany(@PathVariable Long id) {
         companyService.deleteCompany(id);
         return ResponseEntity.ok("Company deleted");
+    }
+
+    @GetMapping("/top6-by-applications")
+    public List<Company> getTop6CompaniesByApplications() {
+        return companyService.getTopCompaniesByApplications(6);
     }
 }
