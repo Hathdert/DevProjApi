@@ -63,4 +63,9 @@ public class InternshipOfferService {
         }
         return false;
     }
+
+    // Find InternshipOffers by Company ID
+    public List<InternshipOffer> findByCompanyId(Long companyId) {
+        return repository.findByCompanyId(companyId);
+    }
 }
