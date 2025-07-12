@@ -5,6 +5,7 @@ import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -25,17 +26,18 @@ public class Company extends User {
     private String phone;
 
     @NotBlank(message = "Description is required")
-    @Column(length = 500)    
+    @Column(length = 500)
     private String description;
 
     @NotBlank(message = "Area is required")
     private String area;
 
     @OneToMany(mappedBy = "company")
-    private List<Document> documents;
+@JsonManagedReference("company-document")
+private List<Document> documents;
 
     @OneToMany(mappedBy = "company")
-@JsonManagedReference
+@JsonManagedReference("company-internship")
 private List<InternshipOffer> offers;
 
     @NotNull(message = "NIPC is required")
@@ -65,6 +67,7 @@ private List<InternshipOffer> offers;
     public String getDescription() {
         return this.description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -72,6 +75,7 @@ private List<InternshipOffer> offers;
     public String getArea() {
         return this.area;
     }
+
     public void setArea(String area) {
         this.area = area;
     }
@@ -99,5 +103,11 @@ private List<InternshipOffer> offers;
     public void setApprovalStatus(int approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
+public List<InternshipOffer> getOffers() {
+    return this.offers;
+}
 
+public void setOffers(List<InternshipOffer> offers) {
+    this.offers = offers;
+}
 }

@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.model.user;
 
+import com.Natixis.SkillBridge.model.Application;
 import com.Natixis.SkillBridge.model.Document;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
@@ -7,7 +8,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 
 @Entity
 @Table(name = "candidate")
@@ -25,10 +25,13 @@ public class Candidate extends User {
     @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
 
+    @OneToMany(mappedBy = "candidate")
+@JsonManagedReference("candidate-application")
+private List<Application> applications;
 
-    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
-    private List<Document> documents;
+    @OneToMany(mappedBy = "candidate")
+@JsonManagedReference("candidate-document")
+private List<Document> documents;
 
     // Getters and Setters
     public String getAddress() {
@@ -55,7 +58,6 @@ public class Candidate extends User {
         this.birthDate = birthDate;
     }
 
-
     public List<Document> getDocuments() {
         return this.documents;
     }
@@ -63,4 +65,12 @@ public class Candidate extends User {
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }
+
+    public List<Application> getApplications() {
+    return this.applications;
+}
+
+public void setApplications(List<Application> applications) {
+    this.applications = applications;
+}
 }
