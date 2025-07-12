@@ -4,8 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.Natixis.SkillBridge.model.user.Company;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Min;
@@ -21,6 +25,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
+@Table(name = "internship_offer")
 public class InternshipOffer {
 
     @Id
@@ -53,18 +58,16 @@ public class InternshipOffer {
     @Min(value = 1, message = "There must be at least one vacancy")
     private int vacancies;
 
-    @NotNull(message = "Company is required")
     @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "company_id")
-    private Company company;
+@JoinColumn(name = "company_id")
+@JsonBackReference("company-internship")
+private Company company;
 
     private boolean isOffer;
 
-    @OneToMany
-    @JsonIgnore
-    @JoinColumn(name = "internship_offer_id")
-    private List<Application> applications;
+    @OneToMany(mappedBy = "internshipOffer", cascade = CascadeType.ALL, orphanRemoval = true)
+@JsonManagedReference("offer-application")
+private List<Application> applications;
 
     // Getters and Setters
     public Long getId() {

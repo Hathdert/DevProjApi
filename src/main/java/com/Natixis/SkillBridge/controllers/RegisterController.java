@@ -41,6 +41,7 @@ public class RegisterController {
 
 @PostMapping("/register")
 public ResponseEntity<?> register(@Valid @RequestBody UserRequest request) {
+    System.out.println("JSON recebido (convertido para UserRequest): " + request);
 
     try {
         userService.registerUser(request);

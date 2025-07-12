@@ -3,7 +3,6 @@ package com.Natixis.SkillBridge.model.user;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +14,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "users")
 public class User {
     @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "Name is required")
@@ -33,10 +32,9 @@ public class User {
     @NotBlank(message = "Role is required")
     private String role;
 
-    
     @NotNull(message = "Registration date is required")
     private LocalDate registrationDate;
-    
+
     @NotNull(message = "Registration time is required")
     private LocalTime registrationTime;
 
@@ -84,12 +82,15 @@ public class User {
     public LocalDate getRegistrationDate() {
         return this.registrationDate;
     }
+
     public void setRegistrationDate(LocalDate registrationDate) {
         this.registrationDate = registrationDate;
     }
+
     public LocalTime getRegistrationTime() {
         return this.registrationTime;
     }
+
     public void setRegistrationTime(LocalTime registrationTime) {
         this.registrationTime = registrationTime;
     }

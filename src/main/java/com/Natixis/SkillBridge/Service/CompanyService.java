@@ -6,8 +6,10 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
 import com.Natixis.SkillBridge.model.user.Company;
 
@@ -17,6 +19,9 @@ public class CompanyService {
 
     @Autowired
     private CompanyRepository companyRepository;
+
+    @Autowired
+    private ApplicationRepository applicationRepository;
 
     public CompanyService(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
@@ -40,6 +45,9 @@ public class CompanyService {
         existing.setEmail(updatedCompany.getEmail());
         existing.setPhone(updatedCompany.getPhone());
         existing.setAddress(updatedCompany.getAddress());
+        existing.setDescription(updatedCompany.getDescription());
+        existing.setNipc(updatedCompany.getNipc());
+        existing.setArea(updatedCompany.getArea());
 
         return companyRepository.save(existing);
     }
@@ -69,4 +77,11 @@ public class CompanyService {
         return companyRepository.save(company);
     }
 
+    public List<Company> getTopCompaniesByApplications(int limit) {
+    List<Object[]> results = applicationRepository.findTopCompaniesByApplications(PageRequest.of(0, limit));
+    List<Long> companyIds = results.stream()
+                                  .map(r -> (Long) r[0])
+                                  .toList();
+    return companyRepository.findAllById(companyIds);
+}
 }

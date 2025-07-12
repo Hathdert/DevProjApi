@@ -58,4 +58,16 @@ public class InternshipOfferController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/top6-by-applications")
+public List<InternshipOffer> getTop6OffersByApplications() {
+    return service.getTopOffersByApplications(6);
+
+    @GetMapping("companies/{companyId}")
+    public List<InternshipOffer> getOffersByCompanyId(@PathVariable Long companyId) {
+        return service.findByCompanyId(companyId);
+    }
+
+    
+}
 }
