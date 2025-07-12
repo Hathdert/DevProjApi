@@ -73,7 +73,6 @@ public class UserService {
                 c.setBirthDate(request.getBirthDate());
                 c.setRegistrationDate(today);
                 c.setRegistrationTime(now);
-                c.setDocuments(request.getDocuments());
                 user = c;
                 break;
             case "company":
