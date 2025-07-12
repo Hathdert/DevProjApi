@@ -21,9 +21,6 @@ public class InternshipOfferService {
     @Autowired
     private ApplicationRepository applicationRepository;
 
-    @Autowired
-    private InternshipOfferRepository internshipOfferRepository;
-
     // List all InternshipOffer
     public List<InternshipOffer> findAll() {
         return repository.findAll();
@@ -64,6 +61,17 @@ public class InternshipOfferService {
         }
     }
 
+    public InternshipOffer updateIsOffer(InternshipOffer offer) {
+
+        if (offer.isOffer() == false) {
+            offer.setOffer(true);
+        } else {
+            offer.setOffer(false);
+        }
+
+        return repository.save(offer);
+    }
+
     // Delete InternshipOffer
     public boolean delete(Long id) {
         Optional<InternshipOffer> existingOfferOpt = repository.findById(id);
@@ -85,15 +93,15 @@ public class InternshipOfferService {
                 }
             }
         }
-        
+
         return true;
-    } 
+    }
 
     public List<InternshipOffer> getTopOffersByApplications(int limit) {
-    List<Object[]> results = applicationRepository.findTopOffersByApplications(PageRequest.of(0, limit));
-    List<Long> offerIds = results.stream()
-                                .map(r -> (Long) r[0])
-                                .toList();
-    return internshipOfferRepository.findAllById(offerIds);
-}
+        List<Object[]> results = applicationRepository.findTopOffersByApplications(PageRequest.of(0, limit));
+        List<Long> offerIds = results.stream()
+                .map(r -> (Long) r[0])
+                .toList();
+        return repository.findAllById(offerIds);
+    }
 }

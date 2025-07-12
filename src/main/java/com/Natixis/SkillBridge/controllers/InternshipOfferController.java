@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.controllers;
 
+import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
 import com.Natixis.SkillBridge.Service.InternshipOfferService;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 
@@ -18,6 +19,9 @@ public class InternshipOfferController {
 
     @Autowired
     private InternshipOfferService service;
+
+    @Autowired
+    private InternshipOfferRepository repo;
 
     // List all InternshipOffer
     @GetMapping
@@ -45,7 +49,7 @@ public class InternshipOfferController {
 
     // Update InternshipOffer
     @PutMapping("/{id}")
-    public ResponseEntity<InternshipOffer> updateOffer(@PathVariable Long id, @RequestBody InternshipOffer offer) {
+    public ResponseEntity<InternshipOffer> updateOffer(@PathVariable Long id) {
         InternshipOffer existingOffer = service.findById(id);
 
         if (existingOffer == null) {
@@ -56,8 +60,21 @@ public class InternshipOfferController {
             return ResponseEntity.status(HttpStatus.CONFLICT).build(); // 409 - can't update due to pending apps
         }
 
-        InternshipOffer updatedOffer = service.update(id, offer);
-        return ResponseEntity.ok(updatedOffer); // 200
+        System.out.println("Updating offer with ID: " + id);
+
+        if(existingOffer.isOffer() == false) {
+            existingOffer.setOffer(true);
+            System.out.println("Offer is now active.");
+        } else {
+            existingOffer.setOffer(false);
+            System.out.println("Offer is now inactive.");
+        }
+
+        System.out.println("Saving updated offer: " + existingOffer);
+
+        repo.save(existingOffer);
+
+        return ResponseEntity.ok(existingOffer); // 200
     }
 
 

@@ -34,12 +34,12 @@ public class UserService {
     public String getUserRole(String email) {
         User user = findByEmail(email);
         if (user != null) {
-            if(user instanceof Candidate) {
+            if (user instanceof Candidate) {
                 return "1";
             } else if (user instanceof Company) {
                 return "2";
             }
-            return "0"; 
+            return "0";
         }
         return null;
     }
