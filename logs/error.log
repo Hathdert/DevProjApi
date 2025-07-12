@@ -111,3 +111,6 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 2025-07-12 15:42:59 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-12 15:43:57 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-12 15:54:26 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-12 17:07:15 ERROR [http-nio-8080-exec-2] c.N.S.security.SecurityConfig - Authentication failed
+2025-07-12 17:08:13 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - [JWT FILTER] Invalid JWT token.
+2025-07-12 17:08:13 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed

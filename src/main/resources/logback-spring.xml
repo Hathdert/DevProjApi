@@ -3,8 +3,10 @@
 
     <property name="LOG_PATH" value="logs"/>
 
+
     <!-- Appender geral -->
     <appender name="APP_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        
         <file>${LOG_PATH}/app.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
@@ -15,7 +17,7 @@
         </encoder>
     </appender>
 
-    <!-- Appender de erro -->
+    <!-- Error Appender-->
     <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOG_PATH}/error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -122,10 +124,18 @@
         <appender-ref ref="INTERNSHIP_LOG"/>
     </logger>
 
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+    </encoder>
+    </appender>
+
+
     <!-- Root logger (geral) -->
     <root level="INFO">
         <appender-ref ref="APP_LOG"/>
         <appender-ref ref="ERROR_LOG"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 
 </configuration>
