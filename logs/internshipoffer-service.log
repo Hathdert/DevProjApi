@@ -34,3 +34,23 @@
 2025-07-12 10:52:06 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:40:45 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:42:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:42:17 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:42:49 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:48:21 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:52:20 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:52:45 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:52:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:53:52 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:53:56 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:40 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:51 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:57:21 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:57:34 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 17:00:49 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:12:54 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:29:52 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:29:56 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:12 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:16 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null

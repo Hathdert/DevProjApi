@@ -1,7 +1,7 @@
 package com.Natixis.SkillBridge.controllers;
 
-
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -25,7 +25,7 @@ import com.Natixis.SkillBridge.model.user.User;
 @RequestMapping("/api/companies")
 // @PreAuthorize("hasRole('COMPANY')")
 public class CompanyController {
-    
+
     @Autowired
     private CompanyService companyService;
 
@@ -51,7 +51,8 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    // Endpoint to update the profile of the authenticated company from the JWT token
+    // Endpoint to update the profile of the authenticated company from the JWT
+    // token
     @PutMapping("/profile")
     public ResponseEntity<?> updateProfileCompany(@RequestBody Company updatedCompany, Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -73,7 +74,8 @@ public class CompanyController {
         return ResponseEntity.ok(updated);
     }
 
-    // Endpoint to delete the profile of the authenticated company from the JWT token
+    // Endpoint to delete the profile of the authenticated company from the JWT
+    // token
     @DeleteMapping("/profile")
     public ResponseEntity<?> deleteProfileCompany(Authentication authentication) {
         if (authentication == null || !authentication.isAuthenticated()) {
@@ -85,7 +87,7 @@ public class CompanyController {
         if (user == null) {
             return ResponseEntity.status(404).body("User not found");
         }
-        
+
         companyService.deleteCompany(user.getId());
         return ResponseEntity.ok("Company profile deleted successfully");
     }
@@ -105,12 +107,11 @@ public class CompanyController {
         return ResponseEntity.ok(company);
     }
 
-    @PutMapping("/{id}")    
+    @PutMapping("/{id}")
     public Company updateCompnay(@PathVariable Long id, @RequestBody Company updatedCompany) {
         System.out.println("idcandidate " + profileCompany(id));
         return companyService.updateCompany(id, updatedCompany);
     }
-    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCompany(@PathVariable Long id) {
@@ -119,7 +120,26 @@ public class CompanyController {
     }
 
     @GetMapping("/top6-by-applications")
-public List<Company> getTop6CompaniesByApplications() {
-    return companyService.getTopCompaniesByApplications(6);
-}
+    public List<Company> getTop6CompaniesByApplications() {
+        return companyService.getTopCompaniesByApplications(6);
+    }
+
+    @PutMapping("/{id}/approval-status")
+    public ResponseEntity<?> updateCompanyApprovalStatus(
+            @PathVariable Long id,
+            @RequestBody Map<String, Integer> request) {
+        Integer status = request.get("approvalStatus");
+
+        if (status == null || status < 0 || status > 2) {
+            return ResponseEntity.badRequest()
+                    .body("Invalid status. Must be 0 (Pending), 1 (Approved), or 2 (Rejected)");
+        }
+
+        try {
+            Company updatedCompany = companyService.updateApprovalStatus(id, status);
+            return ResponseEntity.ok(updatedCompany);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
 }
