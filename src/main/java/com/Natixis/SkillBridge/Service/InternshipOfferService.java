@@ -94,5 +94,10 @@ public InternshipOffer update(Long id, InternshipOffer offerDetails) {
                                 .map(r -> (Long) r[0])
                                 .toList();
     return repository.findAllById(offerIds);
+
+    // Find InternshipOffers by Company ID
+    public List<InternshipOffer> findByCompanyId(Long companyId) {
+        return repository.findByCompanyId(companyId);
+    }
 }
 }

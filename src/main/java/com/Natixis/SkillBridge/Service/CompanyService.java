@@ -42,6 +42,9 @@ public class CompanyService {
         existing.setEmail(updatedCompany.getEmail());
         existing.setPhone(updatedCompany.getPhone());
         existing.setAddress(updatedCompany.getAddress());
+        existing.setDescription(updatedCompany.getDescription());
+        existing.setNipc(updatedCompany.getNipc());
+        existing.setArea(updatedCompany.getArea());
 
         return companyRepository.save(existing);
     }
