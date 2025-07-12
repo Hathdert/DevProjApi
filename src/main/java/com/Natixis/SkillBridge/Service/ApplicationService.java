@@ -1,5 +1,8 @@
 package com.Natixis.SkillBridge.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import com.Natixis.SkillBridge.model.Application;
 
 @Service
 public class ApplicationService {
+    private static final Logger logger = LoggerFactory.getLogger(ApplicationService.class);
     
     @Autowired
     private ApplicationRepository applicationRepository;
@@ -52,7 +56,7 @@ public class ApplicationService {
             existingApplication.setInternshipOffer(application.getInternshipOffer());
             return applicationRepository.save(existingApplication);
         }
-
+        logger.error("Application with ID {} not found for update", id);
         return null;
     }
 
@@ -64,7 +68,7 @@ public class ApplicationService {
             applicationRepository.delete(existingApplication);
             return true;
         }
-        
+        logger.error("Application with ID {} not found for deletion", id);
         return false;
     }
 
@@ -78,7 +82,7 @@ public class ApplicationService {
                 return true;
             }
         }
-
+        logger.error("No applications found for candidate ID {}", id);
         return false;
     }
 }
