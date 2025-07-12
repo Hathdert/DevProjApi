@@ -26,12 +26,12 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    @JsonIgnore
+    //@JsonIgnore
     private Company company;
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
-    @JsonIgnore
+    //@JsonIgnore
     @JsonBackReference
     private Candidate candidate;
 

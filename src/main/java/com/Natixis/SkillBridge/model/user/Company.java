@@ -2,6 +2,9 @@ package com.Natixis.SkillBridge.model.user;
 
 import java.util.List;
 import com.Natixis.SkillBridge.model.Document;
+import com.Natixis.SkillBridge.model.InternshipOffer;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -30,6 +33,10 @@ public class Company extends User {
 
     @OneToMany(mappedBy = "company")
     private List<Document> documents;
+
+    @OneToMany(mappedBy = "company")
+@JsonManagedReference
+private List<InternshipOffer> offers;
 
     @NotNull(message = "NIPC is required")
     @Digits(integer = 9, fraction = 0, message = "NIPC must be a 9-digit number")

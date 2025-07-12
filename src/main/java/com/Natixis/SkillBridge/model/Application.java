@@ -24,7 +24,7 @@ public class Application {
 
     @NotNull(message = "Candidate is required")
     @ManyToOne(optional = false)
-    @JsonIgnore
+    //@JsonIgnore
     @JoinColumn(name = "candidate_id")
     private Candidate candidate;
 
@@ -45,9 +45,8 @@ public class Application {
 
     @NotNull (message = "Application needs to belong to na internship offer")
     @ManyToOne
-    //@JsonIgnore
     @JoinColumn(name = "internship_offer_id")
-    @JsonIgnore
+    //@JsonIgnore
     private InternshipOffer internshipOffer;
 
     // Getters and Setters

@@ -58,4 +58,9 @@ public class InternshipOfferController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/top6-by-applications")
+public List<InternshipOffer> getTop6OffersByApplications() {
+    return service.getTopOffersByApplications(6);
+}
 }

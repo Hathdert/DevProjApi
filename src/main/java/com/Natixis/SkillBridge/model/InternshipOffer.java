@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.Natixis.SkillBridge.model.user.Company;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
@@ -53,17 +54,15 @@ public class InternshipOffer {
     @Min(value = 1, message = "There must be at least one vacancy")
     private int vacancies;
 
-    @NotNull(message = "Company is required")
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "company_id")
+    @JsonBackReference
     private Company company;
 
     private boolean isOffer;
 
-    @OneToMany
+    @OneToMany(mappedBy = "internshipOffer")
     @JsonIgnore
-    @JoinColumn(name = "internship_offer_id")
     private List<Application> applications;
 
     // Getters and Setters
