@@ -34,3 +34,8 @@
 2025-07-12 10:52:06 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:40:45 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:42:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+<<<<<<< Updated upstream
+=======
+2025-07-12 16:17:37 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+>>>>>>> Stashed changes
+2025-07-12 16:40:15 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
