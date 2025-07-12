@@ -32,13 +32,13 @@ public class Company extends User {
     @NotBlank(message = "Area is required")
     private String area;
 
-    @OneToMany(mappedBy = "company")
-@JsonManagedReference("company-document")
-private List<Document> documents;
+@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("company-document")
+    private List<Document> documents;
 
-    @OneToMany(mappedBy = "company")
-@JsonManagedReference("company-internship")
-private List<InternshipOffer> offers;
+@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("company-internship")
+    private List<InternshipOffer> offers;
 
     @NotNull(message = "NIPC is required")
     @Digits(integer = 9, fraction = 0, message = "NIPC must be a 9-digit number")
@@ -103,11 +103,12 @@ private List<InternshipOffer> offers;
     public void setApprovalStatus(int approvalStatus) {
         this.approvalStatus = approvalStatus;
     }
-public List<InternshipOffer> getOffers() {
-    return this.offers;
-}
 
-public void setOffers(List<InternshipOffer> offers) {
-    this.offers = offers;
-}
+    public List<InternshipOffer> getOffers() {
+        return this.offers;
+    }
+
+    public void setOffers(List<InternshipOffer> offers) {
+        this.offers = offers;
+    }
 }

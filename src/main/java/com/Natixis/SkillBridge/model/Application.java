@@ -31,7 +31,7 @@ public class Application {
     @JsonBackReference("candidate-application")
     private Candidate candidate;
 
-    @OneToOne(mappedBy = "application", cascade = CascadeType.MERGE)
+    @OneToOne(mappedBy = "application", cascade = CascadeType.MERGE, orphanRemoval = true)
     @JsonManagedReference("application-document")
     private Document document;
 

@@ -25,11 +25,11 @@ public class Candidate extends User {
     @Past(message = "Birth date must be in the past")
     private LocalDate birthDate;
 
-    @OneToMany(mappedBy = "candidate")
+    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
 @JsonManagedReference("candidate-application")
 private List<Application> applications;
 
-    @OneToMany(mappedBy = "candidate")
+    @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
 @JsonManagedReference("candidate-document")
 private List<Document> documents;
 
