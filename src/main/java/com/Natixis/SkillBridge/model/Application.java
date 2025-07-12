@@ -1,14 +1,18 @@
 package com.Natixis.SkillBridge.model;
 
 import com.Natixis.SkillBridge.model.user.Candidate;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -22,16 +26,19 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Candidate is required")
-    @ManyToOne(optional = false)
-    //@JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "candidate_id")
+    @JsonBackReference("candidate-application")
     private Candidate candidate;
 
-    @ManyToOne
-    @JsonIgnore
-    @JoinColumn(name = "document_id")
+    @OneToOne(mappedBy = "application", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @JsonManagedReference("application-document")
     private Document document;
+
+    @ManyToOne
+    @JoinColumn(name = "internship_offer_id")
+    @JsonBackReference("offer-application")
+    private InternshipOffer internshipOffer;
 
     @NotNull(message = "Pitch cannot be null")
     @NotBlank(message = "Pitch cannot be empty")
@@ -42,12 +49,6 @@ public class Application {
     @Min(0)
     @Max(2)
     private int state; // 0 - pending, 1 - accepted, 2 - rejected
-
-    @NotNull (message = "Application needs to belong to na internship offer")
-    @ManyToOne
-    //@JsonIgnore
-    @JoinColumn(name = "internship_offer_id")
-    private InternshipOffer internshipOffer;
 
     // Getters and Setters
     public Long getId() {

@@ -18,7 +18,7 @@ public class CompanyService {
     @Autowired
     private CompanyRepository companyRepository;
 
-     @Autowired
+    @Autowired
     private ApplicationRepository applicationRepository;
 
     public CompanyService(CompanyRepository companyRepository) {
@@ -76,6 +76,7 @@ public class CompanyService {
                                   .map(r -> (Long) r[0])
                                   .toList();
     return companyRepository.findAllById(companyIds);
+}
 }
 
 }

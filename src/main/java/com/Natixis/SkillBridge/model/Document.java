@@ -1,11 +1,13 @@
 package com.Natixis.SkillBridge.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 
@@ -26,14 +28,18 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    @JsonIgnore
+    @JsonBackReference("company-document") // CORRIGIDO
     private Company company;
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
-    //@JsonIgnore
-    @JsonBackReference
+    @JsonBackReference("candidate-document") // CORRIGIDO
     private Candidate candidate;
+
+    @OneToOne
+    @JoinColumn(name = "application_id")
+    @JsonBackReference("application-document")
+    private Application application;
 
     @PrePersist
     public void prePersist() {
@@ -81,6 +87,7 @@ public class Document {
     public String getFilePath() {
         return this.filePath;
     }
+
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
@@ -88,6 +95,7 @@ public class Document {
     public LocalDate getUploadDate() {
         return this.uploadDate;
     }
+
     public void setUploadDate(LocalDate uploadDate) {
         this.uploadDate = uploadDate;
     }
@@ -95,10 +103,11 @@ public class Document {
     public Company getCompany() {
         return this.company;
     }
+
     public void setCompany(Company company) {
         this.company = company;
     }
-    
+
     public Candidate getCandidate() {
         return this.candidate;
     }
@@ -106,4 +115,13 @@ public class Document {
     public void setCandidate(Candidate candidate) {
         this.candidate = candidate;
     }
+
+    public Application getApplication() {
+        return application;
+    }
+
+    public void setApplication(Application application) {
+        this.application = application;
+    }
+
 }

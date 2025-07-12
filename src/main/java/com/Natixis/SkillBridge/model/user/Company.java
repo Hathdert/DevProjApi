@@ -2,6 +2,10 @@ package com.Natixis.SkillBridge.model.user;
 
 import java.util.List;
 import com.Natixis.SkillBridge.model.Document;
+import com.Natixis.SkillBridge.model.InternshipOffer;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -22,14 +26,19 @@ public class Company extends User {
     private String phone;
 
     @NotBlank(message = "Description is required")
-    @Column(length = 500)    
+    @Column(length = 500)
     private String description;
 
     @NotBlank(message = "Area is required")
     private String area;
 
-    @OneToMany(mappedBy = "company")
+@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("company-document")
     private List<Document> documents;
+
+@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference("company-internship")
+    private List<InternshipOffer> offers;
 
     @NotNull(message = "NIPC is required")
     @Digits(integer = 9, fraction = 0, message = "NIPC must be a 9-digit number")
@@ -58,6 +67,7 @@ public class Company extends User {
     public String getDescription() {
         return this.description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -65,6 +75,7 @@ public class Company extends User {
     public String getArea() {
         return this.area;
     }
+
     public void setArea(String area) {
         this.area = area;
     }
@@ -93,4 +104,11 @@ public class Company extends User {
         this.approvalStatus = approvalStatus;
     }
 
+    public List<InternshipOffer> getOffers() {
+        return this.offers;
+    }
+
+    public void setOffers(List<InternshipOffer> offers) {
+        this.offers = offers;
+    }
 }

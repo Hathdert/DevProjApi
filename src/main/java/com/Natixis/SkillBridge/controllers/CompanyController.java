@@ -2,6 +2,8 @@ package com.Natixis.SkillBridge.controllers;
 
 import java.util.List;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.http.ResponseEntity;
@@ -119,7 +121,7 @@ public class CompanyController {
     }
 
     @GetMapping("/top6-by-applications")
-    public List<Company> getTop6CompaniesByApplications() {
-        return companyService.getTopCompaniesByApplications(6);
-    }
+public List<Company> getTop6CompaniesByApplications() {
+    return companyService.getTopCompaniesByApplications(6);
+}
 }
