@@ -1,5 +1,8 @@
 package com.Natixis.SkillBridge.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
 import com.Natixis.SkillBridge.model.Application;
@@ -16,6 +19,7 @@ import java.util.Optional;
 
 @Service
 public class InternshipOfferService {
+    Logger logger = LoggerFactory.getLogger(InternshipOfferService.class);
 
     @Autowired
     private InternshipOfferRepository repository;
@@ -25,20 +29,24 @@ public class InternshipOfferService {
 
     // List all InternshipOffer
     public List<InternshipOffer> findAll() {
+        logger.info("Attempting to retrieve all InternshipOffers");
         return repository.findAll();
     }
 
     // Search InternshipOffer by ID
     public Optional<InternshipOffer> findById(Long id) {
+        logger.info("Attempting to find InternshipOffer with ID: {}", id);
         return repository.findById(id);
     }
 
     // Save new InternshipOffer
     public InternshipOffer save(InternshipOffer offer) {
+        logger.info("Attempting to save a new InternshipOffer: {}", offer.getTitle());
         return repository.save(offer);
     }
 
     // Update InternshipOffer
+        logger.info("Attempting to update InternshipOffer with ID: {}", id);
 public InternshipOffer update(Long id, InternshipOffer offerDetails) {
     InternshipOffer existingOffer = repository.findById(id)
         .orElseThrow(() -> new IllegalArgumentException("InternshipOffer not found with id " + id));
@@ -80,6 +88,7 @@ public InternshipOffer update(Long id, InternshipOffer offerDetails) {
 
     // Delete InternshipOffer
     public boolean delete(Long id) {
+        logger.info("Attempting to delete InternshipOffer with ID: {}", id);
         Optional<InternshipOffer> existingOfferOpt = repository.findById(id);
         if (existingOfferOpt.isPresent()) {
             repository.deleteById(id);

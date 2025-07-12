@@ -1,5 +1,8 @@
 package com.Natixis.SkillBridge.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
-import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
 
 @Service
 public class CompanyService {
+    private static final Logger logger = LoggerFactory.getLogger(CompanyService.class);
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -52,6 +55,7 @@ public class CompanyService {
     // Delete the company by ID
     public void deleteCompany(Long id) {
         if (!companyRepository.existsById(id)) {
+            logger.error("Company not found with id: {}", id);
             throw new RuntimeException("Company not found");
         }
         companyRepository.deleteById(id);
@@ -66,6 +70,7 @@ public class CompanyService {
     public Company updateApprovalStatus(Long companyId, int newStatus) {
         Company company = getCompanyById(companyId);
         if (company == null) {
+            logger.error("Company not found with id: {}", companyId);
             throw new RuntimeException("Company not found");
         }
         company.setApprovalStatus(newStatus);

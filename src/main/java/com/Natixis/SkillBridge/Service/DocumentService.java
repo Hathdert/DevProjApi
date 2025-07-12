@@ -1,5 +1,8 @@
 package com.Natixis.SkillBridge.Service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.Natixis.SkillBridge.Repository.DocumentRepository;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.user.Candidate;
@@ -20,13 +23,14 @@ import java.util.UUID;
 
 @Service
 public class DocumentService {
-
+    Logger logger = LoggerFactory.getLogger(InternshipOfferService.class);
     private final DocumentRepository documentRepository;
 
     @Value("${upload.directory}")
     private String uploadDirectory;
 
     public DocumentService(DocumentRepository documentRepository) {
+        logger.info("DocumentService initialized with upload directory: {}", uploadDirectory);
         this.documentRepository = documentRepository;
     }
 
@@ -49,10 +53,12 @@ public class DocumentService {
         doc.setUploadDate(LocalDate.now());
         doc.setCandidate(candidate);
 
+        logger.info("Saving document for candidate: {}", candidate.getEmail()); 
         return documentRepository.save(doc);
     }
 
     public Document saveDocumentCompany(MultipartFile file, Company company) throws IOException {
+
         Files.createDirectories(Paths.get(uploadDirectory));
 
         String originalFileName = file.getOriginalFilename();
@@ -91,6 +97,7 @@ public class DocumentService {
         Optional<Document> optionalDoc = documentRepository.findById(id);
 
         if (optionalDoc.isEmpty()) {
+            logger.error("Document not found with id: {}", id);
             throw new RuntimeException("Document not found with id: " + id);
         }
 
@@ -100,6 +107,8 @@ public class DocumentService {
             try {
                 Files.deleteIfExists(Paths.get(doc.getFilePath()));
             } catch (IOException e) {
+                logger.error("Error deleting existing file: {}", doc.getFilePath(), e);
+                throw new RuntimeException("Could not delete existing file: " + doc.getFilePath(), e);
             }
         }
 
@@ -118,17 +127,20 @@ public class DocumentService {
         doc.setUploadDate(LocalDate.now());
         doc.setCandidate(candidate);
 
+        logger.info("Updating document with ID: {}", id);
         return documentRepository.save(doc);
     }
 
     public void deleteDocument(Long id) throws IOException {
         Optional<Document> optionalDoc = documentRepository.findById(id);
         if (optionalDoc.isEmpty()) {
+            logger.error("Document not found with id: {}", id);
             throw new RuntimeException("Document not found with id: " + id);
         }
         Document doc = optionalDoc.get();
 
         if (doc.getFilePath() != null) {
+            logger.info("Deleting file: {}", doc.getFilePath());
             Files.deleteIfExists(Paths.get(doc.getFilePath()));
         }
 
