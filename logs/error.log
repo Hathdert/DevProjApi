@@ -7519,3 +7519,62 @@ Caused by: java.lang.Error: Unresolved compilation problems:
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:210)
 	... 26 common frames omitted
+2025-07-13 22:59:42 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 22:59:42 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:00:54 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:00:54 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:00:55 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - [JWT FILTER] Invalid JWT token.
+2025-07-13 23:00:55 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:00:55 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:00:58 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - [JWT FILTER] Invalid JWT token.
+2025-07-13 23:00:58 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:04 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:11 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:13 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:15 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:17 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:19 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:19 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:33 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:33 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:49 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:50 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:51 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:55 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:01:56 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:02:06 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:02:06 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-13 23:02:06 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
