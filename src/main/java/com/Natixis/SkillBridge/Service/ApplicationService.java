@@ -25,7 +25,8 @@ public class ApplicationService {
 
     // Search application by ID
     public Application findById(Long id) {
-        return applicationRepository.findById(id).orElse(null);
+        return applicationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Application not found with id: " + id));
     }
 
     // List all applications by candidate ID

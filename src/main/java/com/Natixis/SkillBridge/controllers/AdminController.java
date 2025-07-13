@@ -137,8 +137,7 @@ public class AdminController {
                         a.getInternshipOffer() != null ? a.getInternshipOffer().getId() : "",
                         escapeCsv(a.getPitch()),
                         a.getState(),
-                        a.getDocument() != null ? a.getDocument().getId() : "");
-            }
+                        a.getDocument() != null && !a.getDocument().isEmpty() ? a.getDocument().get(0).getId() : "");}
         }
     }
 
