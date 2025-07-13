@@ -113,3 +113,4 @@
 2025-07-13 11:43:16 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 41
 2025-07-13 11:47:58 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-13 14:58:34 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-13 15:04:43 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
