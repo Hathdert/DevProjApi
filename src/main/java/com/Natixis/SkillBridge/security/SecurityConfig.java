@@ -1,5 +1,10 @@
 package com.Natixis.SkillBridge.security;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -27,7 +32,8 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
+    private static final Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
+    // Injecting JwtAuthenticationFilter to handle JWT authentication
     private final JwtAuthenticationFilter jwtAuthFilter;
     private UserService userService;
 
@@ -39,6 +45,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 
@@ -55,7 +62,6 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 
@@ -69,22 +75,26 @@ public class SecurityConfig {
 
                 User user = userService.findByEmail(username);
                 if (user != null && passwordEncoder().matches(password, user.getPassword())) {
+                    logger.info("Authentication failed");
                     List<SimpleGrantedAuthority> authorities = Collections.singletonList(
                             new SimpleGrantedAuthority("ROLE_" + user.getRole()));
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } 
                 else if("user".equals(username) && "pass".equals(password)){
                     List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
+
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 }
                 else {
-                    throw new AuthenticationException("Invalid credentials") {
+                    logger.error("Authentication failed");
+                    throw new AuthenticationException("Authentication failed") {
                     };
                 }
             }
 
             @Override
             public boolean supports(Class<?> authentication) {
+
                 return UsernamePasswordAuthenticationToken.class.isAssignableFrom(authentication);
             }
         };

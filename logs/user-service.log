@@ -1,0 +1,44 @@
+2025-07-12 09:32:41 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: alineh@example.com
+2025-07-12 09:33:41 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: alineh@example.com
+2025-07-12 09:33:42 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: alineh@example.com
+2025-07-12 09:42:27 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: alineh@example.com
+2025-07-12 09:43:17 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: aline12h@example.com
+2025-07-12 09:43:17 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: aline12h@example.com
+2025-07-12 09:47:07 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: aline12h@example.com
+2025-07-12 09:47:07 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: aline12h@example.com
+2025-07-12 10:03:30 WARN  c.N.SkillBridge.Service.UserService - User with email luais3h@example.com not found
+2025-07-12 10:06:48 WARN  c.N.SkillBridge.Service.UserService - User with email luais3h@example.com not found
+2025-07-12 15:42:10 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn123@gmail.com
+2025-07-12 15:42:10 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn123@gmail.com
+2025-07-12 15:42:43 WARN  c.N.SkillBridge.Service.UserService - User with email brn123@gmail.com not found
+2025-07-12 15:42:53 WARN  c.N.SkillBridge.Service.UserService - User with email brn123@gmail.com not found
+2025-07-12 15:43:32 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn1234@gmail.com
+2025-07-12 15:43:32 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn1234@gmail.com
+2025-07-12 15:43:52 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
+2025-07-12 15:43:53 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
+2025-07-12 15:43:57 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
+2025-07-12 15:54:25 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
+2025-07-12 16:49:11 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: contecto@techcorp.com
+2025-07-12 16:49:12 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: contecto@techcorp.com
+2025-07-12 16:52:00 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:52:00 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:53:08 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:12 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:43 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:55 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 18:15:29 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:29 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:35 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:35 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:39 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:39 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:58 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:59 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:57:23 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:57:23 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:01:46 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:01:46 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:04:55 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:04:55 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 10:40:11 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 10:40:11 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found

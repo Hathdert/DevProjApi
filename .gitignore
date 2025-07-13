@@ -36,3 +36,5 @@ data/SkillBridgedb.trace.db
 
 # Ignore data folder
 data/
+# Ignore log files
+*.log

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_PATH" value="logs"/>
+
+
+    <!-- Appender geral -->
+    <appender name="APP_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        
+        <file>${LOG_PATH}/app.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/app.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Error Appender-->
+    <appender name="ERROR_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logs individuais por serviço -->
+    <!-- Repita esse bloco para cada serviço -->
+
+    <appender name="USER_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/user-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="EMAIL_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/email-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CANDIDATE_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/candidate-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ADMIN_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/admin-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="APPLICATION_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/application-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="COMPANY_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/company-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DOCUMENT_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/document-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="INTERNSHIP_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_PATH}/internshipoffer-service.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Loggers for class -->
+    <logger name="com.Natixis.SkillBridge.Service.UserService" level="DEBUG" additivity="false">
+        <appender-ref ref="USER_LOG"/>
+    </logger>
+    <logger name="com.Natixis.SkillBridge.Service.EmailService" level="DEBUG" additivity="false">
+        <appender-ref ref="EMAIL_LOG"/>
+    </logger>
+    <logger name="com.Natixis.SkillBridge.Service.CandidateService" level="DEBUG" additivity="false">
+        <appender-ref ref="CANDIDATE_LOG"/>
+    </logger>
+
+    <logger name="com.Natixis.SkillBridge.Service.AdminService" level="DEBUG" additivity="false">
+        <appender-ref ref="ADMIN_LOG"/>
+    </logger>
+
+    <logger name="com.Natixis.SkillBridge.Service.ApplicationService" level="DEBUG" additivity="false">
+        <appender-ref ref="APPLICATION_LOG"/>
+    </logger>
+
+    <logger name="com.Natixis.SkillBridge.Service.CompanyService" level="DEBUG" additivity="false">
+        <appender-ref ref="COMPANY_LOG"/>
+    </logger>
+
+    <logger name="com.Natixis.SkillBridge.Service.DocumentService" level="DEBUG" additivity="false">
+        <appender-ref ref="DOCUMENT_LOG"/>
+    </logger>
+
+    <logger name="com.Natixis.SkillBridge.Service.InternshipOfferService" level="DEBUG" additivity="false">
+        <appender-ref ref="INTERNSHIP_LOG"/>
+    </logger>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+    </encoder>
+    </appender>
+
+
+    <!-- Root logger (geral) -->
+    <root level="INFO">
+        <appender-ref ref="APP_LOG"/>
+        <appender-ref ref="ERROR_LOG"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

@@ -1,5 +1,10 @@
 package com.Natixis.SkillBridge.security;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +24,7 @@ import java.util.List;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
-
+    private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
     private final JwtUtil jwtUtil;
 
     public JwtAuthenticationFilter(JwtUtil jwtUtil) {
@@ -53,10 +58,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 username = jwtUtil.extractUsername(jwt);
                 System.out.println("[JWT FILTER] Token valid. Username extracted: " + username);
             } else {
+                logger.error("[JWT FILTER] Invalid JWT token.");
                 System.out.println("[JWT FILTER] Token inválido!");
             }
         } else {
-            System.out.println("[JWT FILTER] Authorization header não começa com 'Bearer ' ou está nulo.");
+            logger.warn("[JWT FILTER] Authorization header is either missing or does not start with 'Bearer '.");
+            System.out.println("[JWT FILTER] Authorization header is either missing or does not start with 'Bearer '.");
         }
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -71,7 +78,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             SecurityContextHolder.getContext().setAuthentication(authToken);
         } else {
-            System.out.println("[JWT FILTER] Usuário é nulo ou autenticação já existe no contexto.");
+            logger.error("Authentication failed");
+            System.out.println("Authentication failed");
         }
 
         filterChain.doFilter(request, response);

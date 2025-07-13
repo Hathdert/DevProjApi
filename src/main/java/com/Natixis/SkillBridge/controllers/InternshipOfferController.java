@@ -86,4 +86,11 @@ public class InternshipOfferController {
 public List<InternshipOffer> getTop6OffersByApplications() {
     return service.getTopOffersByApplications(6);
 }
+    @GetMapping("companies/{companyId}")
+    public List<InternshipOffer> getOffersByCompanyId(@PathVariable Long companyId) {
+        return service.findByCompanyId(companyId);
+    }
 }
+    
+
+

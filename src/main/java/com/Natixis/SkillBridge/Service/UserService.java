@@ -3,6 +3,9 @@ package com.Natixis.SkillBridge.Service;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,7 @@ import com.Natixis.SkillBridge.model.user.User;
 
 @Service
 public class UserService {
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -28,25 +32,28 @@ public class UserService {
     }
 
     public User findByEmail(String email) {
+        logger.warn("User with email {} not found", email);
         return userRepository.findByEmail(email).orElse(null);
     }
 
     public String getUserRole(String email) {
         User user = findByEmail(email);
         if (user != null) {
-            if(user instanceof Candidate) {
+            if (user instanceof Candidate) {
                 return "1";
             } else if (user instanceof Company) {
                 return "2";
             }
-            return "0"; 
+            return "0";
         }
+        logger.warn("User with email {} not found", email);
         return null;
     }
 
     public void registerUser(UserRequest request) {
-
+        logger.info("Starting user registration for email: {}", request.getEmail());
         if (userRepository.existsByEmail(request.getEmail())) {
+            logger.error("Tentativa de cadastro com e-mail já existente: {}", request.getEmail());
             throw new RuntimeException("E-mail already in use");
         }
 
@@ -66,7 +73,6 @@ public class UserService {
                 c.setBirthDate(request.getBirthDate());
                 c.setRegistrationDate(today);
                 c.setRegistrationTime(now);
-                c.setDocuments(request.getDocuments());
                 user = c;
                 break;
             case "company":
@@ -87,11 +93,12 @@ public class UserService {
                 user = comp;
                 break;
             default:
+                logger.error("Invalid role provided: {}", request.getRole());
                 throw new RuntimeException("Invalid Role ");
         }
 
         userRepository.save(user);
-
+        logger.info("User registered successfully: {}", user.getEmail());
         // emailService.sendWelcomeEmail(user.getEmail(), user.getName());
 
     }

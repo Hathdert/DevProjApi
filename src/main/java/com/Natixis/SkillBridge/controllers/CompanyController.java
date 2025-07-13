@@ -1,8 +1,8 @@
 package com.Natixis.SkillBridge.controllers;
 
 import java.util.List;
-
-import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.UserService;
+import com.Natixis.SkillBridge.model.InternshipOffer;
 import com.Natixis.SkillBridge.model.user.Company;
 import com.Natixis.SkillBridge.model.user.User;
 
@@ -32,6 +34,9 @@ public class CompanyController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private InternshipOfferRepository internshipOfferRepository;
 
     // Endpoint to get the profile of the authenticated company from the JWT token
     @GetMapping("/profile")
@@ -121,7 +126,41 @@ public class CompanyController {
     }
 
     @GetMapping("/top6-by-applications")
-public List<Company> getTop6CompaniesByApplications() {
-    return companyService.getTopCompaniesByApplications(6);
+    public List<Company> getTop6CompaniesByApplications() {
+        return companyService.getTopCompaniesByApplications(6);
+    }
+
+    @PutMapping("/{id}/approval-status")
+    public ResponseEntity<?> updateCompanyApprovalStatus(
+            @PathVariable Long id,
+            @RequestBody Map<String, Integer> request) {
+        Integer status = request.get("approvalStatus");
+
+        if (status == null || status < 0 || status > 2) {
+            return ResponseEntity.badRequest()
+                    .body("Invalid status. Must be 0 (Pending), 1 (Approved), or 2 (Rejected)");
+        }
+
+        try {
+            Company updatedCompany = companyService.updateApprovalStatus(id, status);
+            return ResponseEntity.ok(updatedCompany);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/by-offer/{offerId}")
+public ResponseEntity<?> getCompanyByOfferId(@PathVariable Long offerId) {
+    Optional<InternshipOffer> offerOpt = internshipOfferRepository.findById(offerId);
+    if (offerOpt.isPresent()) {
+        Company company = offerOpt.get().getCompany();
+        if (company != null) {
+            return ResponseEntity.ok(company);
+        } else {
+            return ResponseEntity.status(404).body("Company not found for this offer");
+        }
+    } else {
+        return ResponseEntity.status(404).body("Offer not found");
+    }
 }
 }
