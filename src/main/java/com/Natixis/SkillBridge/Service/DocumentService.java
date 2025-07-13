@@ -128,7 +128,6 @@ public class DocumentService {
         doc.setFilePath(filePath);
         doc.setUploadDate(LocalDate.now());
         doc.setCandidate(candidate);
-        candidate.getDocuments().add(doc);
 
         logger.info("Updating document with ID: {}", id);
         return documentRepository.save(doc);
