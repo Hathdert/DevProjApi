@@ -54,3 +54,19 @@
 2025-07-12 18:34:12 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 18:34:16 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 18:34:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 20:00:14 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-13 08:57:38 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:15:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: teste
+2025-07-13 09:20:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsf
+2025-07-13 09:20:22 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsffsdf
+2025-07-13 09:20:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsffsdf
+2025-07-13 09:21:43 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: testeteste
+2025-07-13 09:22:48 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: testetesteteset
+2025-07-13 09:25:28 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:26:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:30:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:32:00 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:35:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:35:47 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:36:39 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:52:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
