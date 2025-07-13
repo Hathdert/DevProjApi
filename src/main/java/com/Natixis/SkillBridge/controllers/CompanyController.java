@@ -2,6 +2,7 @@ package com.Natixis.SkillBridge.controllers;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.UserService;
+import com.Natixis.SkillBridge.model.InternshipOffer;
 import com.Natixis.SkillBridge.model.user.Company;
 import com.Natixis.SkillBridge.model.user.User;
 
@@ -31,6 +34,9 @@ public class CompanyController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private InternshipOfferRepository internshipOfferRepository;
 
     // Endpoint to get the profile of the authenticated company from the JWT token
     @GetMapping("/profile")
@@ -142,4 +148,19 @@ public class CompanyController {
             return ResponseEntity.status(404).body(e.getMessage());
         }
     }
+
+    @GetMapping("/by-offer/{offerId}")
+public ResponseEntity<?> getCompanyByOfferId(@PathVariable Long offerId) {
+    Optional<InternshipOffer> offerOpt = internshipOfferRepository.findById(offerId);
+    if (offerOpt.isPresent()) {
+        Company company = offerOpt.get().getCompany();
+        if (company != null) {
+            return ResponseEntity.ok(company);
+        } else {
+            return ResponseEntity.status(404).body("Company not found for this offer");
+        }
+    } else {
+        return ResponseEntity.status(404).body("Offer not found");
+    }
+}
 }
