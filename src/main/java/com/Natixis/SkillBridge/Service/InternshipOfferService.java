@@ -112,5 +112,16 @@ public InternshipOffer update(Long id, InternshipOffer offerDetails) {
     logger.info("Attempting to find InternshipOffers for Company ID: {}", companyId);
         return repository.findByCompanyId(companyId);
     }
-}
 
+    public InternshipOffer changeStatus(Long offerId, boolean status) {
+        logger.info("Attempting to change status of InternshipOffer with ID: {}", offerId);
+        Optional<InternshipOffer> offerOpt = repository.findById(offerId);
+        if (offerOpt.isPresent()) {
+            InternshipOffer offer = offerOpt.get();
+            offer.setOffer(status);
+            return repository.save(offer);
+        }
+        return null;
+    }
+        
+}
