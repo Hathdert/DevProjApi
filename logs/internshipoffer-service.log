@@ -68,3 +68,8 @@
 2025-07-12 19:55:59 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn105@gmail.com
 2025-07-12 20:05:07 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 20:07:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 58
+2025-07-12 20:27:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 58
+2025-07-12 21:44:57 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 21:45:19 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 21:45:25 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 21:45:34 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
