@@ -32,11 +32,11 @@ public class Company extends User {
     @NotBlank(message = "Area is required")
     private String area;
 
-@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("company-document")
     private List<Document> documents;
 
-@OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("company-internship")
     private List<InternshipOffer> offers;
 
