@@ -46,12 +46,14 @@ public class InternshipOfferService {
     }
 
     // Update InternshipOffer
+       
 public InternshipOffer update(Long id, InternshipOffer offerDetails) {
     logger.info("Attempting to update InternshipOffer with ID: {}", id);
 
     InternshipOffer existingOffer = repository.findById(id)
+   
         .orElseThrow(() -> new IllegalArgumentException("InternshipOffer not found with id " + id));
-
+  logger.info("Attempting to update InternshipOffer with ID: {}", id);
     existingOffer.setTitle(offerDetails.getTitle());
     existingOffer.setDescription(offerDetails.getDescription());
     existingOffer.setRequirements(offerDetails.getRequirements());
@@ -105,12 +107,10 @@ public InternshipOffer update(Long id, InternshipOffer offerDetails) {
                                 .toList();
     return repository.findAllById(offerIds);
     }
-
     // Find InternshipOffers by Company ID
     public List<InternshipOffer> findByCompanyId(Long companyId) {
     logger.info("Attempting to find InternshipOffers for Company ID: {}", companyId);
         return repository.findByCompanyId(companyId);
     }
 }
-
 

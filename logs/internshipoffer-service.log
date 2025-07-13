@@ -34,37 +34,39 @@
 2025-07-12 10:52:06 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:40:45 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 2025-07-12 15:42:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
-2025-07-12 16:17:37 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 16:59:18 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:02:59 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:05:24 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:05:34 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:05:42 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:05:47 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:06:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:06:32 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:06:36 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:11:50 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:12:00 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 17:43:47 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 17:44:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 17:45:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 17:45:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 17:48:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 17:56:07 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 38
-2025-07-12 18:21:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
-2025-07-12 18:59:08 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 18:59:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:05:48 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:14:03 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:14:09 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:16:30 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:16:34 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 19:23:37 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn81@gmail.com
-2025-07-12 19:28:21 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn91@gmail.com
-2025-07-12 19:34:01 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn101@gmail.com
-2025-07-12 19:37:25 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn102@gmail.com
-2025-07-12 19:53:17 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn104@gmail.com
-2025-07-12 19:55:59 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn105@gmail.com
-2025-07-12 20:05:07 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
-2025-07-12 20:07:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 58
+2025-07-12 16:42:17 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:42:49 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:48:21 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 16:52:20 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:52:45 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:52:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:53:52 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:53:56 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:40 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:54:51 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: Estágio de Desenvolvimento Android
+2025-07-12 16:57:21 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 16:57:34 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-12 17:00:49 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:12:54 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:29:52 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:29:56 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:12 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:16 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 18:34:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-12 20:00:14 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-13 08:57:38 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:15:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: teste
+2025-07-13 09:20:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsf
+2025-07-13 09:20:22 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsffsdf
+2025-07-13 09:20:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: dfsffsdf
+2025-07-13 09:21:43 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: testeteste
+2025-07-13 09:22:48 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: testetesteteset
+2025-07-13 09:25:28 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:26:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:30:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:32:00 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:35:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:35:47 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:36:39 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-13 09:52:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers

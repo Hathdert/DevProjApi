@@ -67,8 +67,7 @@ public List<InternshipOffer> getTop6OffersByApplications() {
     public List<InternshipOffer> getOffersByCompanyId(@PathVariable Long companyId) {
         return service.findByCompanyId(companyId);
     }
-
 }
+    
 
-   
 

@@ -18,99 +18,25 @@
 2025-07-12 15:43:53 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
 2025-07-12 15:43:57 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
 2025-07-12 15:54:25 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:00:17 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: aline12h@example.com
-2025-07-12 17:00:18 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: aline12h@example.com
-2025-07-12 17:00:34 WARN  c.N.SkillBridge.Service.UserService - User with email luais3h@example.com not found
-2025-07-12 17:00:44 WARN  c.N.SkillBridge.Service.UserService - User with email luais3h@example.com not found
-2025-07-12 17:07:14 WARN  c.N.SkillBridge.Service.UserService - User with email luais3h@example.com not found
-2025-07-12 17:08:06 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: aline12h@example.com
-2025-07-12 17:08:06 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: aline12h@example.com
-2025-07-12 17:30:25 WARN  c.N.SkillBridge.Service.UserService - User with email brn@gmail.com not found
-2025-07-12 17:31:25 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn1234@gmail.com
-2025-07-12 17:31:26 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn1234@gmail.com
-2025-07-12 17:32:34 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:32:35 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:40:10 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:43:24 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: murata22@gmail.com
-2025-07-12 17:43:25 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: murata22@gmail.com
-2025-07-12 17:43:40 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:43:40 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:43:47 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:44:58 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:45:01 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:45:01 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:48:04 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:56:06 WARN  c.N.SkillBridge.Service.UserService - User with email murata22@gmail.com not found
-2025-07-12 17:56:33 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:56:33 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:56:35 WARN  c.N.SkillBridge.Service.UserService - User with email brn1234@gmail.com not found
-2025-07-12 17:57:33 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn12345@gmail.com
-2025-07-12 17:57:33 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn12345@gmail.com
-2025-07-12 17:57:45 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 17:57:45 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 17:57:47 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 17:58:42 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 18:05:04 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn12345@gmail.com
-2025-07-12 18:05:04 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: brn12345@gmail.com
-2025-07-12 18:05:18 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn1@gmail.com
-2025-07-12 18:05:18 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn1@gmail.com
-2025-07-12 18:13:41 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 18:13:41 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 18:13:45 WARN  c.N.SkillBridge.Service.UserService - User with email brn12345@gmail.com not found
-2025-07-12 18:14:10 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn121@gmail.com
-2025-07-12 18:14:11 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn121@gmail.com
-2025-07-12 18:14:31 WARN  c.N.SkillBridge.Service.UserService - User with email brn121@gmail.com not found
-2025-07-12 18:14:31 WARN  c.N.SkillBridge.Service.UserService - User with email brn121@gmail.com not found
-2025-07-12 18:14:35 WARN  c.N.SkillBridge.Service.UserService - User with email brn121@gmail.com not found
-2025-07-12 18:16:33 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn1211@gmail.com
-2025-07-12 18:16:33 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn1211@gmail.com
-2025-07-12 18:17:52 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: murata22@gmail.com
-2025-07-12 18:17:52 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: murata22@gmail.com
-2025-07-12 18:18:43 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: murata222@gmail.com
-2025-07-12 18:18:43 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: murata222@gmail.com
-2025-07-12 18:21:29 WARN  c.N.SkillBridge.Service.UserService - User with email murata222@gmail.com not found
-2025-07-12 18:21:30 WARN  c.N.SkillBridge.Service.UserService - User with email murata222@gmail.com not found
-2025-07-12 18:21:33 WARN  c.N.SkillBridge.Service.UserService - User with email murata222@gmail.com not found
-2025-07-12 18:42:16 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn1211@gmail.com
-2025-07-12 18:42:16 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: brn1211@gmail.com
-2025-07-12 18:42:26 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn12112@gmail.com
-2025-07-12 18:42:26 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn12112@gmail.com
-2025-07-12 18:49:02 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn21@gmail.com
-2025-07-12 18:49:03 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn21@gmail.com
-2025-07-12 19:08:24 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn21@gmail.com
-2025-07-12 19:08:24 ERROR c.N.SkillBridge.Service.UserService - Tentativa de cadastro com e-mail já existente: brn21@gmail.com
-2025-07-12 19:08:51 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn221@gmail.com
-2025-07-12 19:08:59 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn221@gmail.com
-2025-07-12 19:08:59 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn221@gmail.com
-2025-07-12 19:17:13 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn31@gmail.com
-2025-07-12 19:17:13 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn31@gmail.com
-2025-07-12 19:20:43 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn61@gmail.com
-2025-07-12 19:20:43 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn61@gmail.com
-2025-07-12 19:21:52 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn71@gmail.com
-2025-07-12 19:21:52 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn71@gmail.com
-2025-07-12 19:23:36 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn81@gmail.com
-2025-07-12 19:23:36 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn81@gmail.com
-2025-07-12 19:23:55 WARN  c.N.SkillBridge.Service.UserService - User with email brn81@gmail.com not found
-2025-07-12 19:23:55 WARN  c.N.SkillBridge.Service.UserService - User with email brn81@gmail.com not found
-2025-07-12 19:23:59 WARN  c.N.SkillBridge.Service.UserService - User with email brn81@gmail.com not found
-2025-07-12 19:28:19 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn91@gmail.com
-2025-07-12 19:28:21 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn91@gmail.com
-2025-07-12 19:34:00 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn101@gmail.com
-2025-07-12 19:34:00 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn101@gmail.com
-2025-07-12 19:37:24 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn102@gmail.com
-2025-07-12 19:37:24 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn102@gmail.com
-2025-07-12 19:47:20 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn103@gmail.com
-2025-07-12 19:47:21 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn103@gmail.com
-2025-07-12 19:53:16 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn104@gmail.com
-2025-07-12 19:53:17 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn104@gmail.com
-2025-07-12 19:55:58 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: brn105@gmail.com
-2025-07-12 19:55:59 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: brn105@gmail.com
-2025-07-12 19:56:09 WARN  c.N.SkillBridge.Service.UserService - User with email brn105@gmail.com not found
-2025-07-12 19:56:10 WARN  c.N.SkillBridge.Service.UserService - User with email brn105@gmail.com not found
-2025-07-12 19:56:16 WARN  c.N.SkillBridge.Service.UserService - User with email brn105@gmail.com not found
-2025-07-12 19:58:15 WARN  c.N.SkillBridge.Service.UserService - User with email brn105@gmail.com not found
-2025-07-12 20:06:36 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: murata32@gmail.com
-2025-07-12 20:06:37 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: murata32@gmail.com
-2025-07-12 20:07:17 WARN  c.N.SkillBridge.Service.UserService - User with email murata32@gmail.com not found
-2025-07-12 20:07:17 WARN  c.N.SkillBridge.Service.UserService - User with email murata32@gmail.com not found
-2025-07-12 20:07:23 WARN  c.N.SkillBridge.Service.UserService - User with email murata32@gmail.com not found
+2025-07-12 16:49:11 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: contecto@techcorp.com
+2025-07-12 16:49:12 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: contecto@techcorp.com
+2025-07-12 16:52:00 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:52:00 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:53:08 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:12 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:43 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 16:54:55 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-12 18:15:29 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:29 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:35 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-12 18:15:35 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:39 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:39 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:58 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:51:59 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:57:23 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 08:57:23 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:01:46 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:01:46 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:04:55 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
+2025-07-13 09:04:55 WARN  c.N.SkillBridge.Service.UserService - User with email joao.silva@example.com not found
