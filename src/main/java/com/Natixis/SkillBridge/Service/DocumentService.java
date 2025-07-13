@@ -52,6 +52,7 @@ public class DocumentService {
         doc.setFilePath(filePath);
         doc.setUploadDate(LocalDate.now());
         doc.setCandidate(candidate);
+        candidate.getDocuments().add(doc);
 
         logger.info("Saving document for candidate: {}", candidate.getEmail()); 
         return documentRepository.save(doc);
@@ -76,6 +77,7 @@ public class DocumentService {
         doc.setFilePath(filePath);
         doc.setUploadDate(LocalDate.now());
         doc.setCompany(company);
+        company.getDocuments().add(doc);
 
         return documentRepository.save(doc);
     }
