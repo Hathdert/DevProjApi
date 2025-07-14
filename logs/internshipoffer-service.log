@@ -154,3 +154,12 @@
 2025-07-13 11:43:16 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 41
 2025-07-13 11:47:58 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
 >>>>>>> origin/BFuruya
+2025-07-13 14:46:41 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-13 14:49:43 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn106@gmail.com
+2025-07-13 18:11:09 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
+2025-07-13 18:11:31 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
+2025-07-13 18:11:34 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
+2025-07-13 18:11:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
+2025-07-13 18:12:36 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 43
+2025-07-14 08:21:36 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-14 08:21:44 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
