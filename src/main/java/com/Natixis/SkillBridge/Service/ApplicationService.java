@@ -86,4 +86,15 @@ public class ApplicationService {
         logger.error("No applications found for candidate ID {}", id);
         return false;
     }
+
+
+    public Application changeStatus(Long applicationId, boolean status) {
+        Application application = findById(applicationId);
+        if (application != null) {
+            application.setState(status ? 1 : 2);
+            return applicationRepository.save(application);
+        }
+        logger.error("Application with ID {} not found for status change", applicationId);
+        return null;
+    }
 }

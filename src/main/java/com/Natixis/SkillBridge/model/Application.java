@@ -5,6 +5,7 @@ import java.util.List;
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -31,7 +32,7 @@ public class Application {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
-    @JsonBackReference("candidate-application")
+    @JsonIgnoreProperties({"applications"})
     private Candidate candidate;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)

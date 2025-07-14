@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.ApplicationService;
 import com.Natixis.SkillBridge.model.Application;
+import com.Natixis.SkillBridge.model.InternshipOffer;
 
 @RestController
 @RequestMapping("/api/applications")
@@ -81,5 +83,15 @@ public class ApplicationController {
         applicationService.deleteByCandidateId(id);
         return ResponseEntity.noContent().build();
     }
-    
+
+    @PatchMapping("/{applicationId}/change-status")
+    public ResponseEntity<Application> changeOfferStatus( @PathVariable Long applicationId, @RequestBody boolean status) {
+        
+        Application updatedApplication = applicationService.changeStatus(applicationId, status);
+        if (updatedApplication != null) {
+            return ResponseEntity.ok(updatedApplication);
+        }
+        return ResponseEntity.notFound().build();
+
+    }
 }

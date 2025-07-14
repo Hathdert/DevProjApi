@@ -1,10 +1,15 @@
 package com.Natixis.SkillBridge.controllers;
 
+import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.InternshipOfferService;
+import com.Natixis.SkillBridge.Service.UserService;
 import com.Natixis.SkillBridge.model.InternshipOffer;
+import com.Natixis.SkillBridge.model.user.Company;
+import com.Natixis.SkillBridge.model.user.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +22,12 @@ public class InternshipOfferController {
 
     @Autowired
     private InternshipOfferService service;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private CompanyService companyService;
 
     // List all InternshipOffer
     @GetMapping
@@ -77,5 +88,27 @@ public class InternshipOfferController {
             return ResponseEntity.ok(updatedOffer);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("token/{id}")
+    public ResponseEntity<?> getOfferByIdToken(@PathVariable Long id, Authentication authentication) {
+
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(401).body("User not found");
+        }
+
+        String email = authentication.getName();
+        User user = userService.findByEmail(email);
+        if (user == null) {
+            return ResponseEntity.status(404).body("User not found");
+        }
+        Company company = companyService.getCompanyById(user.getId());
+        if (company == null) {
+            return ResponseEntity.status(404).body("Company not found");
+        }
+
+        Optional<InternshipOffer> offerOpt = service.findById(id);
+        return offerOpt.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 }
