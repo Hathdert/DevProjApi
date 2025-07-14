@@ -60,14 +60,22 @@ public class InternshipOfferController {
     }
 
     @GetMapping("/top6-by-applications")
-public List<InternshipOffer> getTop6OffersByApplications() {
-    return service.getTopOffersByApplications(6);
-}
+    public List<InternshipOffer> getTop6OffersByApplications() {
+        return service.getTopOffersByApplications(6);
+    }
+
     @GetMapping("companies/{companyId}")
     public List<InternshipOffer> getOffersByCompanyId(@PathVariable Long companyId) {
         return service.findByCompanyId(companyId);
     }
+
+    @PatchMapping("/offer/{offerId}/change-status")
+    public ResponseEntity<InternshipOffer> changeOfferStatus( @PathVariable Long offerId, @RequestBody boolean status) {
+        
+        InternshipOffer updatedOffer = service.changeStatus(offerId, status);
+        if (updatedOffer != null) {
+            return ResponseEntity.ok(updatedOffer);
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
-    
-
-

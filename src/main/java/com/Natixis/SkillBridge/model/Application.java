@@ -1,5 +1,7 @@
 package com.Natixis.SkillBridge.model;
 
+import java.util.List;
+
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -31,9 +34,9 @@ public class Application {
     @JsonBackReference("candidate-application")
     private Candidate candidate;
 
-    @OneToOne(mappedBy = "application", cascade = CascadeType.MERGE, orphanRemoval = true)
+    @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("application-document")
-    private Document document;
+    private List<Document> document;
 
     @ManyToOne
     @JoinColumn(name = "internship_offer_id")
@@ -67,11 +70,11 @@ public class Application {
         this.candidate = candidate;
     }
 
-    public Document getDocument() {
+    public List<Document> getDocument() {
         return this.document;
     }
 
-    public void setDocument(Document document) {
+    public void setDocument(List<Document> document) {
         this.document = document;
     }
 

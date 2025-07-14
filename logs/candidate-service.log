@@ -4,4 +4,9 @@
 2025-07-12 19:37:25 INFO  c.N.S.Service.CandidateService - Candidate found with email: brn102@gmail.com
 2025-07-12 19:53:17 INFO  c.N.S.Service.CandidateService - Candidate found with email: brn104@gmail.com
 2025-07-12 19:55:59 INFO  c.N.S.Service.CandidateService - Candidate found with email: brn105@gmail.com
+<<<<<<< HEAD
 2025-07-13 14:49:43 INFO  c.N.S.Service.CandidateService - Candidate found with email: brn106@gmail.com
+=======
+2025-07-13 19:21:57 INFO  c.N.S.Service.CandidateService - Candidate found with email: test@test.com
+2025-07-13 20:55:06 INFO  c.N.S.Service.CandidateService - Candidate found with email: ronald_costa96@hotmail.com
+>>>>>>> origin/BFuruya
