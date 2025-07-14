@@ -36,7 +36,7 @@ public class Document {
     @JsonBackReference("candidate-document") // CORRIGIDO
     private Candidate candidate;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "application_id")
     @JsonBackReference("application-document")
     private Application application;

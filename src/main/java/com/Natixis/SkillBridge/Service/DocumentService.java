@@ -7,6 +7,7 @@ import com.Natixis.SkillBridge.Repository.DocumentRepository;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
+import com.Natixis.SkillBridge.model.Application;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -78,6 +79,30 @@ public class DocumentService {
         doc.setUploadDate(LocalDate.now());
         doc.setCompany(company);
         company.getDocuments().add(doc);
+
+        return documentRepository.save(doc);
+    }
+
+    public Document saveDocumentApplication(MultipartFile file, Application application) throws IOException {
+
+        Files.createDirectories(Paths.get(uploadDirectory));
+
+        String originalFileName = file.getOriginalFilename();
+        String fileExtension = getFileExtension(originalFileName);
+        String randomFileName = UUID.randomUUID().toString() + (fileExtension.isEmpty() ? "" : "." + fileExtension);
+        String filePath = uploadDirectory + File.separator + randomFileName;
+        Path path = Paths.get(filePath);
+
+        Files.write(path, file.getBytes(), StandardOpenOption.CREATE);
+
+        Document doc = new Document();
+        doc.setFileName(randomFileName);
+        doc.setOriginalFileName(originalFileName);
+        doc.setFileType(file.getContentType());
+        doc.setFilePath(filePath);
+        doc.setUploadDate(LocalDate.now());
+        doc.setApplication(application);
+        application.getDocument().add(doc);
 
         return documentRepository.save(doc);
     }
