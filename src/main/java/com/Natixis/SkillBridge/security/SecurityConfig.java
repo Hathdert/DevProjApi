@@ -24,6 +24,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.Natixis.SkillBridge.Service.*;
+import com.Natixis.SkillBridge.model.user.Company;
 import com.Natixis.SkillBridge.model.user.User;
 
 import java.util.Collections;
@@ -36,11 +37,13 @@ public class SecurityConfig {
     // Injecting JwtAuthenticationFilter to handle JWT authentication
     private final JwtAuthenticationFilter jwtAuthFilter;
     private UserService userService;
+    private CompanyService companyService;
 
     // Using @Lazy to avoid circular dependency issues because it only creates the bean when it's actually needed
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter, @Lazy UserService userService) {
+    public SecurityConfig(JwtAuthenticationFilter jwtAuthFilter, @Lazy UserService userService, @Lazy CompanyService companyService) {
         this.jwtAuthFilter = jwtAuthFilter;
         this.userService = userService;
+        this.companyService = companyService;
     }
 
     @Bean
@@ -74,8 +77,15 @@ public class SecurityConfig {
                 String password = authentication.getCredentials().toString();
 
                 User user = userService.findByEmail(username);
+
+                Company company = companyService.getCompanyById(user.getId());
                 if (user != null && passwordEncoder().matches(password, user.getPassword())) {
-                    logger.info("Authentication failed");
+                    if (company.getApprovalStatus() == 0 || company.getApprovalStatus() == 2) {
+                        logger.error("Company not approved or pending approval");
+                        throw new AuthenticationException("Company not approved or pending approval") {
+                        };
+                    }
+                    logger.info("Authentication Completed");
                     List<SimpleGrantedAuthority> authorities = Collections.singletonList(
                             new SimpleGrantedAuthority("ROLE_" + user.getRole()));
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);

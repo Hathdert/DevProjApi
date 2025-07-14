@@ -1,10 +1,13 @@
 package com.Natixis.SkillBridge.controllers;
 
+import com.Natixis.SkillBridge.Service.ApplicationService;
 import com.Natixis.SkillBridge.Service.CandidateService;
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.DocumentService;
+import com.Natixis.SkillBridge.Repository.ApplicationRepository;
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
+import com.Natixis.SkillBridge.model.Application;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
@@ -35,12 +38,17 @@ public class DocumentController {
 
     @Autowired
     private CandidateRepository candidateRepository;
+
     @Autowired
     private CompanyRepository companyRepository;
+
+    @Autowired
+    private ApplicationRepository applicationRepository;
 
     private CandidateService candidateService;
 
     private CompanyService companyService;
+
 
     public DocumentController(CandidateService candidateService, CompanyService companyService){
         this.candidateService = candidateService;
@@ -85,6 +93,23 @@ public class DocumentController {
             return ResponseEntity.ok(savedDoc);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error uploading file " + e.getMessage());
+        }
+    }
+
+    @PostMapping("/upload/application")
+    public ResponseEntity<?> uploadFileForApplication(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("applicationId") Long applicationId) {
+        try {
+            Optional<Application> applicationOpt = applicationRepository.findById(applicationId);
+            if (!applicationOpt.isPresent()) {
+                return ResponseEntity.status(404).body("Application not found with id: " + applicationId);
+            }
+            Application application = applicationOpt.get();
+            Document savedDoc = documentService.saveDocumentApplication(file, application);
+            return ResponseEntity.ok(savedDoc);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error uploading file: " + e.getMessage());
         }
     }
 
