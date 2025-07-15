@@ -102,4 +102,10 @@ public class UserService {
         // emailService.sendWelcomeEmail(user.getEmail(), user.getName());
 
     }
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
+
+
+    
 }
