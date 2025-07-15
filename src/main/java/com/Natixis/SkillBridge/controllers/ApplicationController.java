@@ -85,7 +85,7 @@ public class ApplicationController {
     }
 
     @PatchMapping("/{applicationId}/change-status")
-    public ResponseEntity<Application> changeOfferStatus( @PathVariable Long applicationId, @RequestBody boolean status) {
+    public ResponseEntity<Application> changeOfferStatus( @PathVariable Long applicationId, @RequestBody int status) {
         
         Application updatedApplication = applicationService.changeStatus(applicationId, status);
         if (updatedApplication != null) {
