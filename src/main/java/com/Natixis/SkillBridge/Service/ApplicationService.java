@@ -88,10 +88,10 @@ public class ApplicationService {
     }
 
 
-    public Application changeStatus(Long applicationId, boolean status) {
+    public Application changeStatus(Long applicationId, int status) {
         Application application = findById(applicationId);
         if (application != null) {
-            application.setState(status ? 1 : 2);
+            application.setState(status);
             return applicationRepository.save(application);
         }
         logger.error("Application with ID {} not found for status change", applicationId);
