@@ -32,8 +32,8 @@ public class Application {
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
-    //@JsonIgnoreProperties({"applications"}) //resolveu mas quebrou tudo
-     @JsonBackReference("candidate-application")
+    // @JsonIgnoreProperties({"applications"})
+    @JsonBackReference("candidate-application")
     private Candidate candidate;
 
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)

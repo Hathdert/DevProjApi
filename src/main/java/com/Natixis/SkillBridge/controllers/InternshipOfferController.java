@@ -3,7 +3,9 @@ package com.Natixis.SkillBridge.controllers;
 import com.Natixis.SkillBridge.Service.CompanyService;
 import com.Natixis.SkillBridge.Service.InternshipOfferService;
 import com.Natixis.SkillBridge.Service.UserService;
+import com.Natixis.SkillBridge.model.Application;
 import com.Natixis.SkillBridge.model.InternshipOffer;
+import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
 import com.Natixis.SkillBridge.model.user.User;
 
@@ -12,7 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -90,25 +94,52 @@ public class InternshipOfferController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping("token/{id}")
-    public ResponseEntity<?> getOfferByIdToken(@PathVariable Long id, Authentication authentication) {
-
-        if (authentication == null || !authentication.isAuthenticated()) {
-            return ResponseEntity.status(401).body("User not found");
-        }
-
-        String email = authentication.getName();
-        User user = userService.findByEmail(email);
-        if (user == null) {
-            return ResponseEntity.status(404).body("User not found");
-        }
-        Company company = companyService.getCompanyById(user.getId());
-        if (company == null) {
-            return ResponseEntity.status(404).body("Company not found");
-        }
-
-        Optional<InternshipOffer> offerOpt = service.findById(id);
-        return offerOpt.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+@GetMapping("token/{id}")
+public ResponseEntity<?> getOfferByIdToken(@PathVariable Long id, Authentication authentication) {
+    if (authentication == null || !authentication.isAuthenticated()) {
+        return ResponseEntity.status(401).body("User not found");
     }
+
+    String email = authentication.getName();
+    User user = userService.findByEmail(email);
+
+    if (user == null) {
+        return ResponseEntity.status(404).body("User not found");
+    }
+
+    Optional<InternshipOffer> offerOpt = service.findById(id);
+
+    if (offerOpt.isEmpty()) {
+        return ResponseEntity.status(404).body("Offer not found");
+    }
+
+    InternshipOffer offer = offerOpt.get();
+
+    Map<String, Object> offerMap = new HashMap<>();
+    offerMap.put("id", offer.getId());
+    offerMap.put("title", offer.getTitle());
+    offerMap.put("description", offer.getDescription());
+    offerMap.put("requirements", offer.getRequirements());
+    offerMap.put("area", offer.getArea());
+    offerMap.put("startDate", offer.getStartDate());
+    offerMap.put("endDate", offer.getEndDate());
+    offerMap.put("vacancies", offer.getVacancies());
+    offerMap.put("offer", offer.isOffer());
+
+    List<Map<String, Object>> applicationsList = offer.getApplications().stream().map(app -> {
+        Map<String, Object> appMap = new HashMap<>();
+        appMap.put("id", app.getId());
+        appMap.put("pitch", app.getPitch());
+        appMap.put("state", app.getState());
+        appMap.put("candidateId", app.getCandidate() != null ? app.getCandidate().getId() : null);
+        appMap.put("document", app.getDocument());
+        return appMap;
+    }).toList();
+
+    offerMap.put("applications", applicationsList);
+
+    return ResponseEntity.ok(Map.of("offer", offerMap));
+}
+
+
 }
