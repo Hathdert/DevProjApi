@@ -55,7 +55,7 @@ public class DocumentService {
         doc.setCandidate(candidate);
         candidate.getDocuments().add(doc);
 
-        logger.info("Saving document for candidate: {}", candidate.getEmail()); 
+        logger.info("Saving document for candidate: {}", candidate.getEmail());
         return documentRepository.save(doc);
     }
 
@@ -197,5 +197,9 @@ public class DocumentService {
         return documents.stream()
                 .filter(doc -> doc.getFileType() != null && doc.getFileType().startsWith("image"))
                 .findFirst();
+    }
+
+    public List<Document> findByApplicationId(Long applicationId) {
+        return documentRepository.findByApplicationId(applicationId);
     }
 }

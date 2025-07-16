@@ -460,3 +460,54 @@
 2025-07-15 11:51:27 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn109@gmail.com
 2025-07-15 11:55:57 INFO  c.N.S.Service.InternshipOfferService - Saving document for candidate: brn10@gmail.com
 >>>>>>> BFuruya
+2025-07-15 16:19:44 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-15 16:21:25 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-15 16:21:30 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-15 16:22:08 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-15 16:22:11 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 45
+2025-07-15 16:22:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-15 16:22:14 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 42
+2025-07-15 16:22:16 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-15 16:22:27 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-15 16:25:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-15 16:25:39 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 42
+2025-07-15 16:25:51 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-15 16:26:00 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-15 16:26:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-15 16:26:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-15 16:26:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 42
+2025-07-16 07:55:45 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 07:56:02 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 07:59:20 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 07:59:35 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 07:59:49 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 07:59:55 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:00:03 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:14:32 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:15:11 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:15:14 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:16:32 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:16:37 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-16 08:41:10 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 08:49:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 08:54:46 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 08:59:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:00:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:03:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:05:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:15:19 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-16 09:15:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-16 09:16:30 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:16:51 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-16 09:16:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-16 09:16:55 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-16 09:16:56 INFO  c.N.S.Service.InternshipOfferService - Attempting to change status of InternshipOffer with ID: 42
+2025-07-16 09:16:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 42
+2025-07-16 09:17:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 42
+2025-07-16 09:17:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:20:35 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:23:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:28:43 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffers for Company ID: 6
+2025-07-16 09:33:14 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: ewrerwerewrerwerewrerwerewrerwer
+2025-07-16 09:34:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: ddausdhaiushdiauddausdhaiushdiau
+2025-07-16 09:34:39 INFO  c.N.S.Service.InternshipOfferService - Attempting to save a new InternshipOffer: ddausdhaiushdiauddausdhaiushdiau
