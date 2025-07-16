@@ -97,4 +97,5 @@ public class ApplicationService {
         logger.error("Application with ID {} not found for status change", applicationId);
         return null;
     }
+  
 }

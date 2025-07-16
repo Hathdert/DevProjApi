@@ -1,6 +1,8 @@
 package com.Natixis.SkillBridge.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.ApplicationService;
 import com.Natixis.SkillBridge.model.Application;
-import com.Natixis.SkillBridge.model.InternshipOffer;
 
 @RestController
 @RequestMapping("/api/applications")
@@ -95,6 +96,9 @@ public class ApplicationController {
 
     }
 
+   
+
+
     @GetMapping("/{id}/candidate")
     public ResponseEntity<?> getCandidateByApplicationId(@PathVariable Long id) {
         Application application = applicationService.findById(id);
@@ -103,5 +107,19 @@ public class ApplicationController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+      @GetMapping("get-internship-offer/{applicationId}")
+    public ResponseEntity<?> getIntershipByApplicattion(@PathVariable Long applicationId) {
+ 
+        Application application = applicationService.findById(applicationId);
+ 
+        Map<String, Object> applicationMap = new HashMap<>();
+        applicationMap.put("id", application.getId());
+        applicationMap.put("document", application.getDocument());
+        applicationMap.put("pitch", application.getPitch());
+        applicationMap.put("state", application.getState());
+        applicationMap.put("internshipOffer", application.getInternshipOffer() != null ? application.getInternshipOffer().getId() : null);
+ 
+        return ResponseEntity.ok(Map.of("aplication", applicationMap));
     }
 }
