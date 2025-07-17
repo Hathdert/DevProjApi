@@ -592,3 +592,119 @@
 2025-07-16 12:47:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
 2025-07-16 12:47:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
 2025-07-16 12:47:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 08:21:42 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-17 08:53:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 08:53:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 08:53:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 08:53:14 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 09:00:39 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:05:55 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:10:03 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:22:35 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:22:41 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:33:36 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 09:33:36 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 09:33:37 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 09:33:38 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 09:36:18 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:40:49 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:44:52 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:51:05 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:51:48 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:54:50 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:55:01 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:56:05 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:56:15 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:57:31 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 09:57:41 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:01:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:05:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:06:07 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:09:28 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:09:38 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:12:50 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:13:05 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:14:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:14:51 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:18:29 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:18:35 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:25:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:25:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:25:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:25:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:26:28 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:32:37 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:32:37 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:32:37 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:32:37 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:34:10 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:34:18 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:34:18 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:34:19 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:34:19 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:37:59 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:38:11 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:38:11 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:38:11 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:38:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:41:46 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:41:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:41:57 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:41:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:41:58 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:42:31 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:42:43 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:42:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:42:44 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:42:45 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:44:56 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:45:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:45:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:45:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:45:24 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:47:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:47:25 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:47:26 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:47:29 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:47:30 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:47:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:47:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:47:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:47:55 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:00 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:48:14 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:14 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:48:15 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:16 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:47 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:47 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:48:48 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:48:48 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:51:00 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:51:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:51:10 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:51:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 40
+2025-07-17 10:51:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:51:33 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:51:34 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:54:30 INFO  c.N.S.Service.InternshipOfferService - DocumentService initialized with upload directory: null
+2025-07-17 10:54:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:55:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:55:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:55:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:56:56 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:57:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:57:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:57:55 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 10:58:04 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:58:05 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:58:09 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 10:59:22 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 11:03:54 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:04:02 INFO  c.N.S.Service.InternshipOfferService - Attempting to find InternshipOffer with ID: 9
+2025-07-17 11:06:12 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:08:08 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:09:32 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:11:13 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:12:23 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers
+2025-07-17 11:14:46 INFO  c.N.S.Service.InternshipOfferService - Attempting to retrieve all InternshipOffers

@@ -72,7 +72,7 @@ public class ApplicationController {
     }
 
     // Delete application
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteapp/{id}")
     public ResponseEntity<Void> deleteApplication(@PathVariable Long id) {
         applicationService.delete(id);
         return ResponseEntity.noContent().build();
