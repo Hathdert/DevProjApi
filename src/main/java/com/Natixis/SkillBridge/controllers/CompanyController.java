@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
@@ -150,17 +152,31 @@ public class CompanyController {
     }
 
     @GetMapping("/by-offer/{offerId}")
-public ResponseEntity<?> getCompanyByOfferId(@PathVariable Long offerId) {
-    Optional<InternshipOffer> offerOpt = internshipOfferRepository.findById(offerId);
-    if (offerOpt.isPresent()) {
-        Company company = offerOpt.get().getCompany();
-        if (company != null) {
-            return ResponseEntity.ok(company);
+    public ResponseEntity<?> getCompanyByOfferId(@PathVariable Long offerId) {
+        Optional<InternshipOffer> offerOpt = internshipOfferRepository.findById(offerId);
+        if (offerOpt.isPresent()) {
+            Company company = offerOpt.get().getCompany();
+            if (company != null) {
+                return ResponseEntity.ok(company);
+            } else {
+                return ResponseEntity.status(404).body("Company not found for this offer");
+            }
         } else {
-            return ResponseEntity.status(404).body("Company not found for this offer");
+            return ResponseEntity.status(404).body("Offer not found");
         }
-    } else {
-        return ResponseEntity.status(404).body("Offer not found");
     }
-}
+
+    @PostMapping("/id-by-email")
+    public ResponseEntity<?> getCompanyIdByEmail(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        if (email == null || email.isBlank()) {
+            return ResponseEntity.badRequest().body("Email is required");
+        }
+        try {
+            Long companyId = companyService.getCompanyIdByEmail(email);
+            return ResponseEntity.ok(companyId);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
 }

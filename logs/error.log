@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-07-17 08:28:54 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 08:38:50 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 08:39:01 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
@@ -537,6 +538,155 @@ List of constraint violations:[
 	at jdk.proxy5/jdk.proxy5.$Proxy174.save(Unknown Source)
 	at com.Natixis.SkillBridge.Service.ApplicationService.makeNew(ApplicationService.java:44)
 	at com.Natixis.SkillBridge.controllers.ApplicationController.createApplication(ApplicationController.java:63)
+=======
+2025-07-17 07:46:52 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:46:52 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:46:57 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:47:13 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:47:13 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:48:48 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:48:48 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:48:52 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:48:52 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:50:24 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:50:24 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:51:03 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:51:03 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:52:05 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:52:05 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:52:08 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:52:08 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:53:47 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:53:47 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:53:55 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:53:55 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:18 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:18 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:26 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:26 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:38 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:54:38 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:59:55 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 07:59:55 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:00:04 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:00:04 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:01:12 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:01:12 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:01:22 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:01:22 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:02:51 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:02:51 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:05:54 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:05:54 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:02 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:02 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:08 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:08 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:16 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:16 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:25 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:06:25 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:37 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:37 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:51 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:51 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:55 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:55 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:58 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:07:58 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:30 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:30 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:41 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:41 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:59 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:13:59 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:15:13 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:15:13 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:15:19 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:15:19 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:15:20 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:16:41 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:16:41 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:06 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:06 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:25 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:25 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:27 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:29 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:31 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:34 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:36 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:53 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:17:53 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:53:08 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:53:11 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:53:11 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:54:56 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:54:56 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:55:44 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:55:44 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:55:51 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:55:51 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:57:16 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:57:18 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 08:57:18 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:36 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:36 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:43 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:43 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:45 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:07:53 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:51 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:51 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:56 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:56 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:56 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:56 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:57 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:57 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:57 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:08:58 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:09:00 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:09:00 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:09:16 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:09:16 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:09:23 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:10:07 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:10:18 ERROR [http-nio-8080-exec-7] c.N.S.security.SecurityConfig - Company not approved or pending approval
+2025-07-17 09:16:10 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:16:10 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:17:10 ERROR [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.Natixis.SkillBridge.model.user.User.getRole()" because "user" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "com.Natixis.SkillBridge.model.user.User.getRole()" because "user" is null
+	at com.Natixis.SkillBridge.security.SecurityConfig$1.authenticate(SecurityConfig.java:80)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at com.Natixis.SkillBridge.controllers.AuthController.login(AuthController.java:34)
+>>>>>>> HPinto
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
@@ -557,7 +707,11 @@ List of constraint violations:[
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+<<<<<<< HEAD
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+=======
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+>>>>>>> HPinto
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
 	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
@@ -578,8 +732,12 @@ List of constraint violations:[
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
 	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+<<<<<<< HEAD
 	at com.Natixis.SkillBridge.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:85)
 	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+=======
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+>>>>>>> HPinto
 	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
 	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
@@ -641,6 +799,7 @@ List of constraint violations:[
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1447)
+<<<<<<< HEAD
 2025-07-17 11:03:54 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 11:04:02 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 11:04:02 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
@@ -672,3 +831,190 @@ List of constraint violations:[
 2025-07-17 11:14:46 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 11:14:54 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
 2025-07-17 11:14:54 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+=======
+2025-07-17 09:23:29 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:23:29 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:23:53 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:23:53 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:23:58 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:23:58 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:36 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:36 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:47 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:47 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:57 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:26:57 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:08 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:20 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:22 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:26 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:31 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:32 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:49 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:49 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:57 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:57 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:32:57 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:02 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:02 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:02 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:14 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:14 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:31 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:31 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:31 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:31 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:32 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:33 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:35 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:33:35 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:19 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:22 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:22 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:22 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:38 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:34:38 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:37:56 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:37:56 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:02 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:02 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:08 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:08 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:14 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:38:46 ERROR [http-nio-8080-exec-6] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:38:50 ERROR [http-nio-8080-exec-8] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:38:51 ERROR [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:38:58 ERROR [http-nio-8080-exec-7] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:02 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:03 ERROR [http-nio-8080-exec-9] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:03 ERROR [http-nio-8080-exec-4] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:03 ERROR [http-nio-8080-exec-2] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:03 ERROR [http-nio-8080-exec-5] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:26 ERROR [http-nio-8080-exec-6] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:39:29 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:39:29 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:39:32 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:39:41 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:40:11 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:40:11 ERROR [http-nio-8080-exec-2] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UK9I5YT1GVM0CHG5E10QKNS7TLL_INDEX_C ON PUBLIC.CANDIDATE(PHONE NULLS FIRST) VALUES ( /* 39 */ '123456789' )"; SQL statement:
+insert into candidate (address,birth_date,phone,id) values (?,?,?,?) [23505-232]
+2025-07-17 09:40:13 ERROR [http-nio-8080-exec-5] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UK9I5YT1GVM0CHG5E10QKNS7TLL_INDEX_C ON PUBLIC.CANDIDATE(PHONE NULLS FIRST) VALUES ( /* 39 */ '123456789' )"; SQL statement:
+insert into candidate (address,birth_date,phone,id) values (?,?,?,?) [23505-232]
+2025-07-17 09:40:14 ERROR [http-nio-8080-exec-6] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UK9I5YT1GVM0CHG5E10QKNS7TLL_INDEX_C ON PUBLIC.CANDIDATE(PHONE NULLS FIRST) VALUES ( /* 39 */ '123456789' )"; SQL statement:
+insert into candidate (address,birth_date,phone,id) values (?,?,?,?) [23505-232]
+2025-07-17 09:40:14 ERROR [http-nio-8080-exec-8] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UK9I5YT1GVM0CHG5E10QKNS7TLL_INDEX_C ON PUBLIC.CANDIDATE(PHONE NULLS FIRST) VALUES ( /* 39 */ '123456789' )"; SQL statement:
+insert into candidate (address,birth_date,phone,id) values (?,?,?,?) [23505-232]
+2025-07-17 09:40:14 ERROR [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UK9I5YT1GVM0CHG5E10QKNS7TLL_INDEX_C ON PUBLIC.CANDIDATE(PHONE NULLS FIRST) VALUES ( /* 39 */ '123456789' )"; SQL statement:
+insert into candidate (address,birth_date,phone,id) values (?,?,?,?) [23505-232]
+2025-07-17 09:40:52 ERROR [http-nio-8080-exec-10] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:40:53 ERROR [http-nio-8080-exec-7] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:00 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-9] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-4] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-2] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-5] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-6] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:01 ERROR [http-nio-8080-exec-8] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:02 ERROR [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:02 ERROR [http-nio-8080-exec-10] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:02 ERROR [http-nio-8080-exec-7] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:03 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:03 ERROR [http-nio-8080-exec-9] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-4] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-2] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-5] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-6] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-8] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-3] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:04 ERROR [http-nio-8080-exec-10] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:05 ERROR [http-nio-8080-exec-7] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:05 ERROR [http-nio-8080-exec-1] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:05 ERROR [http-nio-8080-exec-9] o.h.e.jdbc.spi.SqlExceptionHelper - Unique index or primary key violation: "PUBLIC.UKB30186265QWKG4GPBVCB8AFAS_INDEX_6 ON PUBLIC.COMPANY(PHONE NULLS FIRST) VALUES ( /* 40 */ '123456789' )"; SQL statement:
+insert into company (address,approval_status,area,description,nipc,phone,id) values (?,?,?,?,?,?,?) [23505-232]
+2025-07-17 09:41:48 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:01 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:01 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:01 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:08 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:08 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:55 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:42:55 ERROR [http-nio-8080-exec-2] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:43:05 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:43:05 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:43:57 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:43:57 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:44:11 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:44:11 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:45:18 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:00 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:02 ERROR [http-nio-8080-exec-3] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:04 ERROR [http-nio-8080-exec-8] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:06 ERROR [http-nio-8080-exec-1] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:08 ERROR [http-nio-8080-exec-9] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:24 ERROR [http-nio-8080-exec-10] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:24 ERROR [http-nio-8080-exec-7] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:27 ERROR [http-nio-8080-exec-4] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:35 ERROR [http-nio-8080-exec-5] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+2025-07-17 09:46:35 ERROR [http-nio-8080-exec-6] c.N.S.s.JwtAuthenticationFilter - Authentication failed
+>>>>>>> HPinto
