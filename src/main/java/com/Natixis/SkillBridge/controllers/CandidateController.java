@@ -3,6 +3,7 @@ package com.Natixis.SkillBridge.controllers;
 import java.util.List;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,6 +27,9 @@ public class CandidateController {
     private final CandidateService candidateService;
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public CandidateController(CandidateService candidateService) {
         this.candidateService = candidateService;
@@ -57,6 +61,24 @@ public class CandidateController {
         }
         System.out.println("-------Company: " + company);
         return ResponseEntity.ok(company);
+    }
+
+    @DeleteMapping("/profile")
+    public ResponseEntity<?> deleteProfileCandidate(Authentication authentication, @RequestBody String password) {
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(401).body("User not authenticated");
+        }
+
+        String email = authentication.getName();
+        User user = userService.findByEmail(email);
+        if (user == null) {
+            return ResponseEntity.status(404).body("User not found");
+        }
+        if (user.getPassword() == null || !passwordEncoder.matches(password, user.getPassword())) {
+            return ResponseEntity.status(403).body("Incorrect password");
+        }
+        candidateService.deleteCandidate(user.getId());
+        return ResponseEntity.ok("Company profile deleted successfully");
     }
 
     // Get candidate by ID
