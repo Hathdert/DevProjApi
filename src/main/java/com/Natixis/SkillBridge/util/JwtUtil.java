@@ -52,9 +52,9 @@ public class JwtUtil {
     //Validate TOKEN
     public boolean validateToken(String token) {
         try {
-            System.out.println("------[JWT UTIL] Validando token: " + token);
+            System.out.println("------[JWT UTIL] Validating token: " + token);
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
-            System.out.println("-------[JWT UTIL] Token válido!");
+            System.out.println("-------[JWT UTIL] Token is valid!");
             return true;
         } catch (JwtException e) {
             return false;

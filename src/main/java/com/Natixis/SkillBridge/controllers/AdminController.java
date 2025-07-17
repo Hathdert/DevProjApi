@@ -202,7 +202,7 @@ public class AdminController {
         return escaped;
     }
 
-    // Não utilizado - Decidimos usar .csv
+    // Not used - but kept for reference
     @GetMapping("/candidates/json")
     public void exportCandidatesToJson(HttpServletResponse response)
             throws IOException, StreamWriteException, DatabindException, java.io.IOException {

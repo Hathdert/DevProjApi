@@ -1,6 +1,8 @@
 package com.Natixis.SkillBridge.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Service.ApplicationService;
 import com.Natixis.SkillBridge.model.Application;
-import com.Natixis.SkillBridge.model.InternshipOffer;
 
 @RestController
 @RequestMapping("/api/applications")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ApplicationController {
-    
+
     @Autowired
     private ApplicationService applicationService;
 
@@ -71,7 +72,7 @@ public class ApplicationController {
     }
 
     // Delete application
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/deleteapp/{id}")
     public ResponseEntity<Void> deleteApplication(@PathVariable Long id) {
         applicationService.delete(id);
         return ResponseEntity.noContent().build();
@@ -85,8 +86,8 @@ public class ApplicationController {
     }
 
     @PatchMapping("/{applicationId}/change-status")
-    public ResponseEntity<Application> changeOfferStatus( @PathVariable Long applicationId, @RequestBody int status) {
-        
+    public ResponseEntity<Application> changeOfferStatus(@PathVariable Long applicationId, @RequestBody int status) {
+
         Application updatedApplication = applicationService.changeStatus(applicationId, status);
         if (updatedApplication != null) {
             return ResponseEntity.ok(updatedApplication);
@@ -94,6 +95,9 @@ public class ApplicationController {
         return ResponseEntity.notFound().build();
 
     }
+
+   
+
 
     @GetMapping("/{id}/candidate")
     public ResponseEntity<?> getCandidateByApplicationId(@PathVariable Long id) {
@@ -103,5 +107,19 @@ public class ApplicationController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+      @GetMapping("get-internship-offer/{applicationId}")
+    public ResponseEntity<?> getIntershipByApplicattion(@PathVariable Long applicationId) {
+ 
+        Application application = applicationService.findById(applicationId);
+ 
+        Map<String, Object> applicationMap = new HashMap<>();
+        applicationMap.put("id", application.getId());
+        applicationMap.put("document", application.getDocument());
+        applicationMap.put("pitch", application.getPitch());
+        applicationMap.put("state", application.getState());
+        applicationMap.put("internshipOffer", application.getInternshipOffer() != null ? application.getInternshipOffer().getId() : null);
+ 
+        return ResponseEntity.ok(Map.of("aplication", applicationMap));
     }
 }

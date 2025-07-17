@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Natixis.SkillBridge.Repository.InternshipOfferRepository;
@@ -167,6 +169,20 @@ public class CompanyController {
             }
         } else {
             return ResponseEntity.status(404).body("Offer not found");
+        }
+    }
+
+    @PostMapping("/id-by-email")
+    public ResponseEntity<?> getCompanyIdByEmail(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        if (email == null || email.isBlank()) {
+            return ResponseEntity.badRequest().body("Email is required");
+        }
+        try {
+            Long companyId = companyService.getCompanyIdByEmail(email);
+            return ResponseEntity.ok(companyId);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
         }
     }
 }
