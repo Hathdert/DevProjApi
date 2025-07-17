@@ -91,11 +91,6 @@ public class SecurityConfig {
                             new SimpleGrantedAuthority("ROLE_" + user.getRole()));
                     return new UsernamePasswordAuthenticationToken(username, password, authorities);
                 } 
-                else if("user".equals(username) && "pass".equals(password)){
-                    List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
-
-                    return new UsernamePasswordAuthenticationToken(username, password, authorities);
-                }
                 else {
                     logger.error("Authentication failed");
                     throw new AuthenticationException("Authentication failed") {
