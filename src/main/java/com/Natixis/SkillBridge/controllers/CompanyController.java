@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,6 +40,9 @@ public class CompanyController {
 
     @Autowired
     private InternshipOfferRepository internshipOfferRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     // Endpoint to get the profile of the authenticated company from the JWT token
     @GetMapping("/profile")
@@ -85,7 +89,7 @@ public class CompanyController {
     // Endpoint to delete the profile of the authenticated company from the JWT
     // token
     @DeleteMapping("/profile")
-    public ResponseEntity<?> deleteProfileCompany(Authentication authentication) {
+    public ResponseEntity<?> deleteProfileCompany(Authentication authentication, @RequestBody String password) {
         if (authentication == null || !authentication.isAuthenticated()) {
             return ResponseEntity.status(401).body("User not authenticated");
         }
@@ -95,7 +99,9 @@ public class CompanyController {
         if (user == null) {
             return ResponseEntity.status(404).body("User not found");
         }
-
+        if (user.getPassword() == null || !passwordEncoder.matches(password, user.getPassword())) {
+            return ResponseEntity.status(403).body("Incorrect password");
+        }
         companyService.deleteCompany(user.getId());
         return ResponseEntity.ok("Company profile deleted successfully");
     }
