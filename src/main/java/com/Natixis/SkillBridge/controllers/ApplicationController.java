@@ -23,7 +23,7 @@ import com.Natixis.SkillBridge.model.InternshipOffer;
 @RequestMapping("/api/applications")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ApplicationController {
-    
+
     @Autowired
     private ApplicationService applicationService;
 
@@ -85,8 +85,8 @@ public class ApplicationController {
     }
 
     @PatchMapping("/{applicationId}/change-status")
-    public ResponseEntity<Application> changeOfferStatus( @PathVariable Long applicationId, @RequestBody int status) {
-        
+    public ResponseEntity<Application> changeOfferStatus(@PathVariable Long applicationId, @RequestBody int status) {
+
         Application updatedApplication = applicationService.changeStatus(applicationId, status);
         if (updatedApplication != null) {
             return ResponseEntity.ok(updatedApplication);

@@ -28,12 +28,12 @@ public class Document {
 
     @ManyToOne
     @JoinColumn(name = "company_id")
-    @JsonBackReference("company-document") // CORRIGIDO
+    @JsonBackReference("company-document") 
     private Company company;
 
     @ManyToOne
     @JoinColumn(name = "candidate_id")
-    @JsonBackReference("candidate-document") // CORRIGIDO
+    @JsonBackReference("candidate-document") 
     private Candidate candidate;
 
     @ManyToOne

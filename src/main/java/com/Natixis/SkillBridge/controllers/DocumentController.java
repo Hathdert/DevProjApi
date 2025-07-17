@@ -49,12 +49,10 @@ public class DocumentController {
 
     private CompanyService companyService;
 
-
-    public DocumentController(CandidateService candidateService, CompanyService companyService){
+    public DocumentController(CandidateService candidateService, CompanyService companyService) {
         this.candidateService = candidateService;
         this.companyService = companyService;
     }
-
 
     @PostMapping("/upload/candidate")
     public ResponseEntity<?> uploadFile(
@@ -208,7 +206,6 @@ public class DocumentController {
         }
     }
 
-    // Método auxiliar para detectar o tipo de mídia com base na extensão do arquivo
     private MediaType getMediaTypeForFileName(String fileName) {
         if (fileName.toLowerCase().endsWith(".png")) {
             return MediaType.IMAGE_PNG;
@@ -250,27 +247,27 @@ public class DocumentController {
     }
 
     @GetMapping("/application/{applicationId}/download")
-public ResponseEntity<?> downloadDocumentByApplication(@PathVariable Long applicationId) {
-    List<Document> documents = documentService.findByApplicationId(applicationId);
-    if (documents.isEmpty()) {
-        return ResponseEntity.status(404).body("No document found for this application.");
+    public ResponseEntity<?> downloadDocumentByApplication(@PathVariable Long applicationId) {
+        List<Document> documents = documentService.findByApplicationId(applicationId);
+        if (documents.isEmpty()) {
+            return ResponseEntity.status(404).body("No document found for this application.");
+        }
+
+        Document doc = documents.get(0);
+        Path filePath = Paths.get(doc.getFilePath());
+
+        try {
+            byte[] fileBytes = Files.readAllBytes(filePath);
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.parseMediaType(doc.getFileType()));
+            headers.setContentLength(fileBytes.length);
+            headers.setContentDispositionFormData("attachment", doc.getOriginalFileName());
+
+            return new ResponseEntity<>(fileBytes, headers, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error downloading file: " + e.getMessage());
+        }
     }
-
-    Document doc = documents.get(0); // Pega o primeiro documento, adapte se quiser outro critério
-    Path filePath = Paths.get(doc.getFilePath());
-
-    try {
-        byte[] fileBytes = Files.readAllBytes(filePath);
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.parseMediaType(doc.getFileType()));
-        headers.setContentLength(fileBytes.length);
-        headers.setContentDispositionFormData("attachment", doc.getOriginalFileName());
-
-        return new ResponseEntity<>(fileBytes, headers, HttpStatus.OK);
-    } catch (Exception e) {
-        return ResponseEntity.status(500).body("Error downloading file: " + e.getMessage());
-    }
-}
 
 }

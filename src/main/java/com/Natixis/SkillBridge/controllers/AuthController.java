@@ -13,14 +13,12 @@ import org.springframework.security.core.AuthenticationException;
 import com.Natixis.SkillBridge.Service.UserService;
 import com.Natixis.SkillBridge.util.JwtUtil;
 
-
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
 
     @Autowired
     private UserService userService;
-     
 
     private final AuthenticationManager authenticationManager;
     private final JwtUtil jwtUtil;
@@ -30,13 +28,11 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
     }
 
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequest request) {
         try {
             Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
-            );
+                    new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
 
             String role = userService.getUserRole(request.getUsername());
 
@@ -52,6 +48,12 @@ public class AuthController {
 
 class AuthResponse {
     private String token;
-    public AuthResponse(String token) { this.token = token; }
-    public String getToken() { return token; }
+
+    public AuthResponse(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
 }

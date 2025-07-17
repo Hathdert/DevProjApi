@@ -53,7 +53,7 @@ public class UserService {
     public void registerUser(UserRequest request) {
         logger.info("Starting user registration for email: {}", request.getEmail());
         if (userRepository.existsByEmail(request.getEmail())) {
-            logger.error("Tentativa de cadastro com e-mail já existente: {}", request.getEmail());
+            logger.error("Email already exists: {}", request.getEmail());
             throw new RuntimeException("E-mail already in use");
         }
 
@@ -103,9 +103,8 @@ public class UserService {
 
     }
 
-        public boolean existsByEmail(String email) {
+    public boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
     }
-
 
 }
