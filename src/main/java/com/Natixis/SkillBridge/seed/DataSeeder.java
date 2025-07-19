@@ -3,6 +3,7 @@ package com.Natixis.SkillBridge.seed;
 
 import com.Natixis.SkillBridge.Repository.CandidateRepository;
 import com.Natixis.SkillBridge.Repository.CompanyRepository;
+import com.Natixis.SkillBridge.Repository.UserRepository;
 import com.Natixis.SkillBridge.Service.ApplicationService;
 import com.Natixis.SkillBridge.Service.CandidateService;
 import com.Natixis.SkillBridge.Service.CompanyService;
@@ -12,12 +13,14 @@ import com.Natixis.SkillBridge.model.Application;
 import com.Natixis.SkillBridge.model.InternshipOffer;
 import com.Natixis.SkillBridge.model.user.Candidate;
 import com.Natixis.SkillBridge.model.user.Company;
+import com.Natixis.SkillBridge.model.user.User;
 import com.Natixis.SkillBridge.util.InMemoryMultipartFile;
 import com.github.javafaker.Faker;
 
 import java.io.IOException;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -37,15 +40,18 @@ public class DataSeeder {
     @Autowired private DocumentService documentService;
     @Autowired private CandidateRepository candidateRepository;
     @Autowired private CompanyRepository companyRepository;
+    @Autowired private PasswordEncoder passwordEncoder;
+    @Autowired private UserRepository userRepository;
 
     private final Faker faker = new Faker();
 
     @PostConstruct
     public void seed() {
-        seedCompanies(50);
-        seedCandidates(100);
-        seedOffers(80);
-        seedApplications(200);
+        // seedCompanies(50);
+        // seedCandidates(100);
+        // seedOffers(80);
+        // seedApplications(200);
+        // seedAdmin(1);
     }
 
     private void seedCompanies(int count) {
@@ -53,7 +59,7 @@ public class DataSeeder {
             var company = new Company();
             company.setName(faker.company().name());
             company.setEmail(faker.internet().emailAddress());
-            company.setPassword("pass123");
+            company.setPassword(passwordEncoder.encode("pass123"));
             company.setAddress(faker.address().fullAddress());
             company.setPhone(faker.phoneNumber().cellPhone());
             company.setArea(faker.company().industry());
@@ -72,13 +78,13 @@ public class DataSeeder {
             companyRepository.save(company);
     
             // Attach 1–2 fake documents
-            int docCount = faker.number().numberBetween(1, 3);
+            int docCount = faker.number().numberBetween(1, 2);
             for (int d = 0; d < docCount; d++) {
                 try {
-                    String fileName = faker.file().fileName(null, null, "pdf", null);
+                    String fileName = faker.file().fileName(null, null, "png", null);
                     byte[] content = ("Fake file for company " + company.getEmail()).getBytes(StandardCharsets.UTF_8);
                     MultipartFile file = new InMemoryMultipartFile(
-                        "file", fileName, "application/pdf", content
+                        "file", fileName, "company/png", content
                     );
     
                     documentService.saveDocumentCompany(file, company);
@@ -97,7 +103,7 @@ public class DataSeeder {
             var candidate = new Candidate();
             candidate.setName(faker.name().fullName());
             candidate.setEmail(faker.internet().emailAddress());
-            candidate.setPassword("pass123");
+            candidate.setPassword(passwordEncoder.encode("pass123"));
             candidate.setAddress(faker.address().fullAddress());
             candidate.setPhone(String.valueOf(faker.number().numberBetween(900000000, 999999999)));
             candidate.setRole("CANDIDATE");
@@ -108,13 +114,13 @@ public class DataSeeder {
             candidateRepository.save(candidate);
 
             // Add 1 to 3 documents for this candidate
-            int docCount = faker.number().numberBetween(1, 4);
+            int docCount = faker.number().numberBetween(1, 2);
             for (int d = 0; d < docCount; d++) {
                 try {
-                    String fileName = faker.file().fileName(null, null, "pdf", null);
+                    String fileName = faker.file().fileName(null, null, "png", null);
                     byte[] content = ("Fake CV for " + candidate.getEmail()).getBytes(StandardCharsets.UTF_8);
                     MultipartFile file = new InMemoryMultipartFile(
-                        "file", fileName, "application/pdf", content
+                        "file", fileName, "company/png", content
                     );
 
                     documentService.saveDocumentCandidate(file, candidate);
@@ -142,6 +148,7 @@ public class DataSeeder {
             offer.setVacancies((faker.number().numberBetween(10, 50)));
             offer.setStartDate(LocalDate.now().plusDays(faker.number().numberBetween(30, 90)));
             offer.setEndDate(offer.getStartDate().plusMonths(3));
+            offer.setOffer(faker.bool().bool());
 
             internshipOfferService.save(offer);
         }
@@ -176,6 +183,19 @@ public class DataSeeder {
             }
         }
     }
-    
+
+    private void seedAdmin(int count) {
+        for (int i = 0; i < count; i++) {
+            var user = new User();
+            user.setName("admin");
+            user.setEmail(faker.internet().emailAddress());
+            user.setPassword(passwordEncoder.encode("pass123"));
+            user.setRole("ADMIN");
+            user.setRegistrationDate(LocalDate.now());
+            user.setRegistrationTime(LocalTime.now());
+ 
+            userRepository.save(user);
+        }
+    }
     
 }
