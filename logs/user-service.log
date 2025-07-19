@@ -895,3 +895,13 @@
 2025-07-17 09:46:33 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
 2025-07-17 09:46:33 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
 >>>>>>> HPinto
+2025-07-19 16:15:33 WARN  c.N.SkillBridge.Service.UserService - User with email hermina.lockman@yahoo.com not found
+2025-07-19 16:15:43 WARN  c.N.SkillBridge.Service.UserService - User with email contacto@techcorp.com not found
+2025-07-19 16:15:55 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
+2025-07-19 16:16:07 INFO  c.N.SkillBridge.Service.UserService - Starting user registration for email: ronald_costa96@hotmail.com
+2025-07-19 16:16:07 INFO  c.N.SkillBridge.Service.UserService - User registered successfully: ronald_costa96@hotmail.com
+2025-07-19 16:16:11 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
+2025-07-19 16:16:11 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
+2025-07-19 16:16:48 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
+2025-07-19 16:16:54 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
+2025-07-19 16:18:09 WARN  c.N.SkillBridge.Service.UserService - User with email ronald_costa96@hotmail.com not found
