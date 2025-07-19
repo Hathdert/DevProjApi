@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.Natixis.SkillBridge.model.user.Candidate;
@@ -39,7 +40,7 @@ public class Application {
     @OneToMany(mappedBy = "application", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("application-document")
     
-    private List<Document> document;
+    private List<Document> document = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "internship_offer_id")

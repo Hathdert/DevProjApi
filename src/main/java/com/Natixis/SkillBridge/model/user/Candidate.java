@@ -5,6 +5,7 @@ import com.Natixis.SkillBridge.model.Document;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
@@ -31,7 +32,7 @@ private List<Application> applications;
 
     @OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL, orphanRemoval = true)
 @JsonManagedReference("candidate-document")
-private List<Document> documents;
+private List<Document> documents = new ArrayList<>();
 
     // Getters and Setters
     public String getAddress() {

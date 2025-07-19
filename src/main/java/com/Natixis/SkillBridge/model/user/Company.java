@@ -1,5 +1,6 @@
 package com.Natixis.SkillBridge.model.user;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.Natixis.SkillBridge.model.Document;
 import com.Natixis.SkillBridge.model.InternshipOffer;
@@ -34,7 +35,7 @@ public class Company extends User {
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("company-document")
-    private List<Document> documents;
+    private List<Document> documents = new ArrayList<>();
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("company-internship")
